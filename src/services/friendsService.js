@@ -4,7 +4,7 @@ const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}`
 
 const index = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/api/leaderboard`, {
+    const res = await fetch(`${BASE_URL}/api/friends`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
     })
     return res.json()
