@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Leaderboard from './pages/Leaderboard/Leaderboard'
 
 // services
 import * as authService from './services/authService'
@@ -66,7 +67,7 @@ const App = () => {
           path='/leaderboard'
           element={
             <ProtectedRoute user={user}>
-              
+              <Leaderboard />
             </ProtectedRoute>
           }
         />
