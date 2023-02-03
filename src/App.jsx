@@ -14,6 +14,7 @@ import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
 import FriendList from './pages/FriendList/FriendList'
+import FriendDetails from './pages/FriendDetails/FriendDetails'
 
 // services
 import * as authService from './services/authService'
@@ -88,6 +89,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <FriendList friends={friends} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/friends/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <FriendDetails />
             </ProtectedRoute>
           }
         />

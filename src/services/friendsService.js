@@ -40,8 +40,25 @@ const show = async (id) => {
   }
 }
 
+const update = async (friendData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${friendData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(friendData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   create,
   show,
+  update
 }
