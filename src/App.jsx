@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -17,12 +17,15 @@ import FriendList from './pages/FriendList/FriendList'
 
 // services
 import * as authService from './services/authService'
+import * as leaderboardService from './services/leaderboardService'
+import * as friendsService from './services/friendsService'
 
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [friends, setFriends] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -34,6 +37,14 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    const fetchAllFriends = async () => {
+      const data = await friendsService.index()
+      setFriends(data)
+    }
+    if (user) fetchAllFriends()
+  }, [user])
 
   return (
     <>
@@ -76,7 +87,7 @@ const App = () => {
           path='/friends'
           element={
             <ProtectedRoute user={user}>
-              <FriendList />
+              <FriendList friends={friends} />
             </ProtectedRoute>
           }
         />
