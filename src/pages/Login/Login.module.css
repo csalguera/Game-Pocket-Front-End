@@ -3,7 +3,11 @@ body {
 }
 
 main { 
-  height: 100vmin;
+  height: 75vmin;
+}
+nav > ul {
+  background-color: white;
+  margin-top: 0px;
 }
 
 .container {
@@ -27,4 +31,14 @@ h1 {
   width: 100%;
   text-align: center;
   margin: 0px;
-  }
+}
+
+img {
+  height: 32px;
+}
+
+.pagehead {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

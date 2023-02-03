@@ -11,15 +11,18 @@ const LoginPage = props => {
 
   return (
     <>
-      <h1>Log In</h1>
+      <div className={styles.pagehead}>
+        <img src="https://i.imgur.com/e213Pvo.png" alt="pacman" />
+        <h1>Log In</h1>
+      </div>
       <main className={styles.container}>
-        <container id="body-container">
+        <div id="body-container">
         <p>{message}</p>
         <LoginForm
           handleSignupOrLogin={props.handleSignupOrLogin}
           updateMessage={updateMessage}
           />
-          </container>
+          </div>
       </main>
     </>
   )
