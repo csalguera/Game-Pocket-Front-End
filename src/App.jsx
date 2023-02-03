@@ -53,6 +53,12 @@ const App = () => {
     navigate('/friends')
   }
 
+  const handleRemoveFriend = async (id) => {
+    const removedFriend = await friendsService.delete(id)
+    setFriends(friends.filter(friend => friend._id !== removedFriend._id))
+    navigate('/friends')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
