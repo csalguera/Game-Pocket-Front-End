@@ -13,6 +13,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
+import FriendList from './pages/FriendList/FriendList'
 
 // services
 import * as authService from './services/authService'
@@ -68,6 +69,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <Leaderboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/friends'
+          element={
+            <ProtectedRoute user={user}>
+              <FriendList />
             </ProtectedRoute>
           }
         />
