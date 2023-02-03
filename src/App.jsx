@@ -62,6 +62,14 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path='/leaderboard'
+          element={
+            <ProtectedRoute user={user}>
+              
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   )
