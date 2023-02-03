@@ -35,6 +35,7 @@ const LoginForm = props => {
       <div className={styles.inputContainer}>
         <label htmlFor="email" className={styles.label}>Email</label>
         <input
+          className={styles.textInputStyle}
           type="text"
           autoComplete="off"
           id="email"
@@ -46,6 +47,7 @@ const LoginForm = props => {
       <div className={styles.inputContainer}>
         <label htmlFor="password" className={styles.label}>Password</label>
         <input
+          className={styles.textInputStyle}
           type="password"
           autoComplete="off"
           id="password"
@@ -55,9 +57,9 @@ const LoginForm = props => {
         />
       </div>
       <div>
-        <button className={styles.button}>Log In</button>
+        <button className={styles.loginButton}>Log In</button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className={styles.cancelButton}>Cancel</button>
         </Link>
       </div>
     </form>

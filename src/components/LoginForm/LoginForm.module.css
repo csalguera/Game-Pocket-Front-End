@@ -11,11 +11,30 @@
   color: #EADC59;
 }
 
-.label,
-.button {
+.label {
   margin-right: 0.5rem;
 }
 
 .inputContainer {
   margin-bottom: 1rem;
+}
+
+.loginButton {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius:10px;
+  background-color: #F91103;
+}
+
+.cancelButton {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  background-color: #FDDD10;
+}
+
+.textInputStyle {
+  background-color: #000000;
+  color: #FDDD10;
+  border-radius: 4px;
 }

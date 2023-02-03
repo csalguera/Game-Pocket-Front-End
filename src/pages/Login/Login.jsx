@@ -12,8 +12,9 @@ const LoginPage = props => {
   return (
     <>
       <div className={styles.pagehead}>
-        <img src="https://i.imgur.com/e213Pvo.png" alt="pacman" />
-        <h1>Log In</h1>
+        <img className={styles.imagehead} src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" />
+        <h1 className={styles.login}>Log In</h1>
+        <img className={styles.imagehead} src="https://i.imgur.com/XfSVnUx.png" alt="pacman" />
       </div>
       <main className={styles.container}>
         <div id="body-container">
