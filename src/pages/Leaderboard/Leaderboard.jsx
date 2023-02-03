@@ -1,6 +1,6 @@
 import Ranking from "../../components/Ranking/Ranking"
 
-const Leaderboard = (props) => {
+const Leaderboard = () => {
   return (
     <Ranking />
   )
