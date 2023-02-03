@@ -1,10 +1,10 @@
-import Friends from "../../components/Friends/Friends"
+import FriendDetails from "../FriendDetails/FriendDetails"
 
 const FriendList = ({ friends }) => {
   return (
     <>
       <h1>Friends</h1>
-      <Friends friends={friends}/>
+      <FriendDetails friends={friends}/>
     </>
   )
 }

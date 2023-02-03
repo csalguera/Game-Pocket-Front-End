@@ -14,6 +14,7 @@ import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
 import FriendList from './pages/FriendList/FriendList'
+import FriendDetails from './pages/FriendDetails/FriendDetails'
 
 // services
 import * as authService from './services/authService'
@@ -45,6 +46,18 @@ const App = () => {
     }
     if (user) fetchAllFriends()
   }, [user])
+
+  const handleAddFriend = async (friendData) => {
+    const newFriend = await friendsService.add(friendData)
+    setFriends([ newFriend, ...friends ])
+    navigate('/friends')
+  }
+
+  const handleRemoveFriend = async (id) => {
+    const removedFriend = await friendsService.delete(id)
+    setFriends(friends.filter(friend => friend._id !== removedFriend._id))
+    navigate('/friends')
+  }
 
   return (
     <>
@@ -88,6 +101,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <FriendList friends={friends} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/friends/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <FriendDetails user={user} />
             </ProtectedRoute>
           }
         />
