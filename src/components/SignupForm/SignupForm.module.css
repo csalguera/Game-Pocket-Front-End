@@ -4,13 +4,37 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  background-color: #5158C3;
+  font-family: 'Bungee', cursive;
+  border-radius: 20px;
+  padding: 1em;
+  color: #EADC59;
 }
 
-.label,
-.button {
-  margin-right: .5rem;
+.label {
+  margin-right: 0.5rem;
 }
 
 .inputContainer {
   margin-bottom: 1rem;
+}
+
+.loginButton {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius:10px;
+  background-color: #F91103;
+}
+
+.cancelButton {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  background-color: #FDDD10;
+}
+
+.textInputStyle {
+  background-color: #000000;
+  color: #FDDD10;
+  border-radius: 4px;
 }

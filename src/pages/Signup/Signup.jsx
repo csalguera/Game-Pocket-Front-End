@@ -10,11 +10,17 @@ const Signup = props => {
   }
 
   return (
-    <main className={styles.container}>
-      <h1>Sign Up</h1>
-      <p>{message}</p>
-      <SignupForm {...props} updateMessage={updateMessage} />
-    </main>
+    <>
+      <div className={styles.pagehead}>
+        <img className={styles.imagehead} src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" />
+        <h1 className={styles.login}>Sign Up</h1>
+        <img className={styles.imagehead} src="https://i.imgur.com/XfSVnUx.png" alt="pacman" />
+      </div>
+      <main className={styles.container}>
+        <p>{message}</p>
+        <SignupForm {...props} updateMessage={updateMessage} />
+      </main>
+    </>
   )
 }
 

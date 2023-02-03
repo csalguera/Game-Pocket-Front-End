@@ -51,6 +51,7 @@ const SignupForm = props => {
       <div className={styles.inputContainer}>
         <label htmlFor="name" className={styles.label}>Name</label>
         <input
+          className={styles.textInputStyle}
           type="text"
           autoComplete="off"
           id="name"
@@ -62,6 +63,7 @@ const SignupForm = props => {
       <div className={styles.inputContainer}>
         <label htmlFor="email" className={styles.label}>Email</label>
         <input
+          className={styles.textInputStyle}
           type="text"
           autoComplete="off"
           id="email"
@@ -73,6 +75,7 @@ const SignupForm = props => {
       <div className={styles.inputContainer}>
         <label htmlFor="password" className={styles.label}>Password</label>
         <input
+          className={styles.textInputStyle}
           type="password"
           autoComplete="off"
           id="password"
@@ -86,6 +89,7 @@ const SignupForm = props => {
           Confirm Password
         </label>
         <input
+          className={styles.textInputStyle}
           type="password"
           autoComplete="off"
           id="confirm"
@@ -99,6 +103,7 @@ const SignupForm = props => {
           Upload Photo
         </label>
         <input
+        className={styles.photoInputStyle}
           type="file"
           id="photo-upload"
           name="photo"
@@ -106,11 +111,11 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        <button disabled={isFormInvalid()} className={styles.loginButton}>
           Sign Up
         </button>
         <Link to="/">
-          <button>Cancel</button>
+          <button className={styles.cancelButton}>Cancel</button>
         </Link>
       </div>
     </form>
