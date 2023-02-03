@@ -47,6 +47,12 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
+  const handleAddFriend = async (friendData) => {
+    const newFriend = await friendsService.create(friendData)
+    setFriends([ newFriend, ...friends ])
+    navigate('/friends')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -96,7 +102,7 @@ const App = () => {
           path='/friends/:id'
           element={
             <ProtectedRoute user={user}>
-              <FriendDetails />
+              <FriendDetails user={user} />
             </ProtectedRoute>
           }
         />
