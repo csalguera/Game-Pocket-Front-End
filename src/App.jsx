@@ -87,7 +87,7 @@ const App = () => {
           path='/friends'
           element={
             <ProtectedRoute user={user}>
-              <FriendList />
+              <FriendList friends={friends} />
             </ProtectedRoute>
           }
         />
