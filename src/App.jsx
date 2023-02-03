@@ -48,7 +48,7 @@ const App = () => {
   }, [user])
 
   const handleAddFriend = async (friendData) => {
-    const newFriend = await friendsService.create(friendData)
+    const newFriend = await friendsService.add(friendData)
     setFriends([ newFriend, ...friends ])
     navigate('/friends')
   }

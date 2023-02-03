@@ -13,10 +13,10 @@ const index = async () => {
   }
 }
 
-const create = async (friendData) => {
+const add = async (friendData) => {
   try {
     const res = await fetch(`${BASE_URL}`, {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
@@ -40,25 +40,13 @@ const show = async (id) => {
   }
 }
 
-const update = async (friendData) => {
-  try {
-    const res = await fetch(`${BASE_URL}/${friendData._id}`, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(friendData)
-    })
-    return res.json()
-  } catch (error) {
-    console.log(error)
-  }
+const deleteFriend = async () => {
+
 }
 
 export {
   index,
-  create,
+  add,
   show,
-  update
+  deleteFriend as delete,
 }
