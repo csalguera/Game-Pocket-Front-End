@@ -1,6 +1,9 @@
+body {
+  background-color: #5158C3;
+}
+
 main { 
   height: 100vmin;
-  display: flex;
 }
 
 .container {
@@ -9,6 +12,7 @@ main {
   flex-direction: column;
   border: 12px solid  #5158C3;
   background-color: black;
+  border-radius: 40px;
   background-size: contain;
   background-repeat: no-repeat;
 }
