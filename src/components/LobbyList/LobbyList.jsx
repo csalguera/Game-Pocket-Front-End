@@ -6,7 +6,7 @@ const LobbyList = ({ lobbies, user }) => {
       <h1>These are the available lobbies</h1>
       {lobbies.map((lobby, idx) => (
         <div key={lobby._id}>
-          <Link to="/">
+          <Link to={`/lobby/${idx + 1}`}>
             <ul>
               <li><h2>Lobby {idx + 1}</h2></li>
               <li><h3>Name: {lobby.name}</h3></li>

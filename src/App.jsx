@@ -24,6 +24,7 @@ import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
+import LobbyDetails from './pages/LobbyRoom/LobbyRoom'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -99,6 +100,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/lobby/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <LobbyDetails />
             </ProtectedRoute>
           }
         />
