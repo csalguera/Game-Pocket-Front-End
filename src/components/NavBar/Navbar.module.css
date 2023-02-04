@@ -8,15 +8,19 @@
   font-family: 'VT323', monospace;
 }
 
+.navbar ul {
+  padding: 10px;
+}
+
 .navbar li{
   list-style: none;
-  padding-bottom: .5em;
 }
 
 .navbar li > * {
   text-decoration: none;
   color: white;
   font-size: 28px;
+  padding: .1em;
 }
 
 .navbar li > *:hover {
