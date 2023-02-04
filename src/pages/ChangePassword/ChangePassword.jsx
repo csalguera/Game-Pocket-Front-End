@@ -13,7 +13,7 @@ const ChangePassword = props => {
     <>
     <div className={styles.page}>
       <div>
-        <h1>Change Password</h1>
+        <h1>Change<br></br>Password</h1>
         <img src="https://i.imgur.com/ArfuBsE.png" alt="Simpsons Family" />
       </div>
         <main className={styles.container}>
