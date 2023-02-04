@@ -1,7 +1,7 @@
 const Ranking = () => {
   return (
     <div>
-      <p3>Game Ranking</p3>
+      <h3>Game Ranking</h3>
       <ol>
         <li>First Place</li>
         <li>Second Place</li>
