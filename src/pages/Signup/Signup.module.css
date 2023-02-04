@@ -27,7 +27,6 @@ nav > ul {
   font-size: 56px;
   font-family: 'Bungee', cursive;
   background-color: #5158C3;
-  /* width: 100%; */
   text-align: center;
   margin: 0px;
 }
@@ -38,6 +37,7 @@ nav > ul {
 }
 
 .pagehead {
+  height: 6em;
   display: flex;
   flex-direction: row;
   align-items: center;
