@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 // Services
 import * as lobbyService from '../../services/lobbyService'
 
-const LobbyRoom = ({ user }) => {
+const LobbyRoom = ({ user, id }) => {
+  const [lobby, setLobby] = useState(null)
+  
   return (
     <>
       <h1>Lobby Room</h1>
