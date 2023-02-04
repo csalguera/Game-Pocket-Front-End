@@ -3,7 +3,12 @@ const Lobby = ({ lobbies, user }) => {
     <>
       <h1>This is the lobby component</h1>
       {lobbies.map(lobby => (
-        lobby.name
+        <ul>
+          <li>Name: {lobby.name}</li>
+          <li>Content: {lobby.content}</li>
+          <li>Gamerooms: {lobby.gamerooms}</li>
+          <li>Members: {lobby.members}</li>
+        </ul>
       ))}
     </>
   )
