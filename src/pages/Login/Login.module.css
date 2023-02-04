@@ -32,11 +32,12 @@ nav > ul {
 }
 
 .imagehead {
-  height: 32px;
+  height: 48px;
   padding: 1em;
 }
 
 .pagehead {
+  height: 6em;
   display: flex;
   flex-direction: row;
   align-items: center;
