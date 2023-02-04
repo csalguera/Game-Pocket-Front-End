@@ -26,6 +26,14 @@
   background-color: #F91103;
 }
 
+.loginButton:disabled {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius:10px;
+  background-color: #f90f039a;
+  color: black;
+}
+
 .cancelButton {
   padding: 3px;
   margin-right: 0.5rem;
