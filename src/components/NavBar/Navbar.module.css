@@ -1,3 +1,8 @@
+.navbar {
+  height: 3rem;
+  margin: 0;
+}
+
 .navbar > * {
   background-color: black;
   justify-content: space-evenly;
@@ -6,6 +11,7 @@
   color: white;
   font-size: 36px;
   font-family: 'VT323', monospace;
+  margin-bottom: 0;
 }
 
 .navbar li{
@@ -20,5 +26,5 @@
 }
 
 .navbar li > *:hover {
-  border: 1px solid white;;
+  border: 1px solid white;
 }
