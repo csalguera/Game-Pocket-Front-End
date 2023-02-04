@@ -1,6 +1,7 @@
 const LobbyDetails = () => {
   return (
     <>
+      <h4>Lobby Details</h4>
     </>
   )
 }
