@@ -1,4 +1,4 @@
-const Lobby = ({ lobbies, user }) => {
+const LobbyList = ({ lobbies, user }) => {
   return (
     <>
       <h1>These are the available lobbies</h1>
@@ -17,4 +17,4 @@ const Lobby = ({ lobbies, user }) => {
   )
 }
 
-export default Lobby
+export default LobbyList
