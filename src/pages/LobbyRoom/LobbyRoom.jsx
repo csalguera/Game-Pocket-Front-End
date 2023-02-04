@@ -19,7 +19,7 @@ const LobbyRoom = ({ user }) => {
   
   if (!lobby) return <h1>Loading</h1>
 
-  console.log(lobby.members)
+  console.log(lobby.chatroom)
   return (
     <>
       <h1>{lobby.name}</h1>
@@ -31,6 +31,15 @@ const LobbyRoom = ({ user }) => {
           lobby.members.map(member => member.name)
           :
           0
+        }
+      </h2>
+      <h2>
+        Chatroom: {
+          lobby.chatroom.name
+          ?
+          lobby.chatroom.name
+          :
+          'No chatroom'
         }
       </h2>
       
