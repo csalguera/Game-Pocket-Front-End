@@ -1,9 +1,11 @@
 import styles from './Landing.module.css'
+import Lobby from '../../components/Lobby/Lobby'
 
-const Landing = ({ user }) => {
+const Landing = ({ lobbies, user }) => {
   return (
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+      <h1>Hello, {user ? user.name : 'please log in or sign up to access the lobby'}</h1>
+      {user ? <Lobby lobbies={lobbies} user={user} /> : ''}
     </main>
   )
 }

@@ -20,6 +20,7 @@ import FriendDetails from './pages/FriendDetails/FriendDetails'
 import * as authService from './services/authService'
 import * as leaderboardService from './services/leaderboardService'
 import * as friendsService from './services/friendsService'
+import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
@@ -27,6 +28,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
+  const [lobbies, setLobbies] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -39,6 +41,7 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  // fetch friends
   useEffect(() => {
     const fetchAllFriends = async () => {
       const data = await friendsService.index()
@@ -47,12 +50,23 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
+  // fetch lobbies
+  useEffect(() => {
+    const fetchAllLobbies = async () => {
+      const data = await lobbyService.index()
+      setLobbies(data)
+    }
+    if (user) fetchAllLobbies()
+  }, [user])
+  
+  // Must be prop drilled to Profiles page in future when backend for friends is ready
   const handleAddFriend = async (friendData) => {
     const newFriend = await friendsService.add(friendData)
     setFriends([ newFriend, ...friends ])
     navigate('/friends')
   }
-
+  
+  // Must be prop drilled to FriendList and FriendDetails page(s) in future when backend for friends is ready
   const handleRemoveFriend = async (id) => {
     const removedFriend = await friendsService.delete(id)
     setFriends(friends.filter(friend => friend._id !== removedFriend._id))
@@ -63,7 +77,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing lobbies={lobbies} user={user} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
