@@ -20,6 +20,7 @@ import FriendDetails from './pages/FriendDetails/FriendDetails'
 import * as authService from './services/authService'
 import * as leaderboardService from './services/leaderboardService'
 import * as friendsService from './services/friendsService'
+import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
@@ -27,6 +28,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
+  const [lobbies, setLobbies] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -39,6 +41,7 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  // fetch friends
   useEffect(() => {
     const fetchAllFriends = async () => {
       const data = await friendsService.index()
@@ -47,6 +50,15 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
+  // fetch lobbies
+  useEffect(() => {
+    const fetchAllLobbies = async () => {
+      const data = await lobbyService.index()
+      setLobbies(data)
+    }
+    if (user) fetchAllLobbies()
+  }, [user])
+  
   // Must be prop drilled to Profiles page in future when backend for friends is ready
   const handleAddFriend = async (friendData) => {
     const newFriend = await friendsService.add(friendData)
