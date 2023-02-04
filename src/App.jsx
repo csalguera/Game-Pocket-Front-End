@@ -107,7 +107,7 @@ const App = () => {
           path='/lobby/:id'
           element={
             <ProtectedRoute user={user}>
-              <LobbyRoom />
+              <LobbyRoom user={user} />
             </ProtectedRoute>
           }
         />
