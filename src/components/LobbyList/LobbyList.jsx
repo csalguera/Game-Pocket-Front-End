@@ -11,7 +11,7 @@ const LobbyList = ({ lobbies, user }) => {
               <li><h2>Lobby {idx + 1}</h2></li>
               <li><h3>Name: {lobby.name}</h3></li>
               <li><h3>Description: {lobby.content}</h3></li>
-              <li><h3>Members: {lobby.members}</h3></li>
+              <li><h3>Members: {lobby.members.length}</h3></li>
             </ul>
           </Link>
         </div>
