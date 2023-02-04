@@ -47,12 +47,14 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
+  // Must be prop drilled to Profiles page in future when backend for friends is ready
   const handleAddFriend = async (friendData) => {
     const newFriend = await friendsService.add(friendData)
     setFriends([ newFriend, ...friends ])
     navigate('/friends')
   }
-
+  
+  // Must be prop drilled to FriendList and FriendDetails page(s) in future when backend for friends is ready
   const handleRemoveFriend = async (id) => {
     const removedFriend = await friendsService.delete(id)
     setFriends(friends.filter(friend => friend._id !== removedFriend._id))
