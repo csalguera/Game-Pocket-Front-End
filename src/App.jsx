@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import LobbyRoom from './pages/LobbyRoom/LobbyRoom'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
 import FriendList from './pages/FriendList/FriendList'
 import FriendDetails from './pages/FriendDetails/FriendDetails'
@@ -24,7 +25,6 @@ import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
-import LobbyDetails from './pages/LobbyRoom/LobbyRoom'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -107,7 +107,7 @@ const App = () => {
           path='/lobby/:id'
           element={
             <ProtectedRoute user={user}>
-              <LobbyDetails />
+              <LobbyRoom />
             </ProtectedRoute>
           }
         />
