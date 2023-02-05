@@ -125,7 +125,7 @@ const App = () => {
           path='/leaderboard'
           element={
             <ProtectedRoute user={user}>
-              <Leaderboard />
+              <Leaderboard records={records} user={user} />
             </ProtectedRoute>
           }
         />
