@@ -1,4 +1,5 @@
 import * as tokenService from "./tokenService"
+import { create as createChatroom } from "./chatroomService"
 
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/lobbies`
 
@@ -15,6 +16,8 @@ const index = async () => {
 
 const create = async (lobbyData) => {
   try {
+    const chatroom = await createChatroom({name: lobbyData.name})
+    lobbyData.chatroom = chatroom._id
     const res = await fetch(`${BASE_URL}`, {
       method: 'POST',
       headers: {
