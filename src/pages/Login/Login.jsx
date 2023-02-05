@@ -11,13 +11,13 @@ const LoginPage = props => {
 
   return (
     <>
-      <div className="pagehead">
+      <div className="page-head">
         <img src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" />
         <h1>Log In</h1>
         <img src="https://i.imgur.com/XfSVnUx.png" alt="pacman" />
       </div>
       <main className='body'>
-        <div className='formContainer'>
+        <div className='form-container'>
           <p>{message}</p>
           <LoginForm
             handleSignupOrLogin={props.handleSignupOrLogin}

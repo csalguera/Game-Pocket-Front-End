@@ -57,7 +57,7 @@ body {
   border: 1px solid white;
 }
 
-.pagehead {
+.page-head {
   background-color: grey;
   display: flex;
   align-items: center;
@@ -66,17 +66,32 @@ body {
   margin-top: 8px;
 }
 
-.pagehead img {
+.page-head img {
   height: 48px;
 }
 
 .body {
   background-color: brown;
-  padding: 10%;
-  height: 50em;
+  padding: 2%;
+  height: 100%;
 }
 
-.formContainer {
-  background-color: yellowgreen;
-  padding: 20%;
+.form-container {
+  background-color: green;
+  padding: 10em;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10%;
+  width: 30%;
+}
+
+.form div {
+  padding: 5%;
 }
