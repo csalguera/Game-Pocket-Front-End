@@ -127,6 +127,7 @@ body {
 }
 
 #pacman div.form-container {
+  border-radius: 40px;
   background-color: black;
 }
 
