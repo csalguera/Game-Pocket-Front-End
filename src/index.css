@@ -240,3 +240,31 @@ body {
 }
 
 /*! ============SIMPSONS==========  */
+
+/*! ============DEFENDER==========  */
+
+#defender{
+  background-color: #F62D21;
+}
+
+#defender .page-head {
+  background-color: #F62D21;
+}
+
+#defender .body {
+  padding: 2%;
+  height: 100vmax;
+}
+
+
+#defender .player-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  font-size: 86px;
+  height: 100%;
+}
+
+/*! ============DEFENDER==========  */

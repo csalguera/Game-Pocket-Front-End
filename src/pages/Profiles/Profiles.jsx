@@ -14,18 +14,24 @@ const Profiles = () => {
 
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.length ? 
-        <>
-          {profiles.map(profile =>
-            <p key={profile._id}>{profile.name}</p>
-          )}
-        </>
-      :
-        <p>No profiles yet</p>
-      }
+      <div id='defender'>
+        <div className='page-head'>
+        <h1>ALL PLAYERS</h1>
+        </div>
+          <div className='body'>
+          {profiles.length ? 
+            <div className='player-list'>
+              {profiles.map(profile =>
+                <p key={profile._id} className='player'>{profile.name}</p>
+                )}
+            </div>
+          :
+          <p>No profiles yet</p>
+        }
+        </div>
+      </div>
     </>
   )
 }
- 
+
 export default Profiles
