@@ -19,7 +19,7 @@ import FriendDetails from './pages/FriendDetails/FriendDetails'
 
 // services
 import * as authService from './services/authService'
-import * as leaderboardService from './services/recordService'
+import * as recordService from './services/recordService'
 import * as friendsService from './services/friendsService'
 import * as lobbyService from './services/lobbyService'
 
