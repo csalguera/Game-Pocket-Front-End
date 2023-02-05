@@ -11,19 +11,17 @@ const ChangePassword = props => {
 
   return (
     <>
-    <div className={styles.outer}>
-      <div className={styles.page}>
-        <div className={styles.head}>
-          <img src="https://i.imgur.com/od8UhEW.png" alt="Simpsons Family" />
-          <h1>C h a n g e<br></br>P a s s w o r d</h1>
-          <img src="https://i.imgur.com/ArfuBsE.png" alt="Simpsons Family" />
-        </div>
-          <main className={styles.container}>
-            <p>{message}</p>
-            <ChangePasswordForm {...props} updateMessage={updateMessage} />
-          </main>
+      <div className="page-head" id="simpsons">
+        <img src="https://i.imgur.com/od8UhEW.png" alt="Simpsons Family" />
+        <h1>C h a n g e<br></br>P a s s w o r d</h1>
+        <img src="https://i.imgur.com/ArfuBsE.png" alt="Simpsons Family" />
       </div>
-    </div>
+      <main className="body">
+        <div className='form-container'>
+          <p>{message}</p>
+          <ChangePasswordForm {...props} updateMessage={updateMessage} />
+        </div>
+      </main>
     </>
   )
 }
