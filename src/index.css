@@ -141,6 +141,7 @@ body {
 }
 
 #pacman .button-container > :nth-child(1) {
+  font-family: 'Bungee', cursive;
   padding: 3px;
   margin-right: 0.5rem;
   border-radius:10px;
@@ -156,6 +157,8 @@ body {
 }
 
 #pacman a button {
+  font-family: 'Bungee', cursive;
+  height: 50px;
   padding: 3px;
   margin-right: 0.5rem;
   border-radius: 10px;
