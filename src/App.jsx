@@ -60,6 +60,15 @@ const App = () => {
     }
     if (user) fetchAllLobbies()
   }, [user])
+
+  // fetch records
+  useEffect(() => {
+    const fetchAllRecords = async () => {
+      const data = await recordService.index()
+      setRecords(data)
+    }
+    if (user) fetchAllRecords()
+  }, [user])
   
   // Must be prop drilled to Profiles page in future when backend for friends is ready
   const handleAddFriend = async (friendData) => {
