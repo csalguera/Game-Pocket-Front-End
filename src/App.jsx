@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import LobbyRoom from './pages/LobbyRoom/LobbyRoom'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
 import FriendList from './pages/FriendList/FriendList'
 import FriendDetails from './pages/FriendDetails/FriendDetails'
@@ -99,6 +100,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/lobby/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <LobbyRoom user={user} />
             </ProtectedRoute>
           }
         />
