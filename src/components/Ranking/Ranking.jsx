@@ -1,4 +1,4 @@
-const Ranking = () => {
+const Ranking = ({ records, user }) => {
   return (
     <div>
       <h3>Game Ranking</h3>
