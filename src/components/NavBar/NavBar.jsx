@@ -3,7 +3,7 @@ import styles from './Navbar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
-    <nav className={styles.navbar}>
+    <nav className="navbar">
       {user ?
         <ul >
           <li>Welcome, {user.name}</li>
