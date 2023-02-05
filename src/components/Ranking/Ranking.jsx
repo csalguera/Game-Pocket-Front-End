@@ -9,11 +9,40 @@ const Ranking = ({ records, user }) => {
       </ol>
       {records.map(record => (
         <div key={record._id} >
-          <p>{record.owner}</p>
-          <p>Game: {record.game}</p>
-          <p>Wins: {record.win}</p>
-          <p>Losses: {record.loss}</p>
-          <p>Win Rate: {Math.floor(record.win / (record.win + record.loss) * 100)}%</p>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Wins
+                </th>
+                <th>
+                  Losses
+                </th>
+                <th>
+                  Win Rate
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  {record.owner}
+                </td>
+                <td>
+                  {record.win}
+                </td>
+                <td>
+                  {record.loss}
+                </td>
+                <td>
+                {Math.floor(record.win / (record.win + record.loss) * 100)}%
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       ))}
     </div>
