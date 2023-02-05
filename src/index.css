@@ -109,6 +109,7 @@ body {
 /*! =============PACMAN===========  */
 #pacman {
   font-family: 'Bungee', cursive;
+  background-color: #5158C3;
 }
 
 #pacman h1 {
@@ -120,10 +121,6 @@ body {
   background-color: #5158C3;
   text-align: center;
   margin: 0px;
-}
-
-#pacman {
-  background-color: #5158C3;
 }
 
 #pacman div.form-container {
@@ -174,3 +171,43 @@ body {
 }
 
 /*! =============PACMAN===========  */
+
+/*! ============SIMPSONS==========  */
+
+#simpsons {
+  font-family: 'Rock Salt', cursive;
+  background-color: #4CC2FF;
+}
+
+#simpsons h1 {
+  -webkit-text-stroke: .25px #FDE024;
+  text-shadow: -1px 1px 2px #000,
+              1px 1px 2px #000,
+              1px -1px 0 #000,
+              -1px -1px 0 #000;
+  color: #FDE024;
+  transform: rotate(-15deg);
+  font-weight: 900;
+  font-size: 3vmin;
+}
+
+#simpsons img {
+  height: 15vmin;
+}
+
+#simpsons div.form-container {
+  border-radius: 40px;
+  background-color: black;
+}
+
+#simpsons .form {
+  background-color: #4CC2FF;
+  border-radius: 20px;
+  color: #FDE024;
+  text-shadow: -1px 1px 2px #000,
+  1px 1px 2px #000,
+  1px -1px 0 #000,
+  -1px -1px 0 #000;
+}
+
+/*! ============SIMPSONS==========  */
