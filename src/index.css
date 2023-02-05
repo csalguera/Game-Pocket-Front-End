@@ -254,17 +254,21 @@ body {
 #defender .body {
   padding: 2%;
   height: 100vmax;
+  background-color: #F62D21;
 }
 
 
 #defender .player-list {
+  font-family: 'VT323', monospace;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  align-content: space-around;
   background-color: black;
+  border-radius: 40px;
   color: white;
-  font-size: 86px;
-  height: 100%;
+  font-size: 64px;
+  height: 80%;
 }
 
 /*! ============DEFENDER==========  */
