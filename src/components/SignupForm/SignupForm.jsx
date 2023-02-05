@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './SignupForm.module.css'
 import * as authService from '../../services/authService'
+
 
 const SignupForm = props => {
   const navigate = useNavigate()
@@ -44,9 +44,9 @@ const SignupForm = props => {
 
   return (
     <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className="form"
+    autoComplete="off"
+    onSubmit={handleSubmit}
+    className="form"
     >
       <div>
         <label htmlFor="name">Name</label>
@@ -105,7 +105,7 @@ const SignupForm = props => {
           onChange={handleChangePhoto}
         />
       </div>
-      <div>
+      <div className='button-container'>
         <button disabled={isFormInvalid()}>
           Sign Up
         </button>

@@ -19,7 +19,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/*! NAVBARSTYLE */
+
+
+/*! =============NAVBAR===========  */
 
 .navbar {
   height: 3rem;
@@ -56,6 +58,8 @@ body {
 .navbar li > *:hover {
   border: 1px solid white;
 }
+
+/*! =============NAVBAR===========  */
 
 .page-head {
   background-color: grey;
@@ -101,9 +105,8 @@ body {
   flex-direction: column;
 }
 
+
 /*! =============PACMAN===========  */
-
-
 #pacman h1 {
   -webkit-text-stroke: 2px #FD4293;
   color: #EADC59;
@@ -125,4 +128,36 @@ body {
 
 #pacman .form {
   background-color: #5158C3;
+  border-radius: 20px;
+  color: #EADC59;
 }
+
+#pacman .button-container {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#pacman .button-container > :nth-child(1) {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius:10px;
+  background-color: #F91103;
+}
+
+#pacman .button-container > :nth-child(1):disabled {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius:10px;
+  background-color: #f90f039a;
+  color: black;
+}
+
+#pacman a button {
+  padding: 3px;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  background-color: #FDDD10;
+}
+
+/*! =============PACMAN===========  */
