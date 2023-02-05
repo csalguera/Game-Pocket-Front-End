@@ -10,12 +10,12 @@ const Signup = props => {
 
   return (
     <>
-      <div className="page-head">
+      <div className="page-head" id="pacman">
         <img src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" />
         <h1>Sign Up</h1>
         <img src="https://i.imgur.com/XfSVnUx.png" alt="pacman" />
       </div>
-      <main className="body">
+      <main className="body" id="pacman">
         <div className="form-container">
           <p>{message}</p>
           <SignupForm {...props} updateMessage={updateMessage} />

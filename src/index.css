@@ -100,3 +100,29 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/*! =============PACMAN===========  */
+
+
+#pacman h1 {
+  -webkit-text-stroke: 2px #FD4293;
+  color: #EADC59;
+  font-weight: 900;
+  font-size: 56px;
+  font-family: 'Bungee', cursive;
+  background-color: #5158C3;
+  text-align: center;
+  margin: 0px;
+}
+
+#pacman {
+  background-color: #5158C3;
+}
+
+#pacman div.form-container {
+  background-color: black;
+}
+
+#pacman .form {
+  background-color: #5158C3;
+}
