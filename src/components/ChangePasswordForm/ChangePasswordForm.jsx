@@ -40,10 +40,10 @@ const ChangePasswordForm = props => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
+      className="form"
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>
+      <div>
+        <label htmlFor="password">
           Current Password
         </label>
         <input
@@ -55,8 +55,8 @@ const ChangePasswordForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="newPassword" className={styles.label}>
+      <div>
+        <label htmlFor="newPassword">
           New Password
         </label>
         <input
@@ -68,8 +68,8 @@ const ChangePasswordForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="newPasswordConf" className={styles.label}>
+      <div>
+        <label htmlFor="newPasswordConf">
           Confirm New Password
         </label>
         <input
@@ -81,7 +81,7 @@ const ChangePasswordForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.buttonContainer}>
+      <div className="button-container">
         <button disabled={isFormInvalid()}>
           Change Password
         </button>
