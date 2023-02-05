@@ -13,7 +13,7 @@ const Ranking = ({ records, user }) => {
             <thead>
               <tr>
                 <th>
-                  Name
+                  
                 </th>
                 <th>
                   Wins
@@ -29,7 +29,7 @@ const Ranking = ({ records, user }) => {
             <tbody>
               <tr>
                 <td>
-                  {record.owner}
+                  <b>{record.owner}</b>
                 </td>
                 <td>
                   {record.win}
