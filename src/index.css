@@ -223,7 +223,7 @@ body {
   justify-content: space-around;
 }
 
-#simpsons .button-container button, .button-container a {
+#simpsons .button-container button, #simpsons .button-container a {
   height: 50px;
   -webkit-text-stroke: .25px #FDE024;
   text-shadow: -1px 1px 2px #000,
