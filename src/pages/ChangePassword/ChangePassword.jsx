@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ChangePasswordForm from '../../components/ChangePasswordForm/ChangePasswordForm'
-import styles from './ChangePassword.module.css'
+
 
 const ChangePassword = props => {
   const [message, setMessage] = useState([''])
