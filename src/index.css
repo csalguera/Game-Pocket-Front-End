@@ -359,11 +359,12 @@ body {
   grid-column-end: 5;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  align-items: center;
   background-color: black;
   border-radius: 40px;
   color: white;
   font-size: 64px;
-  height: 80%;
+  height: 60vmax;
 }
 
 @media (max-width: 450px){
