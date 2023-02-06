@@ -262,11 +262,13 @@ body {
 @media (max-width: 850px){
   #simpsons div.form-container {
     padding: 40px;
-    /* background-color: red; */
   }
   #simpsons form {
     width: 180px;
-    background-color: red;
+  }
+  #simpsons .button-container button {
+    font-size: 16px;
+    margin: 4px;
   }
 }
 
