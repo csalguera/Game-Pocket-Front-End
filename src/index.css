@@ -454,6 +454,8 @@ body {
 .navstick-right {
   height: 25px;
   width: 100px;
+  background-color: transparent;
+  border: none;
 }
 
 .navstick-button {
@@ -462,8 +464,13 @@ body {
   border-radius: 50%;
 }
 
-.arrow {
+.arrow-left,
+.arrow-right {
   width: 100px;
+}
+
+.arrow-right {
+  transform: scaleX(-1);
 }
 
 /*! ============FOOTER============  */
