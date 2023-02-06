@@ -28,6 +28,14 @@ const LobbyList = ({ lobbies, user }) => {
     }
   }
 
+  const handleDelete = async (id) => {
+    try {
+      await lobbyService.delete(id)
+    } catch (err){
+      console.log(err);
+    }
+  }
+
   return (
     <>
       <h1>These are the available lobbies</h1>
@@ -41,6 +49,7 @@ const LobbyList = ({ lobbies, user }) => {
               <h3>Members: {lobby.members.length}</h3>
             </div>
           </Link>
+              <button onClick={() => handleDelete(lobby._id)}>delete</button>
         </div>
       ))}
     <form
