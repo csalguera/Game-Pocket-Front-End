@@ -378,4 +378,14 @@ body {
   }
 }
 
+#defender a, #defender a::before{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+  }
+  
+  #defender a:hover {
+  border: 1px solid white;
+}
+
 /*! ============DEFENDER==========  */
