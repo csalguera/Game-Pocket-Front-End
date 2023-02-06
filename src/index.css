@@ -259,7 +259,9 @@ body {
 #defender .body {
   padding: 2%;
   height: 100vmin;
-  background-color: black;
+  background-color: #F62D21;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }
 
 #defender h1 {
