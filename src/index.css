@@ -197,6 +197,16 @@ body {
   font-weight: bold;
 }
 
+#pacman div#photo {
+  display: flex;
+  width: 60%;
+}
+
+#pacman div#photo input {
+  background-color: #5158C3;
+  color: #5158C3;
+}
+
 @media (max-width: 950px){
   #pacman .form{
     width:max-content
@@ -221,6 +231,9 @@ body {
   @media (max-width: 450px){   
     #pacman.page-head {
       margin-top: -35px;
+    }
+    #pacman .form {
+      width: 240px;
     }
   }
 }
