@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
+import * as messageService from '../../services/messageService'
 
 
 const LobbyRoom = ({ user }) => {
@@ -31,7 +32,8 @@ const LobbyRoom = ({ user }) => {
   const handleSendMessage = async e =>{
     e.preventDefault()
     try {
-      setChatroomMessages([...chatroomMessages, message])
+      const messageData = await messageService.create(message)
+      setChatroomMessages([...chatroomMessages, messageData])
       setMessage('')
     } catch (err) {
       console.log(err);
@@ -61,10 +63,10 @@ const LobbyRoom = ({ user }) => {
         onSubmit={handleSendMessage}
         >
           <div>
-            <label htmlFor="message">Message</label>
+            <label htmlFor="content">Message</label>
             <input 
               type="text"
-              name='message'
+              name='content'
               autoComplete="off"
               onChange={handleChange}
             />
