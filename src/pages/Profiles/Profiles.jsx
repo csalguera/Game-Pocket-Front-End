@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
+import { Link } from 'react-router-dom'
+
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
@@ -22,7 +24,7 @@ const Profiles = () => {
           {profiles.length ? 
             <div className='player-list'>
               {profiles.map(profile =>
-                <p key={profile._id} className='player'>{profile.name}</p>
+                <Link to={`/profiles/${profile._id}`} key={profile._id} className='player' state={profile}>{profile.name}</Link>
                 )}
             </div>
           :
