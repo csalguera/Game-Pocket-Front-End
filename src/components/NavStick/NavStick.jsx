@@ -24,14 +24,27 @@ const NavStick = () => {
 
   return (
     <>
-      <button>
+      <button onClick={navstickLeft}>
         Left
       </button>
+      <p>
+      {
+            destination === '/'
+            ?
+            'HOME'
+            :
+            destination
+            .replace('/', '')
+            .toUpperCase()
+          }
+      </p>
       <button onClick={navstickRight}>
         Right
       </button>
       <Link to={destination}>
-        <button>Navigate</button>
+        <button>
+          Navigate
+        </button>
       </Link>
     </>
   )
