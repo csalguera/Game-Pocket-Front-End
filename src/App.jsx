@@ -25,6 +25,7 @@ import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -146,6 +147,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer />
     </>
   )
 }
