@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Location } from 'react-router-dom';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
@@ -9,8 +8,8 @@ import * as lobbyService from '../../services/lobbyService'
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
-  const location = useLocation()
-  console.log(location.state);
+  const [message, setMessage] = useState('')
+  const [chatroomMessages, setChatroomMessages] = useState([])
 
   // fetch lobby
   useEffect(() => {
@@ -21,9 +20,27 @@ const LobbyRoom = ({ user }) => {
     fetchLobby()
   }, [id])
 
+  //message
+  const handleChange = e => {
+    setMessage({
+      ...message,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSendMessage = async e =>{
+    e.preventDefault()
+    try {
+      setChatroomMessages([...chatroomMessages, message])
+      setMessage('')
+    } catch (err) {
+      console.log(err);
+    }
+  }
   
   if (!lobby) return <h1>Loading</h1>
-
+  console.log(chatroomMessages);
+  // console.log(lobby.mainroom);
   return (
     <>
       <h1>{lobby.name}</h1>
@@ -38,14 +55,25 @@ const LobbyRoom = ({ user }) => {
         }
       </h2>
       <h2>
-        Chatroom: {
-          lobby.mainroom.name
-          ?
-          lobby.mainroom.name
-          :
-          'No chatroom'
-        }
-      </h2>   
+        Chatroom: {lobby.mainroom.name}
+        <form
+        autoComplete='off'
+        onSubmit={handleSendMessage}
+        >
+          <div>
+            <label htmlFor="message">Message</label>
+            <input 
+              type="text"
+              name='message'
+              autoComplete="off"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <button>Send</button>
+          </div>
+        </form>
+      </h2> 
     </>
   )
 }
