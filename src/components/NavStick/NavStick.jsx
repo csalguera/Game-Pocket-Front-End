@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import styles from "./NavStick.module.css"
 
-const NavStick = () => {
+const NavStick = ({ user }) => {
   const [route, setRoute] = useState(0)
 
   const routes = [
@@ -23,6 +23,7 @@ const NavStick = () => {
     route >= routes.length - 1 ? setRoute(0) : setRoute(route + 1)
   }
 
+  if (user)
   return (
     <div className={styles.container}>
       <button className={styles.navstickLeft} onClick={navstickLeft}>
