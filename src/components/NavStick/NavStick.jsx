@@ -26,7 +26,7 @@ const NavStick = ({ user }) => {
   return (
     <div className="navstick-container">
       <button className="navstick-left" onClick={navstickLeft}>
-        Left
+        <img className="arrow" src="/assets/arrow.png" alt="" />
       </button>
         <p>
           {
