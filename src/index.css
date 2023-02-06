@@ -326,6 +326,12 @@ body {
   height: 100%;
 }
 
+#defender div.body {
+  height: 100vw;
+  background-color: black;
+}
+
+
 #defender .page-head {
   background-color: black;
   color: #FEFB02;
@@ -365,6 +371,7 @@ body {
   color: white;
   font-size: 64px;
   height: 60vmax;
+  border: 12px solid #F62D21;
 }
 
 @media (max-width: 450px){
@@ -377,6 +384,11 @@ body {
   #defender .player-list {
     justify-items: start;
   }
+  #defender div.body {
+  height: 100vh;
+  background-color: black;
+}
+
 }
 
 #defender a, #defender a::before{
