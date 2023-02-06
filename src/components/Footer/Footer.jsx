@@ -1,6 +1,6 @@
 import NavStick from "../NavStick/NavStick"
 
-const Footer = () => {
+const Footer = ({ user }) => {
   return (
     <>
       <NavStick />

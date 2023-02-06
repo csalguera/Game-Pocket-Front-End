@@ -147,7 +147,7 @@ const App = () => {
           }
         />
       </Routes>
-      <Footer />
+      <Footer user={user} />
     </>
   )
 }
