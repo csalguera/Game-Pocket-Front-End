@@ -9,7 +9,8 @@ const NavStick = () => {
     '/',
     '/friends',
     '/profiles',
-    'leaderboard',
+    '/leaderboard',
+    '/change-password',
   ]
 
   const destination = `${routes[route]}`
@@ -35,6 +36,7 @@ const NavStick = () => {
             :
             destination
             .replace('/', '')
+            .replace('-', ' ')
             .toUpperCase()
           }
         </p>
