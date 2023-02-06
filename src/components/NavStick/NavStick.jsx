@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import styles from "./NavStick.module.css"
 
 const NavStick = () => {
   const [route, setRoute] = useState(0)
@@ -21,15 +22,13 @@ const NavStick = () => {
     route >= routes.length - 1 ? setRoute(0) : setRoute(route + 1)
   }
 
-  console.log(destination)
-
   return (
-    <>
-      <button onClick={navstickLeft}>
+    <div className={styles.container}>
+      <button className={styles.navstickLeft} onClick={navstickLeft}>
         Left
       </button>
-      <p>
-      {
+        <p>
+          {
             destination === '/'
             ?
             'HOME'
@@ -38,16 +37,16 @@ const NavStick = () => {
             .replace('/', '')
             .toUpperCase()
           }
-      </p>
-      <button onClick={navstickRight}>
+        </p>
+      <button className={styles.navstickRight} onClick={navstickRight}>
         Right
       </button>
       <Link to={destination}>
-        <button>
+        <button className={styles.navButton}>
           Navigate
         </button>
       </Link>
-    </>
+    </div>
   )
 }
 
