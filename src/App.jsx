@@ -30,7 +30,6 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
-  const [lobbies, setLobbies] = useState([])
   const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
@@ -51,15 +50,6 @@ const App = () => {
       setFriends(data)
     }
     if (user) fetchAllFriends()
-  }, [user])
-
-  // fetch lobbies
-  useEffect(() => {
-    const fetchAllLobbies = async () => {
-      const data = await lobbyService.index()
-      setLobbies(data)
-    }
-    if (user) fetchAllLobbies()
   }, [user])
 
   // fetch records
@@ -89,7 +79,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing lobbies={lobbies} user={user} />} />
+        <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

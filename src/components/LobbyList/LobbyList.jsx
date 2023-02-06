@@ -1,13 +1,23 @@
-import { Link, redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 import * as lobbyService from '../../services/lobbyService'
 
-const LobbyList = ({ lobbies, user }) => {
-  
+const LobbyList = ({ user }) => {
+
+  const [lobbies, setLobbies] = useState([])
   const [formData, setFormData] = useState({
     name: '',
     content: ''
+  }, [])
+
+  // fetch lobbies
+  useEffect(() => {
+    const fetchAllLobbies = async () => {
+      const data = await lobbyService.index()
+      setLobbies(data)
+    }
+    if (user) fetchAllLobbies()
   }, [])
 
   const updateForm = msg => {
@@ -22,7 +32,8 @@ const LobbyList = ({ lobbies, user }) => {
   const handleSubmit = async evt =>{
     evt.preventDefault()
     try {
-      await lobbyService.create(formData)
+      const newLobby = await lobbyService.create(formData)
+      setLobbies([...lobbies, newLobby] )
     } catch (err){
       console.log(err);
     }
