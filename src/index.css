@@ -2,6 +2,11 @@ html {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
@@ -408,3 +413,111 @@ body {
 }
 
 /*! ============DEFENDER==========  */
+
+/*! ============FOOTER============  */
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  position: sticky;
+  background-color: black;
+  color: white;
+  padding-top: 16px;
+}
+
+.footer * {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container * {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.navstick-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.buttons-container {
+  display: flex;
+  width: 400px;
+}
+
+.navstick-left,
+.navstick-right {
+  width: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+.navstick-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.navstick-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.navstick-link {
+  text-decoration: none;
+}
+
+.navstick-button {
+  width: 75px;
+  height: 75px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: #02bbf9;
+}
+
+.navstick-button:hover {
+  background-color: #d18f3c;
+  color: white;
+}
+
+.arrow-left,
+.arrow-right {
+  width: 75px;
+}
+
+.arrow-right {
+  transform: scaleX(-1);
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  filter: invert();
+}
+
+.destination-name {
+  color: #02bbf9;
+  user-select: none;
+}
+
+.destination-name:hover {
+  color: #d18f3c;
+}
+
+/*! ============FOOTER============  */

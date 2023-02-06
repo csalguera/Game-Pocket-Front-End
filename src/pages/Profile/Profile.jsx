@@ -1,7 +1,8 @@
-import { Location, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
-const Profile = () =>{
+const Profile = () => {
   const location = useLocation()
+  console.log(location)
   return (
     <h1>{location.state.name}</h1>
   )

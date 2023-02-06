@@ -6,7 +6,6 @@ import * as lobbyService from '../../services/lobbyService'
 import * as messageService from '../../services/messageService'
 import * as chatroomService from '../../services/chatroomService'
 
-
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
