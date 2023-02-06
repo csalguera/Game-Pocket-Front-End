@@ -388,6 +388,9 @@ body {
   #defender .player-list {
     justify-items: start;
   }
+}
+
+@media (max-width: 980px){
   #defender div.body {
   height: 100vh;
   background-color: black;
