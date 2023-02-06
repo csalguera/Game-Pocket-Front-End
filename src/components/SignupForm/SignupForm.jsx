@@ -94,7 +94,7 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div id='photo'>
         <label htmlFor="photo-upload">
           Upload Photo
         </label>

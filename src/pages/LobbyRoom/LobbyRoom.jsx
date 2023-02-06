@@ -39,9 +39,9 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatroom: {
-          location.state.owner
+          lobby.chatroom.name
           ?
-          location.state.owner
+          lobby.chatroom.name
           :
           'No chatroom'
         }

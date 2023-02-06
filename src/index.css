@@ -59,6 +59,27 @@ body {
   border: 1px solid white;
 }
 
+@media (max-width: 950px){
+  .navbar #welcome {
+  display: none;
+  }
+  .navbar > * {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 680px){
+  .navbar #change-password {
+    display: none;
+  }
+}
+
+@media (max-width: 450px){
+  .navbar {
+    margin-bottom: 40px;
+  }
+}
+
 /*! =============NAVBAR===========  */
 
 .page-head {
@@ -112,6 +133,10 @@ body {
   background-color: #5158C3;
 }
 
+#pacman.body {
+  height: 100vh;
+}
+
 #pacman h1 {
   -webkit-text-stroke: 2px #FD4293;
   color: #EADC59;
@@ -120,7 +145,6 @@ body {
   font-family: 'Bungee', cursive;
   background-color: #5158C3;
   text-align: center;
-  margin: 0px;
 }
 
 #pacman div.form-container {
@@ -171,6 +195,47 @@ body {
   color: black;
   border-radius: 4px;
   font-weight: bold;
+}
+
+#pacman div#photo {
+  display: flex;
+  width: 60%;
+}
+
+#pacman div#photo input {
+  background-color: #5158C3;
+  color: #5158C3;
+}
+
+@media (max-width: 950px){
+  #pacman .form{
+    width:max-content
+  }
+}
+
+@media (max-width: 850px){
+  #pacman div.form-container {
+    padding: 40px;
+  }
+  #pacman form {
+    width: 180px;
+  }
+  #pacman .button-container button {
+    font-size: 16px;
+    margin: 4px;
+  }
+  #pacman img {
+    display: none;
+  }
+
+  @media (max-width: 450px){   
+    #pacman.page-head {
+      margin-top: -35px;
+    }
+    #pacman .form {
+      width: 240px;
+    }
+  }
 }
 
 /*! =============PACMAN===========  */
@@ -239,6 +304,19 @@ body {
   border-radius: 20px;
 }
 
+@media (max-width: 850px){
+  #simpsons div.form-container {
+    padding: 40px;
+  }
+  #simpsons form {
+    width: 180px;
+  }
+  #simpsons .button-container button {
+    font-size: 16px;
+    margin: 4px;
+  }
+}
+
 /*! ============SIMPSONS==========  */
 
 /*! ============DEFENDER==========  */
@@ -286,6 +364,18 @@ body {
   color: white;
   font-size: 64px;
   height: 80%;
+}
+
+@media (max-width: 450px){
+  #defender h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px){
+  #defender .player-list {
+    justify-items: start;
+  }
 }
 
 /*! ============DEFENDER==========  */
