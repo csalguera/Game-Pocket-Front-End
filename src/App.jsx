@@ -54,8 +54,6 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
-
-
   // fetch records
   useEffect(() => {
     const fetchAllRecords = async () => {
@@ -83,7 +81,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} socket={socket}/>} />
+        <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

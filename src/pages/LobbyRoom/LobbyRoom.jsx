@@ -5,7 +5,6 @@ import { Location } from 'react-router-dom';
 // Services
 import * as lobbyService from '../../services/lobbyService'
 
-
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
