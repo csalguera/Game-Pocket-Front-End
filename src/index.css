@@ -244,17 +244,29 @@ body {
 /*! ============DEFENDER==========  */
 
 #defender{
-  background-color: #F62D21;
+  background-color: black;
 }
 
 #defender .page-head {
-  background-color: #F62D21;
+  background-color: black;
+  color: #FEFB02;
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  justify-content: center;
+  border-top: 2px solid #F62D21;
 }
 
 #defender .body {
   padding: 2%;
-  height: 100vmax;
-  background-color: #F62D21;
+  height: 100vmin;
+  background-color: black;
+}
+
+#defender h1 {
+  color: #FFFC07;
+  text-shadow:
+  4px 10px 0 #F62D21,
+  -4px 10px 0 #F62D21;
 }
 
 
