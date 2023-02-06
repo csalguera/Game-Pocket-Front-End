@@ -408,3 +408,18 @@ body {
 }
 
 /*! ============DEFENDER==========  */
+
+/*! ============FOOTER============  */
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container * {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/*! ============FOOTER============  */
