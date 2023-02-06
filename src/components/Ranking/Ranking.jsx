@@ -1,4 +1,6 @@
 const Ranking = ({ records, user }) => {
+  records.sort((a, b) => Math.floor(b.win / (b.win + b.loss) * 100) - Math.floor(a.win / (a.win + a.loss) * 100))
+
   return (
     <>
       <h3>Game Ranking</h3>
