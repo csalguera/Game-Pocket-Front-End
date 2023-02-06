@@ -240,3 +240,52 @@ body {
 }
 
 /*! ============SIMPSONS==========  */
+
+/*! ============DEFENDER==========  */
+
+#defender{
+  background-color: black;
+  height: 100%;
+}
+
+#defender .page-head {
+  background-color: black;
+  color: #FEFB02;
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  justify-content: center;
+  border-top: 4px solid #F62D21;
+}
+
+#defender .body {
+  padding: 2%;
+  height: 100%;
+  background-color: #F62D21;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+#defender h1 {
+  color: #FFFC07;
+  text-shadow:
+  4px 10px 0 #F62D21,
+  -4px 10px 0 #F62D21;
+}
+
+
+#defender .player-list {
+  font-family: 'VT323', monospace;
+  display: grid;
+  grid-template-columns: 5;
+  grid-template-rows: 5;
+  grid-column-end: 5;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  background-color: black;
+  border-radius: 40px;
+  color: white;
+  font-size: 64px;
+  height: 80%;
+}
+
+/*! ============DEFENDER==========  */
