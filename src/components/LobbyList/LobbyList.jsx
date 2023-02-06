@@ -1,14 +1,24 @@
 import { Link, redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { socket } from "../../services/socket"
 
 import * as lobbyService from '../../services/lobbyService'
+socket.emit('lobbies-index')
 
-const LobbyList = ({ lobbies, user }) => {
+const LobbyList = ({ user, socket }) => {
   
   const [formData, setFormData] = useState({
     name: '',
     content: ''
   }, [])
+
+  const [lobbies, setLobbies] = useState([])
+  // fetch lobbies
+  useEffect(() => {
+    socket.on('lobbies-index', data => {
+      setLobbies(data)
+    })
+  },[socket])
 
   const updateForm = msg => {
     setFormData(msg)
