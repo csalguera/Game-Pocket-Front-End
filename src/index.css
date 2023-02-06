@@ -422,4 +422,22 @@ body {
   margin-right: 8px;
 }
 
+.navstick-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navstick-left,
+.navstick-right {
+  height: 25px;
+  width: 100px;
+}
+
+.navstick-button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
 /*! ============FOOTER============  */
