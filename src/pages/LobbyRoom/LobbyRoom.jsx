@@ -5,7 +5,6 @@ import { Location } from 'react-router-dom';
 // Services
 import * as lobbyService from '../../services/lobbyService'
 
-
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
@@ -39,9 +38,9 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatroom: {
-          lobby.chatroom.name
+          lobby.mainroom.name
           ?
-          lobby.chatroom.name
+          lobby.mainroom.name
           :
           'No chatroom'
         }
