@@ -425,6 +425,11 @@ body {
   padding-top: 16px;
 }
 
+.footer * {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+}
+
 .footer-container {
   display: flex;
   justify-content: center;
@@ -447,8 +452,15 @@ body {
 
 .navstick-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .navstick-left,
@@ -459,14 +471,16 @@ body {
 }
 
 .navstick-button {
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
+  font-size: 20px;
   border-radius: 50%;
   background-color: #02bbf9;
 }
 
 .navstick-button:hover {
   background-color: #d18f3c;
+  color: white;
 }
 
 .arrow-left,

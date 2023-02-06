@@ -25,24 +25,26 @@ const NavStick = ({ user }) => {
   if (user)
   return (
     <div className="navstick-container">
-      <button className="navstick-left" onClick={navstickLeft}>
-        <img className="arrow-left" src="/assets/arrow.png" alt="" />
-      </button>
-        <p className="destination-name">
-          {
-            destination === '/'
-            ?
-            'HOME'
-            :
-            destination
-            .replace('/', '')
-            .replace('-', ' ')
-            .toUpperCase()
-          }
-        </p>
-      <button className="navstick-right" onClick={navstickRight}>
-        <img className="arrow-right" src="/assets/arrow.png" alt="" />
-      </button>
+      <div className="buttons-container">
+        <button className="navstick-left" onClick={navstickLeft}>
+          <img className="arrow-left" src="/assets/arrow.png" alt="" />
+        </button>
+          <p className="destination-name">
+            {
+              destination === '/'
+              ?
+              'HOME'
+              :
+              destination
+              .replace('/', '')
+              .replace('-', ' ')
+              .toUpperCase()
+            }
+          </p>
+        <button className="navstick-right" onClick={navstickRight}>
+          <img className="arrow-right" src="/assets/arrow.png" alt="" />
+        </button>
+      </div>
       <Link to={destination}>
         <button className="navstick-button">
           Navigate
