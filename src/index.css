@@ -422,6 +422,7 @@ body {
   position: sticky;
   background-color: black;
   color: white;
+  padding-top: 16px;
 }
 
 .footer-container {
@@ -452,25 +453,43 @@ body {
 
 .navstick-left,
 .navstick-right {
-  height: 25px;
   width: 100px;
   background-color: transparent;
   border: none;
 }
 
 .navstick-button {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
+  background-color: #02bbf9;
+}
+
+.navstick-button:hover {
+  background-color: #d18f3c;
 }
 
 .arrow-left,
 .arrow-right {
-  width: 100px;
+  width: 50px;
 }
 
 .arrow-right {
   transform: scaleX(-1);
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  filter: invert();
+}
+
+.destination-name {
+  color: #02bbf9;
+  user-select: none;
+}
+
+.destination-name:hover {
+  color: #d18f3c;
 }
 
 /*! ============FOOTER============  */

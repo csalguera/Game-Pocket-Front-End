@@ -28,7 +28,7 @@ const NavStick = ({ user }) => {
       <button className="navstick-left" onClick={navstickLeft}>
         <img className="arrow-left" src="/assets/arrow.png" alt="" />
       </button>
-        <p>
+        <p className="destination-name">
           {
             destination === '/'
             ?
