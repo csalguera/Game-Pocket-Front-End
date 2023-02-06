@@ -39,9 +39,9 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatroom: {
-          lobby.chatroom.name
+          lobby.mainroom.name
           ?
-          lobby.chatroom.name
+          lobby.mainroom.name
           :
           'No chatroom'
         }
