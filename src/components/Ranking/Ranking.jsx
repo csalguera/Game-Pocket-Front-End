@@ -1,6 +1,6 @@
 const Ranking = ({ records, user }) => {
   return (
-    <div>
+    <>
       <h3>Game Ranking</h3>
       <ol>
         <li>First Place</li>
@@ -13,7 +13,7 @@ const Ranking = ({ records, user }) => {
             <thead>
               <tr>
                 <th>
-                  
+
                 </th>
                 <th>
                   Wins
@@ -38,14 +38,14 @@ const Ranking = ({ records, user }) => {
                   {record.loss}
                 </td>
                 <td>
-                {Math.floor(record.win / (record.win + record.loss) * 100)}%
+                  {Math.floor(record.win / (record.win + record.loss) * 100)}%
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       ))}
-    </div>
+    </>
   );
 }
 
