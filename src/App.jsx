@@ -1,6 +1,7 @@
 // npm modules
 import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { socket } from './services/socket'
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -31,6 +32,10 @@ import Footer from './components/Footer/Footer'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
+<<<<<<< HEAD
+ 
+=======
+>>>>>>> e57363d71552c1713469d09218541f5a3bed87cf
   const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
@@ -53,6 +58,11 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> e57363d71552c1713469d09218541f5a3bed87cf
   // fetch records
   useEffect(() => {
     const fetchAllRecords = async () => {
@@ -80,7 +90,11 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
+<<<<<<< HEAD
+        <Route path="/" element={<Landing user={user} socket={socket}/>} />
+=======
         <Route path="/" element={<Landing user={user} />} />
+>>>>>>> e57363d71552c1713469d09218541f5a3bed87cf
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
