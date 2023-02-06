@@ -29,6 +29,7 @@ const NavStick = ({ user }) => {
         <button className="navstick-left" onClick={navstickLeft}>
           <img className="arrow-left" src="/assets/arrow.png" alt="" />
         </button>
+          <Link className="navstick-link" to={destination}>
           <p className="destination-name">
             {
               destination === '/'
@@ -41,6 +42,7 @@ const NavStick = ({ user }) => {
               .toUpperCase()
             }
           </p>
+          </Link>
         <button className="navstick-right" onClick={navstickRight}>
           <img className="arrow-right" src="/assets/arrow.png" alt="" />
         </button>

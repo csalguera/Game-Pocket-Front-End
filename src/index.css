@@ -460,7 +460,7 @@ body {
 
 .buttons-container {
   display: flex;
-  justify-content: flex-start;
+  width: 400px;
 }
 
 .navstick-left,
@@ -468,6 +468,20 @@ body {
   width: 100px;
   background-color: transparent;
   border: none;
+}
+
+.navstick-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.navstick-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.navstick-link {
+  text-decoration: none;
 }
 
 .navstick-button {
