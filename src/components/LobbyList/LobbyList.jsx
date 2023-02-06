@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import * as lobbyService from '../../services/lobbyService'
+socket.emit('lobbies-index')
 
 const LobbyList = ({ user }) => {
 
