@@ -41,7 +41,8 @@ const LobbyList = ({ user }) => {
 
   const handleDelete = async (id) => {
     try {
-      await lobbyService.delete(id)
+      const oldLobby = await lobbyService.delete(id)
+      setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
     } catch (err){
       console.log(err);
     }
