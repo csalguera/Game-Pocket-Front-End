@@ -1,0 +1,9 @@
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkContainer * {
+  margin: 0 8px;
+}
