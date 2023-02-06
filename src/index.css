@@ -259,6 +259,17 @@ body {
   border-radius: 20px;
 }
 
+@media (max-width: 850px){
+  #simpsons div.form-container {
+    padding: 40px;
+    /* background-color: red; */
+  }
+  #simpsons form {
+    width: 180px;
+    background-color: red;
+  }
+}
+
 /*! ============SIMPSONS==========  */
 
 /*! ============DEFENDER==========  */
