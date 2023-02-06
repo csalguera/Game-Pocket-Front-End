@@ -4,6 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 // Services
 import * as lobbyService from '../../services/lobbyService'
 import * as messageService from '../../services/messageService'
+import * as chatroomService from '../../services/chatroomService'
 
 
 const LobbyRoom = ({ user }) => {
@@ -33,6 +34,7 @@ const LobbyRoom = ({ user }) => {
     e.preventDefault()
     try {
       const messageData = await messageService.create(message)
+      await chatroomService.addMessage(lobby.mainroom._id, messageData._id)
       setChatroomMessages([...chatroomMessages, messageData])
       setMessage('')
     } catch (err) {
@@ -41,8 +43,6 @@ const LobbyRoom = ({ user }) => {
   }
   
   if (!lobby) return <h1>Loading</h1>
-  console.log(chatroomMessages);
-  // console.log(lobby.mainroom);
   return (
     <>
       <h1>{lobby.name}</h1>
