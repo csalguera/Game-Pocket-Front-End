@@ -12,6 +12,10 @@ const NavStick = () => {
 
   const destination = `${routes[route]}`
 
+  function navstickLeft() {
+    route <= 0 ? setRoute(routes.length - 1) : setRoute(route - 1)
+  }
+
   function navstickRight() {
     route >= routes.length - 1 ? setRoute(0) : setRoute(route + 1)
   }
@@ -20,6 +24,9 @@ const NavStick = () => {
 
   return (
     <>
+      <button>
+        Left
+      </button>
       <button onClick={navstickRight}>
         Right
       </button>
