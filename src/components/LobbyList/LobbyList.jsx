@@ -1,24 +1,25 @@
-import { Link, redirect } from "react-router-dom"
 import { useState, useEffect } from "react"
-import { socket } from "../../services/socket"
+import { Link } from "react-router-dom"
 
 import * as lobbyService from '../../services/lobbyService'
 socket.emit('lobbies-index')
 
-const LobbyList = ({ user, socket }) => {
-  
+const LobbyList = ({ user }) => {
+
+  const [lobbies, setLobbies] = useState([])
   const [formData, setFormData] = useState({
     name: '',
     content: ''
   }, [])
 
-  const [lobbies, setLobbies] = useState([])
   // fetch lobbies
   useEffect(() => {
-    socket.on('lobbies-index', data => {
+    const fetchAllLobbies = async () => {
+      const data = await lobbyService.index()
       setLobbies(data)
-    })
-  },[socket])
+    }
+    if (user) fetchAllLobbies()
+  }, [])
 
   const updateForm = msg => {
     setFormData(msg)
@@ -32,7 +33,17 @@ const LobbyList = ({ user, socket }) => {
   const handleSubmit = async evt =>{
     evt.preventDefault()
     try {
-      await lobbyService.create(formData)
+      const newLobby = await lobbyService.create(formData)
+      setLobbies([...lobbies, newLobby] )
+    } catch (err){
+      console.log(err);
+    }
+  }
+
+  const handleDelete = async (id) => {
+    try {
+      const oldLobby = await lobbyService.delete(id)
+      setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
     } catch (err){
       console.log(err);
     }
@@ -51,6 +62,7 @@ const LobbyList = ({ user, socket }) => {
               <h3>Members: {lobby.members.length}</h3>
             </div>
           </Link>
+              <button onClick={() => handleDelete(lobby._id)}>delete</button>
         </div>
       ))}
     <form

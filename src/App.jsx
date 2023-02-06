@@ -9,6 +9,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import Profile from './pages/Profile/Profile'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -26,11 +27,15 @@ import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
+<<<<<<< HEAD
  
+=======
+>>>>>>> e57363d71552c1713469d09218541f5a3bed87cf
   const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
@@ -53,8 +58,11 @@ const App = () => {
     if (user) fetchAllFriends()
   }, [user])
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e57363d71552c1713469d09218541f5a3bed87cf
   // fetch records
   useEffect(() => {
     const fetchAllRecords = async () => {
@@ -82,7 +90,11 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
+<<<<<<< HEAD
         <Route path="/" element={<Landing user={user} socket={socket}/>} />
+=======
+        <Route path="/" element={<Landing user={user} />} />
+>>>>>>> e57363d71552c1713469d09218541f5a3bed87cf
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
@@ -96,6 +108,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <Profiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profiles/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <Profile />
             </ProtectedRoute>
           }
         />
@@ -140,6 +160,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer user={user} />
     </>
   )
 }

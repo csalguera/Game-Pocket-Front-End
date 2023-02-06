@@ -315,6 +315,10 @@ body {
     font-size: 16px;
     margin: 4px;
   }
+  #simpsons.body {
+  height: 100vh;
+  }
+
 }
 
 /*! ============SIMPSONS==========  */
@@ -325,6 +329,12 @@ body {
   background-color: black;
   height: 100%;
 }
+
+#defender div.body {
+  height: 100%;
+  background-color: black;
+}
+
 
 #defender .page-head {
   background-color: black;
@@ -359,11 +369,13 @@ body {
   grid-column-end: 5;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  align-items: center;
   background-color: black;
   border-radius: 40px;
   color: white;
   font-size: 64px;
-  height: 80%;
+  height: 60vmax;
+  border: 12px solid #F62D21;
 }
 
 @media (max-width: 450px){
@@ -376,6 +388,23 @@ body {
   #defender .player-list {
     justify-items: start;
   }
+}
+
+@media (max-width: 980px){
+  #defender div.body {
+  height: 100vh;
+  background-color: black;
+  }
+}
+
+#defender a, #defender a::before{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+  }
+  
+  #defender a:hover {
+  border: 1px solid white;
 }
 
 /*! ============DEFENDER==========  */
