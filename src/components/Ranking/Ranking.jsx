@@ -7,13 +7,16 @@ const Ranking = ({ records, user }) => {
         <li>Second Place</li>
         <li>Third Place</li>
       </ol>
-      {records.map(record => (
+      {records.map((record, idx) => (
         <div key={record._id} >
           <table>
             <thead>
               <tr>
                 <th>
 
+                </th>
+                <th>
+                  Rank
                 </th>
                 <th>
                   Wins
@@ -30,6 +33,9 @@ const Ranking = ({ records, user }) => {
               <tr>
                 <td>
                   <b>{record.owner}</b>
+                </td>
+                <td>
+                  {idx + 1}
                 </td>
                 <td>
                   {record.win}
