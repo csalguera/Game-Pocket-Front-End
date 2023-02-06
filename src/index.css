@@ -59,6 +59,13 @@ body {
   border: 1px solid white;
 }
 
+@media (max-width: 950px){
+  .navbar li:nth-child(1) {
+  color: red;
+  display: none;
+  }
+}
+
 /*! =============NAVBAR===========  */
 
 .page-head {
