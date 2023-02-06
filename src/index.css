@@ -315,6 +315,10 @@ body {
     font-size: 16px;
     margin: 4px;
   }
+  #simpsons.body {
+  height: 100vh;
+  }
+
 }
 
 /*! ============SIMPSONS==========  */
@@ -387,8 +391,7 @@ body {
   #defender div.body {
   height: 100vh;
   background-color: black;
-}
-
+  }
 }
 
 #defender a, #defender a::before{
