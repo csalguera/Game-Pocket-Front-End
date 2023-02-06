@@ -7,7 +7,8 @@ const NavStick = () => {
   const routes = [
     '/',
     '/friends',
-    '/profiles'
+    '/profiles',
+    'leaderboard',
   ]
 
   const destination = `${routes[route]}`
