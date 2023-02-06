@@ -1,8 +1,8 @@
 import Ranking from "../../components/Ranking/Ranking"
 
-const Leaderboard = () => {
+const Leaderboard = ({ records, user }) => {
   return (
-    <Ranking />
+    <Ranking records={records} user={user} />
   )
 }
 

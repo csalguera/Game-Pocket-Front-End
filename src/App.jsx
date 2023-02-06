@@ -19,7 +19,7 @@ import FriendDetails from './pages/FriendDetails/FriendDetails'
 
 // services
 import * as authService from './services/authService'
-import * as leaderboardService from './services/leaderboardService'
+import * as recordService from './services/recordService'
 import * as friendsService from './services/friendsService'
 import * as lobbyService from './services/lobbyService'
 
@@ -30,6 +30,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
   const [lobbies, setLobbies] = useState([])
+  const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -58,6 +59,15 @@ const App = () => {
       setLobbies(data)
     }
     if (user) fetchAllLobbies()
+  }, [user])
+
+  // fetch records
+  useEffect(() => {
+    const fetchAllRecords = async () => {
+      const data = await recordService.index()
+      setRecords(data)
+    }
+    if (user) fetchAllRecords()
   }, [user])
   
   // Must be prop drilled to Profiles page in future when backend for friends is ready
@@ -115,7 +125,7 @@ const App = () => {
           path='/leaderboard'
           element={
             <ProtectedRoute user={user}>
-              <Leaderboard />
+              <Leaderboard records={records} user={user} />
             </ProtectedRoute>
           }
         />
