@@ -321,4 +321,10 @@ body {
   height: 80%;
 }
 
+@media (max-width: 450px){
+  #defender h1 {
+    text-align: center;
+  }
+}
+
 /*! ============DEFENDER==========  */
