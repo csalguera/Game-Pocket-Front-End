@@ -245,6 +245,7 @@ body {
 
 #defender{
   background-color: black;
+  height: 100%;
 }
 
 #defender .page-head {
@@ -258,7 +259,7 @@ body {
 
 #defender .body {
   padding: 2%;
-  height: 100vmin;
+  height: 100%;
   background-color: #F62D21;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -274,10 +275,12 @@ body {
 
 #defender .player-list {
   font-family: 'VT323', monospace;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: space-around;
+  display: grid;
+  grid-template-columns: 5;
+  grid-template-rows: 5;
+  grid-column-end: 5;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
   background-color: black;
   border-radius: 40px;
   color: white;
