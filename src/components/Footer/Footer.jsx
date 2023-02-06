@@ -8,6 +8,7 @@ const Footer = ({ user }) => {
       <div className={styles.linkContainer}>
         <a href="https://github.com/WarmSkin/Game-Pocket-Front-End" target="_blank" rel="noreferrer">GitHub</a>
         <p>|</p>
+        {/* link in attributions must be changed once README is done */}
         <a href="/" target="_blank" rel="noreferrer">Attributions</a>
       </div>
     </>
