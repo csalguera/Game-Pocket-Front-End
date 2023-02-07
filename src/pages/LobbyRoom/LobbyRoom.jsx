@@ -41,9 +41,17 @@ const LobbyRoom = ({ user }) => {
       console.log(err);
     }
   }
+
+  const deleteMessage = async (id) => {
+    try {
+      const deletedMessage = await messageService.delete(id)
+    } catch (error) {
+      console.log(error);
+    }
+  }
   
   if (!lobby) return <h1>Loading</h1>
-  console.log("MessageS", lobby.mainroom.messages);
+
   console.log("message State", chatroomMessages);
   return (
     <>
@@ -62,7 +70,11 @@ const LobbyRoom = ({ user }) => {
         Chatroom: {lobby.mainroom.name}
       </h2> 
         {lobby.mainroom.messages.map(message => 
-          <div key={message._id}>{message.content} - {message.from}</div>
+        <div key={message._id}>
+          <div>{message.content} - {message.from}
+          </div>
+          <button onClick={() => deleteMessage(message._id)}>Delete</button>
+        </div>
         )}
         <form
         autoComplete='off'
