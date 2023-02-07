@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Location } from 'react-router-dom';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
@@ -8,8 +7,6 @@ import * as lobbyService from '../../services/lobbyService'
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
-  const location = useLocation()
-  console.log(location.state);
 
   // fetch lobby
   useEffect(() => {
