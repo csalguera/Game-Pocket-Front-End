@@ -603,4 +603,8 @@ div.lobbyCard button:hover {
   margin: 20px;
 }
 
+#lobby-container .form button:hover {
+  background-color: white;
+}
+
 /*! ============LOBBY LIST============  */
