@@ -22,7 +22,6 @@ const NavStick = ({ user }) => {
     route >= routes.length - 1 ? setRoute(0) : setRoute(route + 1)
   }
 
-  if (user)
   return (
     <div className="navstick-container">
       <div className="buttons-container">
@@ -47,9 +46,9 @@ const NavStick = ({ user }) => {
           <img className="arrow-right" src="/assets/arrow.png" alt="" />
         </button>
       </div>
-      <Link to={destination}>
+      <Link className="navstick-destinaiton" to={destination}>
         <button className="navstick-button">
-          Enter
+          <p>PUSH</p>
         </button>
       </Link>
     </div>
