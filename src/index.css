@@ -423,7 +423,7 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
-  height: 8vh;
+  height: 8vw;
 }
 
 .footer * {
@@ -485,8 +485,8 @@ body {
 }
 
 .navstick-button {
-  width: 50px;
-  height: 50px;
+  width: 4vw;
+  height: 4vw;
   font-size: 20px;
   border-radius: 50%;
   display: flex;
@@ -502,7 +502,7 @@ body {
 
 .arrow-left,
 .arrow-right {
-  width: 50px;
+  width: 4vw;
 }
 
 .arrow-right {
