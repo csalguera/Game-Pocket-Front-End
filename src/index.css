@@ -491,6 +491,7 @@ body {
   width: 45px;
   height: 45px;
   font-size: 12px;
+  font-weight: bold;
   border: solid black 3px;
   border-radius: 50%;
   display: flex;
