@@ -14,7 +14,7 @@ const MyPage = ({ user }) => {
     fetchProfile()
   }, [user])
 
-  const handleSubmit = async evt =>{
+  const handleAccept = async (evt, userId, friendId) =>{
     evt.preventDefault()
     try {
       const newProfile = await profileService.sendFriendRequest(profile._id)
@@ -61,10 +61,25 @@ const MyPage = ({ user }) => {
         profile.friendRequests?.length 
         ? 
         <ul>
-          {profile.friendRequests.map(request => {
-            <h3>{request.name}</h3>
-          })
-          }
+          {profile.friendRequests.map(request =>
+          <>
+            <h3>
+              {request.name}
+              <form
+                autoComplete="off"
+                onSubmit={handleSubmit}
+              >
+                  <button>Accept</button>
+              </form>
+              <form
+                autoComplete="off"
+                onSubmit={handleSubmit}
+              >
+                  <button style={{backgroundColor:"red"}}>Deny</button>
+              </form>
+            </h3>
+          </>
+          )}
         </ul>
         : 0
         }
