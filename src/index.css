@@ -526,6 +526,8 @@ body {
 /*! ============LOBBY LIST============  */
 #space-invaders{
   background-color: #25255E;
+}
+h1.space-invaders {
   color: yellow;
 }
 
