@@ -10,7 +10,7 @@ import * as chatroomService from '../../services/chatroomService'
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
 
   // fetch lobby
@@ -37,7 +37,7 @@ const LobbyRoom = ({ user }) => {
       const messageData = await messageService.create(message)
       await chatroomService.addMessage(lobby.mainroom._id, messageData._id)
       setChatroomMessages([...chatroomMessages, messageData])
-      setMessage('')
+      setMessage({content: ""})
     } catch (err) {
       console.log(err);
     }
@@ -53,7 +53,7 @@ const LobbyRoom = ({ user }) => {
   }
   
   if (!lobby) return <h1>Loading</h1>
-  console.log("user", user.profile);
+  console.log(message.content);
   return (
     <>
       <h1>{lobby.name}</h1>
@@ -92,6 +92,7 @@ const LobbyRoom = ({ user }) => {
               name='content'
               autoComplete="off"
               onChange={handleChange}
+              value={message.content}
             />
           </div>
           <div>
