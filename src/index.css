@@ -531,7 +531,12 @@ body {
   text-decoration: none;
 }
 
+.navstick-destinaiton {
+  text-decoration: none;
+}
+
 /*! ============FOOTER============  */
+
 
 
 /*! ============LOBBY LIST============  */
@@ -540,6 +545,7 @@ body {
 }
 h1.space-invaders {
   font-family: 'Russo One', sans-serif;
+  font-size: 3em;
   color: #C0D535;
   text-shadow: 
               0 -3px 2px #758CC6,
@@ -631,8 +637,3 @@ div.lobbyCard button:hover {
 }
 
 /*! ============LOBBY LIST============  */
-.navstick-destinaiton {
-  text-decoration: none;
-}
-
-/*! ============FOOTER============  */
