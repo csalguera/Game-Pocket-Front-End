@@ -20,7 +20,7 @@ const LobbyRoom = ({ user }) => {
       setLobby(data)
     }
     fetchLobby()
-  }, [id])
+  }, [chatroomMessages])
 
   //message
   const handleChange = e => {
@@ -43,7 +43,8 @@ const LobbyRoom = ({ user }) => {
   }
   
   if (!lobby) return <h1>Loading</h1>
-  console.log(lobby.mainroom.messages);
+  console.log("MessageS", lobby.mainroom.messages);
+  console.log("message State", chatroomMessages);
   return (
     <>
       <h1>{lobby.name}</h1>
@@ -59,8 +60,9 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatroom: {lobby.mainroom.name}
+      </h2> 
         {lobby.mainroom.messages.map(message => 
-          <div>{message.content}</div>
+          <div key={message._id}>{message.content} - {message.from}</div>
         )}
         <form
         autoComplete='off'
@@ -79,7 +81,7 @@ const LobbyRoom = ({ user }) => {
             <button>Send</button>
           </div>
         </form>
-      </h2> 
+
     </>
   )
 }
