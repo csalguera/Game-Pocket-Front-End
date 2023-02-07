@@ -594,14 +594,14 @@ div.lobbyCard button:hover {
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  border: 2px solid red;
+  border: 2px solid #3DB644;
   border-radius: 20px;
   color: white;
 }
 
 #lobby-container .form button {
   font-family: 'VT323', monospace;
-  background-color: #f90f039a;
+  background-color: white;
   border-radius: 20px;
   width: fit-content;
   height: fit-content;
@@ -610,7 +610,7 @@ div.lobbyCard button:hover {
 }
 
 #lobby-container .form button:hover {
-  background-color: white;
+  background-color: #3DB644;
 }
 
 /*! ============LOBBY LIST============  */
