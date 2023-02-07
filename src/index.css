@@ -583,6 +583,7 @@ div.lobbyCard button:hover {
 }
 
 #lobby-container .form {
+    font-family: 'VT323', monospace;
   background-color: black;
   flex-direction: row;
   justify-content: space-evenly;
@@ -593,6 +594,7 @@ div.lobbyCard button:hover {
 }
 
 #lobby-container .form button {
+  font-family: 'VT323', monospace;
   background-color: yellow;
   border-radius: 20px;
   width: fit-content;

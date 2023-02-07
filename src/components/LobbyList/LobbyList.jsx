@@ -93,7 +93,7 @@ const LobbyList = ({ user }) => {
           />
         </div>
         <div className='button-container'>
-          <button>New Lobby</button>
+          <button>NEW LOBBY</button>
         </div>
       </form>
     </div>
