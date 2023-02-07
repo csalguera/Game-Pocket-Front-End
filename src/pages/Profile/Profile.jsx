@@ -69,6 +69,8 @@ const Profile = ({ user }) => {
         <h2>Friend Requests: {profile.friendRequests.length}
         </h2>
         :
+        profile.friendRequests?.filter(requestId => requestId === user.profile).length === 0
+        ?
         <form
           autoComplete="off"
           onSubmit={handleSubmit}
@@ -77,6 +79,8 @@ const Profile = ({ user }) => {
             <button>Send Friend Request</button>
           </div>
         </form>
+        :
+        <h2>Request Sent</h2>
       }
     </>
   )
