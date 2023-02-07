@@ -59,7 +59,8 @@ const Profile = ({ user }) => {
         <h2>Friend Requests: {profile.friendRequests.length}
         </h2>
         :
-        ''
+        //! button needs functionality
+        <button>Send friend Request</button>
       }
     </>
   )
