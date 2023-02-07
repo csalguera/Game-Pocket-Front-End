@@ -18,9 +18,10 @@ const LobbyRoom = ({ user }) => {
     const fetchLobby = async () => {
       const data = await lobbyService.show(id)
       setLobby(data)
+      setChatroomMessages(data.mainroom.messages)
     }
     fetchLobby()
-  }, [chatroomMessages])
+  }, [])
 
   //message
   const handleChange = e => {
@@ -45,6 +46,7 @@ const LobbyRoom = ({ user }) => {
   const deleteMessage = async (id) => {
     try {
       const deletedMessage = await messageService.delete(id)
+      setChatroomMessages(chatroomMessages.filter(message => message._id !== deletedMessage._id))
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +71,7 @@ const LobbyRoom = ({ user }) => {
       <h2>
         Chatroom: {lobby.mainroom.name}
       </h2> 
-        {lobby.mainroom.messages.map(message => 
+        {chatroomMessages.map(message => 
         <div key={message._id}>
           <div>{message.content} - {message.from}
           </div>
