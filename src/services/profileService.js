@@ -20,4 +20,24 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
-export { getAllProfiles, addPhoto }
+async function getProfile(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}`, {
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+async function sendFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/send-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+export { 
+  getAllProfiles,
+  addPhoto,
+  getProfile,
+  sendFriendRequest,
+}
