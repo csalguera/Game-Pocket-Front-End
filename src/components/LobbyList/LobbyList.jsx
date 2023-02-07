@@ -50,7 +50,7 @@ const LobbyList = ({ user }) => {
 
   return (
     <>
-      <h1 className="space-invaders">These are the available lobbies</h1>
+      <h1 className="space-invaders">L O B B I E S</h1>
       <div id="lobby-container" className="space-invaders">
       {lobbies.map((lobby, idx) => (
         <div key={lobby._id} className="lobbyCard">

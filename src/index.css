@@ -525,10 +525,14 @@ body {
 
 /*! ============LOBBY LIST============  */
 #space-invaders{
-  background-color: #25255E;
+  background-color: #222359;
 }
 h1.space-invaders {
-  color: yellow;
+  font-family: 'Russo One', sans-serif;
+  color: #C0D535;
+  text-shadow: 
+              0 -3px 2px #758CC6,
+              0 -6px 2px #3A99D4;
 }
 
 #space-invaders #lobby-container {
