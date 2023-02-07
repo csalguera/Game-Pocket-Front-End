@@ -420,14 +420,15 @@ body {
   bottom: 0;
   width: 100%;
   position: sticky;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
+  height: 8vh;
 }
 
 .footer * {
   font-family: 'VT323', monospace;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .footer-container {
@@ -437,8 +438,7 @@ body {
 }
 
 .footer-container * {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin: 8px;
 }
 
 .footer-container a {
@@ -454,8 +454,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .buttons-container {
@@ -485,10 +485,13 @@ body {
 }
 
 .navstick-button {
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
   font-size: 20px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #02bbf9;
 }
 
@@ -499,7 +502,7 @@ body {
 
 .arrow-left,
 .arrow-right {
-  width: 75px;
+  width: 50px;
 }
 
 .arrow-right {
