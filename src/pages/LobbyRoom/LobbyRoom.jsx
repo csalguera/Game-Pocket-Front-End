@@ -53,8 +53,8 @@ const LobbyRoom = ({ user }) => {
   }
   
   if (!lobby) return <h1>Loading</h1>
-
-  console.log("message State", chatroomMessages);
+  console.log("message", chatroomMessages[0].sender);
+  console.log("user", user.profile);
   return (
     <>
       <h1>{lobby.name}</h1>
@@ -75,7 +75,11 @@ const LobbyRoom = ({ user }) => {
         <div key={message._id}>
           <div>{message.content} - {message.from}
           </div>
+          {message.sender === user.profile ? 
           <button onClick={() => deleteMessage(message._id)}>Delete</button>
+          :
+          ""
+        }
         </div>
         )}
         <form
