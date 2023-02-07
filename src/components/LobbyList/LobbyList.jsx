@@ -51,11 +51,12 @@ const LobbyList = ({ user }) => {
   return (
     <>
       <h1>These are the available lobbies</h1>
+      <div id="lobby-container">
       {lobbies.map((lobby, idx) => (
-        <div key={lobby._id}>
+        <div key={lobby._id} className="lobbyCard">
           <Link to={`/lobby/${lobby._id}`} >
             <div>
-              <h2>Lobby {idx + 1}</h2>
+              {/* <h2>Lobby {idx + 1}</h2> */}
               <h3>Name: {lobby.name}</h3>
               <h3>Description: {lobby.content}</h3>
               <h3>Members: {lobby.members.length}</h3>
@@ -64,6 +65,7 @@ const LobbyList = ({ user }) => {
               <button onClick={() => handleDelete(lobby._id)}>delete</button>
         </div>
       ))}
+      </div>
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
