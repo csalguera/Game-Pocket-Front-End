@@ -52,6 +52,15 @@ const LobbyRoom = ({ user }) => {
       console.log(error);
     }
   }
+
+  // fetch chatrooms
+  useEffect(() => {
+    const createChatroom = async () => {
+      const chatroom = await chatroomService.index()
+      setChatrooms([ chatroom, ...chatrooms ])
+    }
+    createChatroom()
+  }, [])
   
   if (!lobby) return <h1>Loading</h1>
   return (
