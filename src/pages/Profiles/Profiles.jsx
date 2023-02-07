@@ -24,7 +24,7 @@ const Profiles = () => {
           {profiles.length ? 
             <div className='player-list'>
               {profiles.map(profile =>
-                <Link to={`/profiles/${profile._id}`} key={profile._id} className='player' state={profile}>{profile.name}</Link>
+                <Link to={`/profiles/${profile._id}`} key={profile._id} className='player'>{profile.name}</Link>
                 )}
             </div>
           :

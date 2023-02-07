@@ -1,10 +1,11 @@
-import { useLocation } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 const Profile = () => {
-  const location = useLocation()
-  console.log(location)
+  const { id } = useParams()
+  console.log(id)
   return (
-    <h1>{location.state.name}</h1>
+    <>
+    </>
   )
 }
 
