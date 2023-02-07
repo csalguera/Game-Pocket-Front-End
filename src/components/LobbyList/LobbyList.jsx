@@ -50,8 +50,8 @@ const LobbyList = ({ user }) => {
 
   return (
     <>
-      <h1>These are the available lobbies</h1>
-      <div id="lobby-container">
+      <h1 className="space-invaders">These are the available lobbies</h1>
+      <div id="lobby-container" className="space-invaders">
       {lobbies.map((lobby, idx) => (
         <div key={lobby._id} className="lobbyCard">
           <Link to={`/lobby/${lobby._id}`} >
