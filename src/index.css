@@ -528,36 +528,71 @@ body {
   background-color: #000;
   display: flex;
   flex-direction: column;
-  padding: 2%;
+  align-items: center;
+  padding: 3%;
+  border-radius: 40px;
 }
 
 .lobbyCard {
   display: grid;
+  align-items: center;
   grid-template-columns: auto auto;
   justify-content: space-between;
   background-color: red;
+  border-radius: 20px;
   width: 100%;
   margin: 1%;
   padding: 1%;
 }
 
 div.lobbyCard button{
-  background-color: white;
+  background-color: yellow;
+  border-radius: 20px;
   width: fit-content;
-  justify-content: end;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+}
 
+div.lobbyCard button:hover {
+  background-color: white;
 }
 
 .lobbyCard div {
-  background-color: green;
+  background-color: black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 40em;
   padding: 1%;
+  border-radius: 20px;
 }
 
 .lobbyCard div * {
-  background-color: cyan;
+  background-color: black;
+}
+
+.lobbyCard a {
+  text-decoration: none;
+  color: white;
+}
+
+#lobby-container .form {
+  background-color: black;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  border: 2px solid red;
+  border-radius: 20px;
+  color: white;
+}
+
+#lobby-container .form button {
+  background-color: yellow;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
 }
 
 /*! ============LOBBY LIST============  */

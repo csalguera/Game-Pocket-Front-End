@@ -65,38 +65,38 @@ const LobbyList = ({ user }) => {
               <button onClick={() => handleDelete(lobby._id)}>delete</button>
         </div>
       ))}
-      </div>
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className="form"
-    >
-      <div>
-        <label htmlFor="name">Lobby Name:</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="name"
-          value={formData.name}
-          name="name"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="content">Description</label>
-        <input
-          type="text"
-          autoComplete="off"
-          id="content"
-          value={formData.content}
-          name="content"
-          onChange={handleChange}
-        />
-      </div>
-      <div className='button-container'>
-        <button>New Lobby</button>
-      </div>
-    </form>
+      <form
+        autoComplete="off"
+        onSubmit={handleSubmit}
+        className="form"
+      >
+        <div>
+          <label htmlFor="name">Lobby Name:</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="name"
+            value={formData.name}
+            name="name"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="content">Description:</label>
+          <input
+            type="text"
+            autoComplete="off"
+            id="content"
+            value={formData.content}
+            name="content"
+            onChange={handleChange}
+          />
+        </div>
+        <div className='button-container'>
+          <button>New Lobby</button>
+        </div>
+      </form>
+    </div>
     </>
   )
 }
