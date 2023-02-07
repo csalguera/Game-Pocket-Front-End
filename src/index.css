@@ -419,7 +419,6 @@ body {
 .footer {
   bottom: 0;
   width: 100%;
-  /* position: sticky; */
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
