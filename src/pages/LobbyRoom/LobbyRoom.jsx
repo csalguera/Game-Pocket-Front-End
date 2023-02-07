@@ -6,6 +6,7 @@ import * as lobbyService from '../../services/lobbyService'
 import * as messageService from '../../services/messageService'
 import * as chatroomService from '../../services/chatroomService'
 
+
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
   const [lobby, setLobby] = useState('')
@@ -42,6 +43,7 @@ const LobbyRoom = ({ user }) => {
   }
   
   if (!lobby) return <h1>Loading</h1>
+  console.log(lobby.mainroom.messages);
   return (
     <>
       <h1>{lobby.name}</h1>
@@ -57,6 +59,9 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatroom: {lobby.mainroom.name}
+        {lobby.mainroom.messages.map(message => 
+          <div>{message.content}</div>
+        )}
         <form
         autoComplete='off'
         onSubmit={handleSendMessage}
