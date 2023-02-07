@@ -95,7 +95,7 @@ const App = () => {
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />
@@ -119,7 +119,7 @@ const App = () => {
           path="/my-page"
           element={
             <ProtectedRoute user={user}>
-              <MyPage handleSignupOrLogin={handleSignupOrLogin} />
+              <MyPage user={user} />
             </ProtectedRoute>
           }
         />

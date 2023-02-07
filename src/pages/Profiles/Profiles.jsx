@@ -3,7 +3,7 @@ import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom'
 
 
-const Profiles = () => {
+const Profiles = ({ user }) => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Profiles = () => {
           <div className='body'>
           {profiles.length ? 
             <div className='player-list'>
-              {profiles.map(profile =>
+              {profiles.filter(profile => profile._id !== user.profile).map(profile =>
                 <Link to={`/profiles/${profile._id}`} key={profile._id} className='player'>{profile.name}</Link>
                 )}
             </div>
