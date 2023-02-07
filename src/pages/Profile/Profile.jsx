@@ -14,6 +14,16 @@ const Profile = ({ user }) => {
     fetchProfile()
   }, [id])
 
+  const handleSubmit = async evt =>{
+    evt.preventDefault()
+    try {
+      const newProfile = await profileService.sendFriendRequest(profile._id)
+      setProfile(newProfile)
+    } catch (err){
+      console.log(err);
+    }
+  }
+
   return (
     <>
       <h1>{profile.name}</h1>
@@ -59,8 +69,14 @@ const Profile = ({ user }) => {
         <h2>Friend Requests: {profile.friendRequests.length}
         </h2>
         :
-        //! button needs functionality
-        <button>Send Friend Request</button>
+        <form
+          autoComplete="off"
+          onSubmit={handleSubmit}
+        >
+          <div>
+            <button>Send Friend Request</button>
+          </div>
+        </form>
       }
     </>
   )

@@ -27,4 +27,17 @@ async function getProfile(profileId) {
   return await res.json()
 }
 
-export { getAllProfiles, addPhoto, getProfile }
+async function sendFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/send-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+export { 
+  getAllProfiles,
+  addPhoto,
+  getProfile,
+  sendFriendRequest,
+}
