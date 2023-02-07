@@ -419,7 +419,7 @@ body {
 .footer {
   bottom: 0;
   width: 100%;
-  position: sticky;
+  /* position: sticky; */
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
@@ -457,6 +457,9 @@ body {
   margin-left: 10vw;
   margin-right: 10vw;
   height: 30px;
+  position: sticky;
+  background-color: rgba(0, 0, 0, 0.9);
+  bottom: 0;
 }
 
 .buttons-container {
