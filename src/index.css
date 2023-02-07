@@ -454,12 +454,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  height: 30px;
+  padding: 16px;
+  height: 50px;
   position: sticky;
   background-color: rgba(0, 0, 0, 0.9);
   bottom: 0;
+  width: 100%;
 }
 
 .buttons-container {
