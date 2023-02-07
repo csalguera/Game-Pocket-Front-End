@@ -419,8 +419,7 @@ body {
 .footer {
   bottom: 0;
   width: 100%;
-  position: sticky;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
 }
@@ -437,13 +436,13 @@ body {
 }
 
 .footer-container * {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin: 8px;
 }
 
 .footer-container a {
   text-decoration: none;
   color: white;
+  font-size: 1.5vw 1.5vh;
 }
 
 .footer-container a:hover {
@@ -454,8 +453,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 32px;
-  margin-right: 32px;
+  padding: 16px;
+  height: 50px;
+  position: sticky;
+  background-color: rgba(0, 0, 0, 0.9);
+  bottom: 0;
+  width: 100%;
 }
 
 .buttons-container {
@@ -485,21 +488,25 @@ body {
 }
 
 .navstick-button {
-  width: 75px;
-  height: 75px;
-  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  font-size: 12px;
+  font-weight: bold;
+  border: solid black 3px;
   border-radius: 50%;
-  background-color: #02bbf9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
 }
 
 .navstick-button:hover {
-  background-color: #d18f3c;
-  color: white;
+  filter: brightness(200%);
 }
 
 .arrow-left,
 .arrow-right {
-  width: 75px;
+  width: 30px;
 }
 
 .arrow-right {
@@ -518,6 +525,10 @@ body {
 
 .destination-name:hover {
   color: #d18f3c;
+}
+
+.navstick-destinaiton {
+  text-decoration: none;
 }
 
 /*! ============FOOTER============  */
@@ -620,3 +631,8 @@ div.lobbyCard button:hover {
 }
 
 /*! ============LOBBY LIST============  */
+.navstick-destinaiton {
+  text-decoration: none;
+}
+
+/*! ============FOOTER============  */

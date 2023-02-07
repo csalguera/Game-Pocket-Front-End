@@ -4,16 +4,15 @@ import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 
 const MyPage = ({ user }) => {
-  const { id } = useParams()
   const [profile, setProfile] = useState('')
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const data = await profileService.getProfile(id)
+      const data = await profileService.getProfile(user.profile)
       setProfile(data)
     }
     fetchProfile()
-  }, [id])
+  }, [user])
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
@@ -27,7 +26,6 @@ const MyPage = ({ user }) => {
 
   return (
     <>
-      <h1>{profile.name}</h1>
       <img src={
         profile.photo
         ?
@@ -38,7 +36,7 @@ const MyPage = ({ user }) => {
         alt=""
         width="150px"
       />
-      <li><Link to="/change-password" id="change-password">Change Password</Link></li>
+      <Link to="/change-password" id="change-password">Change Password</Link>
       <h2>
         Current Records: {
           profile.records?.length
@@ -55,7 +53,6 @@ const MyPage = ({ user }) => {
           'Pay $5 to see your friends.'
           :
           'No friends yet'
-
         }
       </h2>
         <h2>Friend Requests: {profile.friendRequests?.length ? profile.friendRequests?.length : 0}

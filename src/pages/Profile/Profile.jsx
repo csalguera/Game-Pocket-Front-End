@@ -39,36 +39,23 @@ const Profile = ({ user }) => {
       />
       <h2>
         Current Records: {
-          profile.records
+          profile.records?.length
           ?
-          profile.records.length
-          ?
-          profile.records
+          'Loading...'
           :
           'No records yet'
-          :
-          'Loading...'
         }
       </h2>
       <h2>
         Friends: {
-          profile.friends
+          profile.friends?.length
           ?
-          profile.friends.length
-          ?
-          profile.friends
+          'Pay $5 to see your friends.'
           :
           'No friends yet'
-          :
-          'Loading...'
         }
       </h2>
       {
-        user.profile === profile._id
-        ?
-        <h2>Friend Requests: {profile.friendRequests.length}
-        </h2>
-        :
         profile.friendRequests?.filter(requestId => requestId === user.profile).length === 0
         ?
         <form
