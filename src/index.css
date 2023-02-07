@@ -531,9 +531,6 @@ body {
   text-decoration: none;
 }
 
-.navstick-destinaiton {
-  text-decoration: none;
-}
 
 /*! ============FOOTER============  */
 
@@ -559,6 +556,7 @@ h1.space-invaders {
   align-items: center;
   padding: 3%;
   border-radius: 40px;
+  margin-bottom: 5%;
 }
 
 .lobbyCard {
@@ -612,7 +610,7 @@ div.lobbyCard button:hover {
 }
 
 #space-invaders #lobby-container .form {
-    font-family: 'VT323', monospace;
+  font-family: 'VT323', monospace;
   background-color: black;
   flex-direction: row;
   justify-content: space-evenly;
@@ -620,6 +618,7 @@ div.lobbyCard button:hover {
   border: 2px solid #3DB644;
   border-radius: 20px;
   color: white;
+  margin: 1%;
 }
 
 #lobby-container .form button {
