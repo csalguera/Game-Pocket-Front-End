@@ -119,7 +119,7 @@ const App = () => {
           path="/my-page"
           element={
             <ProtectedRoute user={user}>
-              <MyPage handleSignupOrLogin={handleSignupOrLogin} />
+              <MyPage user={user} />
             </ProtectedRoute>
           }
         />
