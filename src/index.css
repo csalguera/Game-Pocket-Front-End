@@ -423,7 +423,6 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
-  height: 90px;
 }
 
 .footer * {
@@ -456,6 +455,7 @@ body {
   align-items: center;
   margin-left: 10vw;
   margin-right: 10vw;
+  height: 30px;
 }
 
 .buttons-container {
