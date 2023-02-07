@@ -22,7 +22,6 @@ const NavStick = ({ user }) => {
     route >= routes.length - 1 ? setRoute(0) : setRoute(route + 1)
   }
 
-  if (user)
   return (
     <div className="navstick-container">
       <div className="buttons-container">
