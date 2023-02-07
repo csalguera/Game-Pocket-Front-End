@@ -28,6 +28,7 @@ import * as lobbyService from './services/lobbyService'
 // styles
 import './App.css'
 import Footer from './components/Footer/Footer'
+import MyPage from './pages/MyPage/MyPage'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -111,6 +112,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-page"
+          element={
+            <ProtectedRoute user={user}>
+              <MyPage handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
           }
         />
