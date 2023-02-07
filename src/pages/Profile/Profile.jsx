@@ -53,6 +53,14 @@ const Profile = ({ user }) => {
           'Loading...'
         }
       </h2>
+      {
+        user.profile === profile._id
+        ?
+        <h2>Friend Requests: {profile.friendRequests.length}
+        </h2>
+        :
+        ''
+      }
     </>
   )
 }
