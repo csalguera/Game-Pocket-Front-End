@@ -13,7 +13,6 @@ const Profile = ({ user }) => {
     }
     fetchProfile()
   }, [id])
-  console.log(profile)
 
   return (
     <>
@@ -32,18 +31,26 @@ const Profile = ({ user }) => {
         Current Records: {
           profile.records
           ?
+          profile.records.length
+          ?
           profile.records
           :
           'No records yet'
+          :
+          'Loading...'
         }
       </h2>
       <h2>
         Friends: {
           profile.friends
           ?
+          profile.friends.length
+          ?
           profile.friends
           :
           'No friends yet'
+          :
+          'Loading...'
         }
       </h2>
     </>
