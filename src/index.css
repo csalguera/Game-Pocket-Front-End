@@ -423,12 +423,12 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   padding-top: 16px;
-  height: 8vw;
+  height: 90px;
 }
 
 .footer * {
   font-family: 'VT323', monospace;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .footer-container {
@@ -485,8 +485,8 @@ body {
 }
 
 .navstick-button {
-  width: 4vw;
-  height: 4vw;
+  width: 2.5vw;
+  height: 2.5vw;
   font-size: 20px;
   border-radius: 50%;
   display: flex;
@@ -502,7 +502,7 @@ body {
 
 .arrow-left,
 .arrow-right {
-  width: 4vw;
+  width: 2.5vw;
 }
 
 .arrow-right {
