@@ -14,7 +14,6 @@ const Profile = () => {
     fetchProfile()
   }, [id])
   
-  console.log(profile)
   return (
     <>
     </>
