@@ -49,7 +49,7 @@ const NavStick = ({ user }) => {
       </div>
       <Link to={destination}>
         <button className="navstick-button">
-          <p>Enter</p>
+          {/* <p>Enter</p> */}
         </button>
       </Link>
     </div>
