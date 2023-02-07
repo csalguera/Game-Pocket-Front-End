@@ -8,7 +8,7 @@ const MyPage = ({ user }) => {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const data = await profileService.getProfile(user.profile)
+      const data = await profileService.myPage()
       setProfile(data)
     }
     fetchProfile()
@@ -55,8 +55,20 @@ const MyPage = ({ user }) => {
           'No friends yet'
         }
       </h2>
-        <h2>Friend Requests: {profile.friendRequests?.length ? profile.friendRequests?.length : 0}
-        </h2>
+      <h2>
+        Friend Requests: 
+        {
+        profile.friendRequests?.length 
+        ? 
+        <ul>
+          {profile.friendRequests.map(request => {
+            <h3>{request.name}</h3>
+          })
+          }
+        </ul>
+        : 0
+        }
+      </h2>
        
     </>
   )
