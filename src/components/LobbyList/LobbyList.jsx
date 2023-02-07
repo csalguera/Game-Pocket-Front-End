@@ -62,7 +62,7 @@ const LobbyList = ({ user }) => {
               <h3>Members: {lobby.members.length}</h3>
             </div>
           </Link>
-              <button onClick={() => handleDelete(lobby._id)}>delete</button>
+              <button onClick={() => handleDelete(lobby._id)}>DELETE</button>
         </div>
       ))}
       <form

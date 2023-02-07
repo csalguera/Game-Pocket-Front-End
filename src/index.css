@@ -545,8 +545,13 @@ body {
   padding: 1%;
 }
 
+.lobbyCard:hover {
+  background-color: blue;
+}
+
 div.lobbyCard button{
   background-color: yellow;
+  font-family: 'VT323', monospace;
   border-radius: 20px;
   width: fit-content;
   height: fit-content;
@@ -574,6 +579,7 @@ div.lobbyCard button:hover {
 .lobbyCard a {
   text-decoration: none;
   color: white;
+  font-family: 'VT323', monospace;
 }
 
 #lobby-container .form {
