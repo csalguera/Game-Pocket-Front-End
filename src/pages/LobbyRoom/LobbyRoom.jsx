@@ -12,6 +12,7 @@ const LobbyRoom = ({ user }) => {
   const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
+  const [chatrooms, setChatrooms] = useState([])
 
   // fetch lobby
   useEffect(() => {
@@ -98,7 +99,6 @@ const LobbyRoom = ({ user }) => {
             <button>Send</button>
           </div>
         </form>
-
     </>
   )
 }
