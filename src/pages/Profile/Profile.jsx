@@ -13,14 +13,24 @@ const Profile = ({ user }) => {
     }
     fetchProfile()
   }, [id])
+  console.log(profile)
 
   return (
     <>
       <h1>{profile.name}</h1>
-      <img src={profile.photo} alt="" width="150px" />
+      <img src={
+        profile.photo
+        ?
+        profile.photo
+        :
+        "https://i.imgur.com/izJwDia.png"
+      }
+        alt=""
+        width="150px"
+      />
       <h2>
         Current Records: {
-          profile.records.length
+          profile.records
           ?
           profile.records
           :
@@ -29,7 +39,7 @@ const Profile = ({ user }) => {
       </h2>
       <h2>
         Friends: {
-          profile.friends.length
+          profile.friends
           ?
           profile.friends
           :
