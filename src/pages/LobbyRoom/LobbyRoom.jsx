@@ -53,7 +53,6 @@ const LobbyRoom = ({ user }) => {
   }
   
   if (!lobby) return <h1>Loading</h1>
-  console.log("message", chatroomMessages[0].sender);
   console.log("user", user.profile);
   return (
     <>
