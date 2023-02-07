@@ -5,6 +5,7 @@ import * as profileService from '../../services/profileService'
 
 const MyPage = ({ user }) => {
   const [profile, setProfile] = useState('')
+  let refreshP = 0
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -12,12 +13,11 @@ const MyPage = ({ user }) => {
       setProfile(data)
     }
     fetchProfile()
-  }, [user])
+  }, [user,refreshP])
 
-  const handleAccept = async (evt, userId, friendId) =>{
-    evt.preventDefault()
+  const handleAccept = async (friendId) =>{
     try {
-      const newProfile = await profileService.sendFriendRequest(profile._id)
+      const newProfile = await profileService.acceptFriendRequest(friendId)
       setProfile(newProfile)
     } catch (err){
       console.log(err);
@@ -50,7 +50,14 @@ const MyPage = ({ user }) => {
         Friends: {
           profile.friends?.length
           ?
-          'Pay $5 to see your friends.'
+          <ul>
+            {profile.friends.map(friend =>
+              <li key={friend._id}>
+                <h3>{friend.name}</h3>
+                <button style={{backgroundColor:"red"}}>Brock Up</button>   
+              </li>
+              )}
+          </ul>
           :
           'No friends yet'
         }
@@ -62,23 +69,11 @@ const MyPage = ({ user }) => {
         ? 
         <ul>
           {profile.friendRequests.map(request =>
-          <>
-            <h3>
-              {request.name}
-              <form
-                autoComplete="off"
-                onSubmit={handleSubmit}
-              >
-                  <button>Accept</button>
-              </form>
-              <form
-                autoComplete="off"
-                onSubmit={handleSubmit}
-              >
-                  <button style={{backgroundColor:"red"}}>Deny</button>
-              </form>
-            </h3>
-          </>
+          <li key={request._id}>
+            <h3>{request.name}</h3>
+            <button onClick={() => handleAccept(request._id)}>Accept</button>
+            <button style={{backgroundColor:"red"}}>Deny</button>   
+          </li>
           )}
         </ul>
         : 0

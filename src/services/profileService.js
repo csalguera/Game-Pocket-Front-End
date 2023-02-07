@@ -42,10 +42,19 @@ async function myPage() {
   return await res.json()
 }
 
+async function acceptFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/accept-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
 export { 
   getAllProfiles,
   addPhoto,
   getProfile,
   sendFriendRequest,
   myPage,
+  acceptFriendRequest,
 }
