@@ -47,8 +47,10 @@ const NavStick = ({ user }) => {
           <img className="arrow-right" src="/assets/arrow.png" alt="" />
         </button>
       </div>
-      <Link to={destination}>
-        <button className="navstick-button"></button>
+      <Link className="navstick-destinaiton" to={destination}>
+        <button className="navstick-button">
+          <p>PUSH</p>
+        </button>
       </Link>
     </div>
   )

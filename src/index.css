@@ -488,19 +488,19 @@ body {
 }
 
 .navstick-button {
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  font-size: 12px;
+  border: solid black 3px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #02bbf9;
+  background-color: red;
 }
 
 .navstick-button:hover {
-  background-color: #d18f3c;
-  color: white;
+  filter: brightness(200%);
 }
 
 .arrow-left,
@@ -524,6 +524,10 @@ body {
 
 .destination-name:hover {
   color: #d18f3c;
+}
+
+.navstick-destinaiton {
+  text-decoration: none;
 }
 
 /*! ============FOOTER============  */
