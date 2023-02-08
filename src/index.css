@@ -653,12 +653,13 @@ div.lobbyCard button:hover {
 }
 
 #image-container img {
-  height: 15vmin;
-  justify-content: center;
+  /* height: 5%;
+  width: 100%; */
 }
 
 #image-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   background-color: red;
   width: 15%;
