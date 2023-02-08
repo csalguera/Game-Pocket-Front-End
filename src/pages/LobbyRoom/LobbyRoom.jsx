@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 // Components
-import Chatroom from '../../components/Chatroom/ChatroomList';
+import ChatroomList from '../../components/ChatroomList/ChatroomList';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 import Message from '../../components/Message/Message';
 import MessageForm from '../../components/MessageForm/MessageForm';
@@ -103,9 +103,10 @@ const LobbyRoom = ({ user }) => {
             chatrooms.map(chatroom => (
               <ul key={chatroom._id}>
                 <li>
-                  <Chatroom
+                  <ChatroomList
                     chatroom={chatroom}
                     handleJoinChatroom={handleJoinChatroom}
+                    user={user}
                   />
                 </li>
               </ul>

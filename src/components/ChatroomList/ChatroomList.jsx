@@ -1,5 +1,5 @@
-const ChatroomList = ({ chatroom, handleJoinChatroom }) => {
-
+const ChatroomList = ({ chatroom, handleJoinChatroom, user }) => {
+  
   return (
     <>
       <h3>
@@ -7,6 +7,10 @@ const ChatroomList = ({ chatroom, handleJoinChatroom }) => {
       </h3>
       <button onClick={() => handleJoinChatroom()}>
         Join
+      </button>
+      {/* {chatroom.owner === } */}
+      <button>
+        Delete
       </button>
     </>
   )
