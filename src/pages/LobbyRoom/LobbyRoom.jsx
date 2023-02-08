@@ -66,9 +66,7 @@ const LobbyRoom = ({ user }) => {
           0
         }
       </h2>
-      <h2>
-        Chatroom: {lobby.mainroom.name}
-      </h2> 
+      <div id="chatroom">
         {chatroomMessages.map(message => 
         <div key={message._id}>
           <div>{message.content} - {message.from}
@@ -80,6 +78,7 @@ const LobbyRoom = ({ user }) => {
         }
         </div>
         )}
+        </div>
         <form
         autoComplete='off'
         onSubmit={handleSendMessage}
