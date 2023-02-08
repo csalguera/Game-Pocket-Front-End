@@ -79,7 +79,6 @@ const LobbyRoom = ({ user }) => {
   }
 
   const handleJoinChatroom = async () => {
-    console.log(chatrooms)
   }
 
   if (!lobby) return <h1>Loading</h1>
