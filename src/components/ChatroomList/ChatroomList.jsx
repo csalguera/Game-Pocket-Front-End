@@ -8,10 +8,14 @@ const ChatroomList = ({ chatroom, handleJoinChatroom, user }) => {
       <button onClick={() => handleJoinChatroom()}>
         Join
       </button>
-      {/* {chatroom.owner === } */}
-      <button>
-        Delete
-      </button>
+      {chatroom.owner === user.profile
+        ?
+        <button>
+          Delete
+        </button>
+        :
+        ''
+      }
     </>
   )
 }
