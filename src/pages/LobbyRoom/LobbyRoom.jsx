@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 // Components
-import Chatroom from '../../components/Chatroom/Chatroom';
+import ChatroomList from '../../components/ChatroomList/ChatroomList';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 import Message from '../../components/Message/Message';
 import MessageForm from '../../components/MessageForm/MessageForm';
@@ -69,8 +69,17 @@ const LobbyRoom = ({ user }) => {
     e.preventDefault()
     const chatroomData = await chatroomService.create(chatroomInput)
     await lobbyService.addChatroom(lobby._id, chatroomData._id)
-    setChatrooms([...chatrooms, chatroomData._id]) //! remove object id once chatroom is populated 
+    setChatrooms([...chatrooms, chatroomData])
     setChatroomInput({name: ""})
+  }
+
+  const handleDeleteChatroom = async (id) => {
+    const deletedChatroom = await chatroomService.delete(id)
+    setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
+  }
+
+  const handleJoinChatroom = async () => {
+    console.log(chatrooms)
   }
 
   if (!lobby) return <h1>Loading</h1>
@@ -91,18 +100,26 @@ const LobbyRoom = ({ user }) => {
           }
         </h2>
         <h2>
-          Chatrooms: {
+          Chatrooms:
+        </h2>
+          {
             chatrooms?.length
             ?
             chatrooms.map(chatroom => (
-              <ul key={chatroom}>
-                <li><Chatroom chatroom={chatroom} /></li>
+              <ul key={chatroom._id}>
+                <li>
+                  <ChatroomList
+                    chatroom={chatroom}
+                    handleJoinChatroom={handleJoinChatroom}
+                    handleDeleteChatroom={handleDeleteChatroom}
+                    user={user}
+                  />
+                </li>
               </ul>
             ))
             :
-            'No other chatrooms'
+            <h3>No other chatrooms</h3>
           }
-        </h2>
         <ChatroomForm
           handleCreateChatroom={handleCreateChatroom}
           handleChange={handleChange}
