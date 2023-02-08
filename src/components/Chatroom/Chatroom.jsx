@@ -1,4 +1,4 @@
-const Chatroom = ({ chatroom }) => {
+const Chatroom = ({ chatroom, handleJoinChatroom }) => {
 
   return (
     <>
