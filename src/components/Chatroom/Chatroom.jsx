@@ -1,6 +1,7 @@
-const Chatroom = () => {
+const Chatroom = ({ chatroom }) => {
   return (
     <>
+      {chatroom}
     </>
   )
 }

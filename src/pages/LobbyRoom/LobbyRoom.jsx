@@ -88,7 +88,7 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatrooms: {
-          chatrooms
+          chatrooms?.length
           ?
           chatrooms.map(chatroom => (
             <ul key={chatroom}>
