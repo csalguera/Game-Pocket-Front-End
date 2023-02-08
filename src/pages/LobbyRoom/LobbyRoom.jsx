@@ -73,6 +73,10 @@ const LobbyRoom = ({ user }) => {
     setChatroomInput({name: ""})
   }
 
+  const joinChatroom = async () => {
+    console.log('test')
+  }
+
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
