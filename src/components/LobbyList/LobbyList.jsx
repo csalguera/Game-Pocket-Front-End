@@ -66,8 +66,8 @@ const LobbyList = ({ user, socket }) => {
           <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           </div>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="left"/>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="right"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="left"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="right"/>
           <img src="https://i.imgur.com/1MHgrcd.png" alt="Spaace invader spaceship" id="good-guy"/>
         </div>
         <div id="lobby-container" className="space-invaders">
@@ -121,8 +121,8 @@ const LobbyList = ({ user, socket }) => {
             <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
             <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           </div>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="right"/>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="left"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="right"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="left"/>
           <img src="https://i.imgur.com/1MHgrcd.png" alt="Space invader spaceship" id="good-guy"/>
         </div>
       </div>

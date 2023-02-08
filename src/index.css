@@ -708,14 +708,31 @@ img.shot#right {
 }
 
 #lobby-head {
+  font-size: 16px;
+  font-family: 'VT323', monospace;
+  border-radius: 20px;
   background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
+  padding: 1%;
   margin: 1%;
   width: 20%;
+}
+
+#lobby-head > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10%;
+}
+
+#lobby-head #chatroom-header{
+  margin-top: 0;
 }
 
 #chatroom {

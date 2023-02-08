@@ -85,7 +85,7 @@ const LobbyRoom = ({ user }) => {
   return (
     <>
     <div id='lobby-room'>
-      <h1 className='space-invaders'>LOBBY</h1>
+      <h1 className='space-invaders'>L O B B Y</h1>
       <div id="lobby-screen">
       <div id="lobby-head">
         <h2>Description: {lobby.content}</h2>
@@ -98,9 +98,11 @@ const LobbyRoom = ({ user }) => {
             0
           }
         </h2>
-        <h2>
+        <div>
+        <h2 id="chatroom-header">
           Chatrooms:
         </h2>
+        <div id="chatroom-list">
           {
             chatrooms?.length
             ?
@@ -112,13 +114,15 @@ const LobbyRoom = ({ user }) => {
                     handleJoinChatroom={handleJoinChatroom}
                     handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
-                  />
+                    />
                 </li>
               </ul>
             ))
             :
             <h3>No other chatrooms</h3>
           }
+                  </div>
+          </div>
         <ChatroomForm
           handleCreateChatroom={handleCreateChatroom}
           handleChange={handleChange}
