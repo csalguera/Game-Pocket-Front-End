@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
+import { socket } from "../../services/socket"
 
 const MyPage = ({ user }) => {
   const [profile, setProfile] = useState('')
+  const [refresh, setRefresh] = useState(0)
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -12,12 +14,16 @@ const MyPage = ({ user }) => {
       setProfile(data)
     }
     fetchProfile()
-  }, [user])
+    setRefresh(0)
+  }, [refresh])
+
+  socket.on('friendRequest', () => setRefresh(1))
 
   const handleAccept = async (friendId) => {
     try {
       const newProfile = await profileService.acceptFriendRequest(friendId)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
@@ -27,6 +33,7 @@ const MyPage = ({ user }) => {
     try {
       const newProfile = await profileService.denyFriendRequest(friendId)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
@@ -36,6 +43,7 @@ const MyPage = ({ user }) => {
     try {
       const newProfile = await profileService.breakupFriend(friendId)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
@@ -71,7 +79,7 @@ const MyPage = ({ user }) => {
             {profile.friends.map(friend =>
               <li key={friend._id}>
                 <h3>{friend.name}</h3>
-                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Brock Up</button>   
+                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
               </li>
               )}
           </ul>
