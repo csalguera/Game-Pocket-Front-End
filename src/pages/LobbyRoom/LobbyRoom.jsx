@@ -12,6 +12,8 @@ const LobbyRoom = ({ user }) => {
   const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
+  const [chatroomInput, setChatroomInput] = useState({name: ""})
+  const [chatrooms, setChatrooms] = useState([])
 
   // fetch lobby
   useEffect(() => {
@@ -19,6 +21,7 @@ const LobbyRoom = ({ user }) => {
       const data = await lobbyService.show(id)
       setLobby(data)
       setChatroomMessages(data.mainroom.messages)
+      setChatrooms(data.chatrooms)
     }
     fetchLobby()
   }, [])
@@ -28,6 +31,10 @@ const LobbyRoom = ({ user }) => {
     setMessage({
       ...message,
       [e.target.name]: e.target.value,
+    })
+    setChatroomInput({
+      ...chatroomInput,
+      [e.target.name]: e.target.value
     })
   }
 
@@ -51,7 +58,17 @@ const LobbyRoom = ({ user }) => {
       console.log(error);
     }
   }
-  
+
+  const handleCreateChatroom = async e => {
+    e.preventDefault()
+    const chatroomData = await chatroomService.create()
+    await lobbyService.addChatroom(lobby._id, chatroomData._id)
+    setChatrooms([...chatrooms, chatroomData._id]) //! remove object id once chatroom is populated 
+    setChatroomInput({name: ""})
+  }
+
+  console.log(chatrooms)
+
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
@@ -59,13 +76,41 @@ const LobbyRoom = ({ user }) => {
       <h2>Description: {lobby.content}</h2>
       <h2>
         Current Members: {
-          lobby.members.length
+          lobby.members?.length
           ?
           lobby.members.map(member => member.name)
           :
           0
         }
       </h2>
+      <h2>
+        Chatrooms: {
+          chatrooms
+          ?
+          chatrooms.map(chatroom => (
+            <ul key={chatroom}>
+              <li>{chatroom}</li>
+            </ul>
+          ))
+          :
+          'No other chatrooms'
+        }
+      </h2> 
+      <form
+      autoComplete='off'
+      onSubmit={handleCreateChatroom}
+      >
+        <div>
+          <label htmlFor="name">Create a chatroom:</label>
+          <input
+            type="text"
+            name='name'
+            onChange={handleChange}
+            value={chatroomInput.name}
+          />
+          <button>Create</button>
+        </div>
+      </form>
       <div id="chatroom">
         {chatroomMessages.map(message => 
         <div key={message._id}>
@@ -97,7 +142,6 @@ const LobbyRoom = ({ user }) => {
             <button>Send</button>
           </div>
         </form>
-
     </>
   )
 }
