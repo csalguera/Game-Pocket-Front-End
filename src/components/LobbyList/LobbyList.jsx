@@ -53,7 +53,11 @@ const LobbyList = ({ user }) => {
       <h1 className="space-invaders">L O B B I E S</h1>
       <div id="main-page">
         <div id="image-container">
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader spaceship" />
+        <div id="bad-guy-container">
+          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          </div>
           <img src="https://i.imgur.com/7ZjSHXf.png" alt="Spaace invader spaceship" />
         </div>
         <div id="lobby-container" className="space-invaders">
@@ -102,8 +106,12 @@ const LobbyList = ({ user }) => {
           </form>
         </div>
         <div id="image-container">
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader spaceship" />
-          <img src="https://i.imgur.com/7ZjSHXf.png" alt="Spaace invader spaceship" />
+          <div id="bad-guy-container">
+          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          </div>
+          <img src="https://i.imgur.com/7ZjSHXf.png" alt="Spaace invader spaceship"/>
         </div>
       </div>
     </>

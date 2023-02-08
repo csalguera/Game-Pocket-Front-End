@@ -652,9 +652,9 @@ div.lobbyCard button:hover {
   width: 100%
 }
 
-#image-container img {
-  /* height: 5%;
-  width: 100%; */
+
+#bad-guy-container img {
+  width: 100%;
 }
 
 #image-container {
