@@ -63,7 +63,7 @@ const LobbyRoom = ({ user }) => {
     e.preventDefault()
     try {
       const chatroomData = await chatroomService.create()
-      await lobbyService.update(lobby._id, chatroomData._id)
+      await lobbyService.addLobby(lobby._id, chatroomData._id)
       setChatrooms([...chatrooms, chatroomData])
       setChatroomInput({name: ""})
     } catch (error) {
@@ -88,7 +88,13 @@ const LobbyRoom = ({ user }) => {
         }
       </h2>
       <h2>
-        Chatrooms: {lobby.chatrooms?.length ? lobby.chatrooms : 'No other chatrooms'}
+        Chatrooms: {
+          lobby.chatrooms?.length
+          ?
+          lobby.chatrooms
+          :
+          'No other chatrooms'
+        }
       </h2> 
       <form
       autoComplete='off'
