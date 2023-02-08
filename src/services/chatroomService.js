@@ -91,6 +91,20 @@ const show = async (id) => {
   }
 }
 
+const joinChatroom = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/join-chatroom`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   create,
@@ -98,4 +112,5 @@ export {
   addMessage,
   deleteChatroom as delete,
   show,
+  joinChatroom,
 }
