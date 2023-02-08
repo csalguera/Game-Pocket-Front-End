@@ -54,9 +54,9 @@ const LobbyList = ({ user }) => {
       <div id="main-page">
         <div id="image-container">
         <div id="bad-guy-container">
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           </div>
           <img src="https://i.imgur.com/7ZjSHXf.png" alt="Spaace invader spaceship" id="good-guy"/>
         </div>
@@ -107,9 +107,9 @@ const LobbyList = ({ user }) => {
         </div>
         <div id="image-container">
           <div id="bad-guy-container">
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
-          <img src="https://i.imgur.com/t66cu63.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           </div>
           <img src="https://i.imgur.com/7ZjSHXf.png" alt="Spaace invader spaceship" id="good-guy"/>
         </div>
