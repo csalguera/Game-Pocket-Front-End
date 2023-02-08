@@ -92,7 +92,7 @@ const LobbyRoom = ({ user }) => {
           ?
           chatrooms.map(chatroom => (
             <ul key={chatroom}>
-              <li>{chatroom}</li>
+              <li><Chatroom chatroom={chatroom} /></li>
             </ul>
           ))
           :
