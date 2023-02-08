@@ -28,7 +28,6 @@ const LobbyRoom = ({ user }) => {
       setLobby(data)
       setChatroomMessages(data.mainroom.messages)
       setChatrooms(data.chatrooms)
-      console.log(data.chatrooms)
     }
     fetchLobby()
   }, [])
@@ -73,8 +72,6 @@ const LobbyRoom = ({ user }) => {
     setChatrooms([...chatrooms, chatroomData]) //! remove object id once chatroom is populated 
     setChatroomInput({name: ""})
   }
-
-  console.log(chatrooms)
 
   if (!lobby) return <h1>Loading</h1>
   return (
