@@ -58,6 +58,14 @@ async function breakupFriend(profileId) {
   return await res.json()
 }
 
+async function denyFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/deny-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
 export { 
   getAllProfiles,
   addPhoto,
@@ -65,5 +73,6 @@ export {
   sendFriendRequest,
   myPage,
   acceptFriendRequest,
+  denyFriendRequest,
   breakupFriend,
 }
