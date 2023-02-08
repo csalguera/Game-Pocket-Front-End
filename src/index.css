@@ -721,6 +721,7 @@ img.shot#right {
   background-color: black;
   margin: 1%;
   width: 80%;
+  border-radius: 40px;
   justify-content: space-between;
 }
 
@@ -732,12 +733,14 @@ img.shot#right {
   background-color: yellow;
   display: flex;
   justify-content: space-between;
+  /* margin-bottom: 2%; */
   /* flex-direction: row; */
 }
 
 #message-container {
   display: flex;
   flex-direction: column;
+  padding: 1%;
 }
 
 #my-message{
@@ -745,24 +748,28 @@ img.shot#right {
   justify-content: flex-end;
   align-items: center;
   align-content: center;
-  background-color: brown;
-  margin: 1%;
-  padding: 1%;
 }
 
 #my-message button {
   height: fit-content;
+  border-radius: 20px;
 }
 
+#my-message button:hover {
+  background-color: red;
+} 
+
 #other-message {
-  background-color: aquamarine;
-  margin: 1%;
-  padding: 1%;
-  /* width: fit-content; */
+  /* background-color: aquamarine; */
 }
 
 .message-content {
-  background-color: white;
+  font-family: 'VT323', monospace;
+  background-color: black;
+  color: white;
+  border: 4px solid #3DB644;
+  font-size: 32px;
+  border-radius: 20px;
   width: fit-content;
   margin: 1%;
   padding: 1%;

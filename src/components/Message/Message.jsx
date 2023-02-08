@@ -1,4 +1,5 @@
 const Message = ({ user, message, deleteMessage }) => {
+  console.log(user);
   return (
     <>
       {message.sender === user.profile ? 
