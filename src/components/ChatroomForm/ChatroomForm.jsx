@@ -6,7 +6,7 @@ const ChatroomForm = ({ handleCreateChatroom, handleChange, chatroomInput }) => 
       onSubmit={handleCreateChatroom}
       >
         <div>
-          <label htmlFor="name">Create a chatroom:</label>
+          <label htmlFor="name">Create a chatroom: </label>
           <input
             type="text"
             name='name'
