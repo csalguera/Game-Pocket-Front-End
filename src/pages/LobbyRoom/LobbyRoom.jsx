@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
+// Components
+import Chatroom from '../../components/Chatroom/Chatroom';
+
 // Services
 import * as lobbyService from '../../services/lobbyService'
 import * as messageService from '../../services/messageService'
