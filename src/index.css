@@ -731,8 +731,26 @@ img.shot#right {
   padding: 10%;
 }
 
+#lobby-head h2{
+  text-align: center;
+}
+
 #lobby-head #chatroom-header{
   margin-top: 0;
+}
+
+#lobby-head button {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  border: 1px solid #3DB644;
+  margin: 3%;
+  border-radius: 4px;
+}
+
+#lobby-head #mini-room {
+  /* background-color: blue; */
 }
 
 #chatroom {
@@ -746,6 +764,12 @@ img.shot#right {
   justify-content: space-between;
 }
 
+#chatroom-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #lobby-screen {
   display: flex;
 }
@@ -756,6 +780,16 @@ img.shot#right {
   border: 4px solid #3DB644;
   border-radius: 40px;
   margin: 3%;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+#button-container button {
+  width: 50%;
 }
 
 #send-container form {

@@ -5,6 +5,8 @@ const ChatroomList = ({ chatroom, handleJoinChatroom, handleDeleteChatroom, user
       <h3>
         {chatroom.name} - Members: {chatroom.members?.length}
       </h3>
+      <div id="button-container">
+
       <button onClick={() => handleJoinChatroom()}>
         Join
       </button>
@@ -16,6 +18,7 @@ const ChatroomList = ({ chatroom, handleJoinChatroom, handleDeleteChatroom, user
         :
         ''
       }
+      </div>
     </>
   )
 }

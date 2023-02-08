@@ -107,16 +107,14 @@ const LobbyRoom = ({ user }) => {
             chatrooms?.length
             ?
             chatrooms.map(chatroom => (
-              <ul key={chatroom._id}>
-                <li>
-                  <ChatroomList
-                    chatroom={chatroom}
-                    handleJoinChatroom={handleJoinChatroom}
-                    handleDeleteChatroom={handleDeleteChatroom}
-                    user={user}
-                    />
-                </li>
-              </ul>
+              <div key={chatroom._id} id="mini-room">
+                <ChatroomList
+                  chatroom={chatroom}
+                  handleJoinChatroom={handleJoinChatroom}
+                  handleDeleteChatroom={handleDeleteChatroom}
+                  user={user}
+                />
+              </div>
             ))
             :
             <h3>No other chatrooms</h3>
