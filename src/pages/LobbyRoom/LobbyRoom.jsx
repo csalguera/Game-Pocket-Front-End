@@ -71,7 +71,7 @@ const LobbyRoom = ({ user }) => {
     }
   }
   
-  console.log(chatroomInput)
+  console.log(lobby)
 
   if (!lobby) return <h1>Loading</h1>
   return (
