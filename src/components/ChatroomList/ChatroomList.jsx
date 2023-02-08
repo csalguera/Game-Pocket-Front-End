@@ -1,4 +1,4 @@
-const ChatroomList = ({ chatroom, handleJoinChatroom, user }) => {
+const ChatroomList = ({ chatroom, handleJoinChatroom, handleDeleteChatroom, user }) => {
   
   return (
     <>
@@ -10,7 +10,7 @@ const ChatroomList = ({ chatroom, handleJoinChatroom, user }) => {
       </button>
       {chatroom.owner === user.profile
         ?
-        <button>
+        <button onClick={() => handleDeleteChatroom()}>
           Delete
         </button>
         :

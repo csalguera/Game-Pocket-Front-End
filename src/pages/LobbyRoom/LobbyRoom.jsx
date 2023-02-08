@@ -73,7 +73,7 @@ const LobbyRoom = ({ user }) => {
     setChatroomInput({name: ""})
   }
 
-  const handleDelteChatroom = async (id) => {
+  const handleDeleteChatroom = async (id) => {
     const deletedChatroom = await chatroomService.delete(id)
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
   }
@@ -111,7 +111,7 @@ const LobbyRoom = ({ user }) => {
                   <ChatroomList
                     chatroom={chatroom}
                     handleJoinChatroom={handleJoinChatroom}
-                    handleDelteChatroom={handleDelteChatroom}
+                    handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
                   />
                 </li>

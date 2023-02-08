@@ -70,7 +70,6 @@ const deleteChatroom = async (id) => {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
-        'Content-Type': 'application/json'
       },
     })
     return res.json()
