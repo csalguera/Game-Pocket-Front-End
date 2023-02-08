@@ -73,8 +73,8 @@ const LobbyRoom = ({ user }) => {
     }
   }
   
-  console.log(lobby)
-  console.log(chatrooms)
+  console.log(lobby._id)
+  // console.log(chatrooms)
 
   if (!lobby) return <h1>Loading</h1>
   return (
