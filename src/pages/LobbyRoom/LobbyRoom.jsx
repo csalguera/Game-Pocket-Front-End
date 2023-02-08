@@ -93,6 +93,21 @@ const LobbyRoom = ({ user }) => {
       <h2>
         Chatrooms: {lobby.mainroom.name}, {lobby.chatrooms?.length ? lobby.chatrooms : 'no other chatrooms'}
       </h2> 
+      <form
+      autoComplete='off'
+      onSubmit={handleCreateChatroom}
+      >
+        <div>
+          <label htmlFor="name">Create a chatroom:</label>
+          <input
+            type="text"
+            name='name'
+            onChange={handleChange}
+            value={chatroomMessages.name}
+          />
+          <button>Create</button>
+        </div>
+      </form>
         {chatroomMessages.map(message => 
         <div key={message._id}>
           <div>{message.content} - {message.from}
@@ -122,21 +137,6 @@ const LobbyRoom = ({ user }) => {
             <button>Send</button>
           </div>
         </form>
-      <form
-      autoComplete='off'
-      onSubmit={handleCreateChatroom}
-      >
-        <div>
-          <label htmlFor="name">Chatroom:</label>
-          <input
-            type="text"
-            name='name'
-            onChange={handleChange}
-            value={chatroomMessages.name}
-          />
-          <button>Create</button>
-        </div>
-      </form>
     </>
   )
 }
