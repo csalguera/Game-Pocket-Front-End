@@ -57,9 +57,25 @@ const deleteLobboy = async (id) => {
   }
 }
 
+const update = async (chatroomData, id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(chatroomData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export {
   index,
   create,
   show,
   deleteLobboy as delete,
+  update,
 }

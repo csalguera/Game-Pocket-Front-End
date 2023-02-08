@@ -55,13 +55,27 @@ const LobbyRoom = ({ user }) => {
 
   // fetch chatrooms
   useEffect(() => {
-    const createChatroom = async () => {
-      const chatroom = await chatroomService.index()
-      setChatrooms([ chatroom, ...chatrooms ])
+    const fetchChatrooms = async () => {
+      const data = await chatroomService.index()
+      setChatrooms(data)
     }
-    createChatroom()
+    fetchChatrooms()
   }, [])
+
+  const createChatroom = async e => {
+    e.preventDefault()
+    try {
+      const chatroomData = await chatroomService.create()
+      await lobbyService.update(lobby._id, chatroomData._id)
+      setChatrooms([...chatrooms, chatroomData])
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
+  console.log(lobby)
+  console.log(chatrooms)
+
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
@@ -77,7 +91,7 @@ const LobbyRoom = ({ user }) => {
         }
       </h2>
       <h2>
-        Chatroom: {lobby.mainroom.name}
+        Chatrooms: {lobby.mainroom.name}
       </h2> 
         {chatroomMessages.map(message => 
         <div key={message._id}>
