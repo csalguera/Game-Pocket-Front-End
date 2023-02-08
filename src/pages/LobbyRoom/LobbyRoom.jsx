@@ -69,7 +69,7 @@ const LobbyRoom = ({ user }) => {
     e.preventDefault()
     const chatroomData = await chatroomService.create(chatroomInput)
     await lobbyService.addChatroom(lobby._id, chatroomData._id)
-    setChatrooms([...chatrooms, chatroomData]) //! remove object id once chatroom is populated 
+    setChatrooms([...chatrooms, chatroomData])
     setChatroomInput({name: ""})
   }
 
