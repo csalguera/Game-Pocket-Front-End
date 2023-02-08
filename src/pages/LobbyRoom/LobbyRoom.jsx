@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 // Components
 import Chatroom from '../../components/Chatroom/Chatroom';
+import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
@@ -98,7 +99,12 @@ const LobbyRoom = ({ user }) => {
           :
           'No other chatrooms'
         }
-      </h2> 
+      </h2>
+      <ChatroomForm
+        handleCreateChatroom={handleCreateChatroom}
+        handleChange={handleChange}
+        chatroomInput={chatroomInput}
+      />
       <form
       autoComplete='off'
       onSubmit={handleCreateChatroom}
