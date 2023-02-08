@@ -20,6 +20,7 @@ const LobbyRoom = ({ user }) => {
       const data = await lobbyService.show(id)
       setLobby(data)
       setChatroomMessages(data.mainroom.messages)
+      setChatrooms(data.chatrooms)
     }
     fetchLobby()
   }, [])
@@ -53,15 +54,6 @@ const LobbyRoom = ({ user }) => {
     }
   }
 
-  // fetch chatrooms
-  useEffect(() => {
-    const fetchChatrooms = async () => {
-      const data = await chatroomService.index()
-      setChatrooms(data)
-    }
-    fetchChatrooms()
-  }, [])
-
   const handleCreateChatroom = async e => {
     e.preventDefault()
     try {
@@ -73,8 +65,7 @@ const LobbyRoom = ({ user }) => {
     }
   }
   
-  console.log(chatrooms)
-  // console.log(chatrooms)
+  console.log(lobby)
 
   if (!lobby) return <h1>Loading</h1>
   return (
