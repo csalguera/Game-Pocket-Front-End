@@ -91,7 +91,7 @@ const LobbyRoom = ({ user }) => {
         }
       </h2>
       <h2>
-        Chatrooms: {lobby.mainroom.name}
+        Chatrooms: {lobby.mainroom.name}, {lobby.chatrooms?.length ? lobby.chatrooms : 'no other chatrooms'}
       </h2> 
         {chatroomMessages.map(message => 
         <div key={message._id}>
