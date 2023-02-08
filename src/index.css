@@ -718,7 +718,7 @@ img.shot#right {
 #chatroom {
   display: flex;
   flex-direction: column;
-  background-color: blue;
+  background-color: black;
   margin: 1%;
   width: 80%;
   justify-content: space-between;
@@ -743,22 +743,29 @@ img.shot#right {
 #my-message{
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   align-content: center;
   background-color: brown;
+  margin: 1%;
+  padding: 1%;
 }
 
-#my-message {
-  /* background-color: white; */
-  /* width: fit-content; */
+#my-message button {
+  height: fit-content;
 }
 
 #other-message {
   background-color: aquamarine;
+  margin: 1%;
+  padding: 1%;
   /* width: fit-content; */
 }
 
 .message-content {
   background-color: white;
   width: fit-content;
+  margin: 1%;
+  padding: 1%;
 }
+
 /*! ============LOBBY ROOM============  */
