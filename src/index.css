@@ -558,7 +558,7 @@ h1.space-invaders {
   padding: 3%;
   border-radius: 40px;
   margin-bottom: 5%;
-  width: 70%;
+  /* width: 100%; */
 }
 
 .lobbyCard {
@@ -568,7 +568,7 @@ h1.space-invaders {
   justify-content: space-between;
   background-color: #3DB644;
   border-radius: 20px;
-  width: 100%;
+  /* width: 70%; */
   margin: 1%;
   padding: 1%;
 }
@@ -652,17 +652,20 @@ div.lobbyCard button:hover {
   width: 100%
 }
 
-
 #bad-guy-container img {
   width: 100%;
+}
+
+#good-guy{
+  width: 50%;
 }
 
 #image-container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: red;
-  width: 15%;
+  align-items: center;
+  width: 100%;
 }
 
 /*! ============LOBBY LIST============  */
