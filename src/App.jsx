@@ -104,7 +104,7 @@ const App = () => {
           path="/profiles/:id"
           element={
             <ProtectedRoute user={user}>
-              <Profile user={user} />
+              <Profile user={user} socket={socket}/>
             </ProtectedRoute>
           }
         />
