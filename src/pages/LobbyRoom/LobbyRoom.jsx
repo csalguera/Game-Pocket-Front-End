@@ -73,7 +73,7 @@ const LobbyRoom = ({ user }) => {
     setChatroomInput({name: ""})
   }
 
-  const joinChatroom = async () => {
+  const handleJoinChatroom = async () => {
     console.log('test')
   }
 
@@ -102,7 +102,12 @@ const LobbyRoom = ({ user }) => {
             ?
             chatrooms.map(chatroom => (
               <ul key={chatroom._id}>
-                <li><Chatroom chatroom={chatroom} /></li>
+                <li>
+                  <Chatroom
+                    chatroom={chatroom}
+                    handleJoinChatroom={handleJoinChatroom}
+                  />
+                </li>
               </ul>
             ))
             :
