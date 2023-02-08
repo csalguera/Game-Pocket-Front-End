@@ -43,7 +43,7 @@ const show = async (id) => {
   }
 }
 
-const deleteLobboy = async (id) => {
+const deleteLobby = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE',
@@ -72,10 +72,25 @@ const addChatroom = async (lobbyId, chatroomId) => {
   }
 }
 
+const joinLobby = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/join-lobby`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   create,
   show,
-  deleteLobboy as delete,
+  deleteLobby as delete,
   addChatroom,
+  joinLobby,
 }

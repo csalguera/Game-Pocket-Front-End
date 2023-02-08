@@ -33,6 +33,16 @@ const LobbyList = ({ user, socket }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const handleJoinLobby = async (memebers, lobbyId) => {
+    if(!memebers.some(memeberId => memeberId === user.profile)) 
+      try {
+        const joinLobby = await lobbyService.joinLobby(lobbyId)
+        console.log("Join a lobby")
+      } catch (err){
+        console.log(err);
+      }
+  }
+
   const handleSubmit = async evt =>{
     evt.preventDefault()
     socket.emit('refreshLobby')
@@ -66,14 +76,14 @@ const LobbyList = ({ user, socket }) => {
           <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           </div>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="left"/>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="right"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="left"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="right"/>
           <img src="https://i.imgur.com/1MHgrcd.png" alt="Spaace invader spaceship" id="good-guy"/>
         </div>
         <div id="lobby-container" className="space-invaders">
           {lobbies.map((lobby, idx) => (
             <div key={lobby._id} className="lobbyCard">
-              <Link to={`/lobby/${lobby._id}`} >
+              <Link to={`/lobby/${lobby._id}`} onClick={() => handleJoinLobby(lobby.members, lobby._id)}>
                 <div>
                   <h3>Name: {lobby.name}</h3>
                   <h3>Description: {lobby.content}</h3>
@@ -121,8 +131,8 @@ const LobbyList = ({ user, socket }) => {
             <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
             <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
           </div>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="right"/>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" class="shot" id="left"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="right"/>
+          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="left"/>
           <img src="https://i.imgur.com/1MHgrcd.png" alt="Space invader spaceship" id="good-guy"/>
         </div>
       </div>

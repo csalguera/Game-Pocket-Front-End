@@ -16,13 +16,10 @@ import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import LobbyRoom from './pages/LobbyRoom/LobbyRoom'
 import Leaderboard from './pages/Leaderboard/Leaderboard'
-import FriendList from './pages/FriendList/FriendList'
-import FriendDetails from './pages/FriendDetails/FriendDetails'
 
 // services
 import * as authService from './services/authService'
 import * as recordService from './services/recordService'
-import * as friendsService from './services/friendsService'
 import * as lobbyService from './services/lobbyService'
 
 // styles
@@ -47,15 +44,6 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  // fetch friends
-  useEffect(() => {
-    const fetchAllFriends = async () => {
-      const data = await friendsService.index()
-      setFriends(data)
-    }
-    if (user) fetchAllFriends()
-  }, [user])
-
   // fetch records
   useEffect(() => {
     const fetchAllRecords = async () => {
@@ -64,20 +52,7 @@ const App = () => {
     }
     if (user) fetchAllRecords()
   }, [user])
-  
-  // Must be prop drilled to Profiles page in future when backend for friends is ready
-  const handleAddFriend = async (friendData) => {
-    const newFriend = await friendsService.add(friendData)
-    setFriends([ newFriend, ...friends ])
-    navigate('/friends')
-  }
-  
-  // Must be prop drilled to FriendList and FriendDetails page(s) in future when backend for friends is ready
-  const handleRemoveFriend = async (id) => {
-    const removedFriend = await friendsService.delete(id)
-    setFriends(friends.filter(friend => friend._id !== removedFriend._id))
-    navigate('/friends')
-  }
+
 
   return (
     <>
@@ -137,22 +112,6 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <Leaderboard records={records} user={user} />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/friends'
-          element={
-            <ProtectedRoute user={user}>
-              <FriendList friends={friends} />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/friends/:id'
-          element={
-            <ProtectedRoute user={user}>
-              <FriendDetails user={user} />
             </ProtectedRoute>
           }
         />
