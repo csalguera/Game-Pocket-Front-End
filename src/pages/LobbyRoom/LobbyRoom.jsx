@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
+// Components
+import Chatroom from '../../components/Chatroom/Chatroom';
+import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
+import Message from '../../components/Message/Message';
+import MessageForm from '../../components/MessageForm/MessageForm';
+
 // Services
 import * as lobbyService from '../../services/lobbyService'
 import * as messageService from '../../services/messageService'
@@ -61,13 +67,11 @@ const LobbyRoom = ({ user }) => {
 
   const handleCreateChatroom = async e => {
     e.preventDefault()
-    const chatroomData = await chatroomService.create()
+    const chatroomData = await chatroomService.create(chatroomInput)
     await lobbyService.addChatroom(lobby._id, chatroomData._id)
     setChatrooms([...chatrooms, chatroomData._id]) //! remove object id once chatroom is populated 
     setChatroomInput({name: ""})
   }
-
-  console.log(chatrooms)
 
   if (!lobby) return <h1>Loading</h1>
   return (
@@ -85,63 +89,38 @@ const LobbyRoom = ({ user }) => {
       </h2>
       <h2>
         Chatrooms: {
-          chatrooms
+          chatrooms?.length
           ?
           chatrooms.map(chatroom => (
             <ul key={chatroom}>
-              <li>{chatroom}</li>
+              <li><Chatroom chatroom={chatroom} /></li>
             </ul>
           ))
           :
           'No other chatrooms'
         }
-      </h2> 
-      <form
-      autoComplete='off'
-      onSubmit={handleCreateChatroom}
-      >
-        <div>
-          <label htmlFor="name">Create a chatroom:</label>
-          <input
-            type="text"
-            name='name'
-            onChange={handleChange}
-            value={chatroomInput.name}
-          />
-          <button>Create</button>
-        </div>
-      </form>
+      </h2>
+      <ChatroomForm
+        handleCreateChatroom={handleCreateChatroom}
+        handleChange={handleChange}
+        chatroomInput={chatroomInput}
+      />
       <div id="chatroom">
-        {chatroomMessages.map(message => 
+        {chatroomMessages.map(message =>
         <div key={message._id}>
-          <div>{message.content} - {message.from}
-          </div>
-          {message.sender === user.profile ? 
-          <button onClick={() => deleteMessage(message._id)}>Delete</button>
-          :
-          ""
-        }
+          <Message
+            message={message}
+            deleteMessage={deleteMessage}
+            user={user}
+          />
         </div>
         )}
-        </div>
-        <form
-        autoComplete='off'
-        onSubmit={handleSendMessage}
-        >
-          <div>
-            <label htmlFor="content">Message</label>
-            <input 
-              type="text"
-              name='content'
-              autoComplete="off"
-              onChange={handleChange}
-              value={message.content}
-            />
-          </div>
-          <div>
-            <button>Send</button>
-          </div>
-        </form>
+      </div>
+      <MessageForm
+        handleSendMessage={handleSendMessage}
+        handleChange={handleChange}
+        message={message}
+      />
     </>
   )
 }
