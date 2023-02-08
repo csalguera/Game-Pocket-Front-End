@@ -5,6 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import Chatroom from '../../components/Chatroom/Chatroom';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 import Message from '../../components/Message/Message';
+import MessageForm from '../../components/MessageForm/MessageForm';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
