@@ -111,6 +111,7 @@ const LobbyRoom = ({ user }) => {
                   <ChatroomList
                     chatroom={chatroom}
                     handleJoinChatroom={handleJoinChatroom}
+                    handleDelteChatroom={handleDelteChatroom}
                     user={user}
                   />
                 </li>
