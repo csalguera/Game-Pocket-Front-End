@@ -5,7 +5,6 @@ import * as profileService from '../../services/profileService'
 
 const MyPage = ({ user }) => {
   const [profile, setProfile] = useState('')
-  let refreshP = 0
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -13,7 +12,7 @@ const MyPage = ({ user }) => {
       setProfile(data)
     }
     fetchProfile()
-  }, [user,refreshP])
+  }, [user])
 
   const handleAccept = async (friendId) => {
     try {
