@@ -53,9 +53,9 @@ const LobbyList = ({ user }) => {
       <h1 className="space-invaders">L O B B I E S</h1>
       <div id="main-page">
         <div id="image-container">
-
+          <img src="https://i.imgur.com/qPzPL0C.png" alt="Spaace invader spaceship" />
+          <img src="https://i.imgur.com/qPzPL0C.png" alt="Spaace invader spaceship" />
         </div>
-
         <div id="lobby-container" className="space-invaders">
           {lobbies.map((lobby, idx) => (
             <div key={lobby._id} className="lobbyCard">
@@ -100,13 +100,11 @@ const LobbyList = ({ user }) => {
               <button>NEW LOBBY</button>
             </div>
           </form>
-        <div id="image-container">
-
         </div>
-        
-      </div>
-
-
+        <div id="image-container">
+          <img src="https://i.imgur.com/qPzPL0C.png" alt="Spaace invader spaceship" />
+          <img src="https://i.imgur.com/qPzPL0C.png" alt="Spaace invader spaceship" />
+        </div>
       </div>
     </>
   )

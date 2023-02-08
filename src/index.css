@@ -558,7 +558,7 @@ h1.space-invaders {
   padding: 3%;
   border-radius: 40px;
   margin-bottom: 5%;
-  width: 105%;
+  width: 70%;
 }
 
 .lobbyCard {
@@ -647,5 +647,21 @@ div.lobbyCard button:hover {
   background-color: #00ff0d;
 }
 
+#main-page {
+  display: flex;
+  width: 100%
+}
+
+#image-container img {
+  height: 15vmin;
+  justify-content: center;
+}
+
+#image-container {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  width: 15%;
+}
 
 /*! ============LOBBY LIST============  */
