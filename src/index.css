@@ -719,6 +719,7 @@ img.shot#right {
   padding: 1%;
   margin: 1%;
   width: 20%;
+  height: 900px;
 }
 
 #lobby-head > * {
@@ -764,10 +765,37 @@ img.shot#right {
   justify-content: space-between;
 }
 
+#chatrooms {
+  height: 40%;
+}
+
 #chatroom-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+}
+
+#chatroom-list::-webkit-scrollbar{
+  background-color: rgba(255, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3DB644;
+  border-radius: 4px;
+  size: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 255, 0);
 }
 
 #lobby-screen {
@@ -820,7 +848,7 @@ img.shot#right {
 
 #send-container form button:hover{
   background-color: #00ff0d;
-  color: red;
+  color: white;
 }
 
 #send-container form div:nth-child(1){
@@ -890,6 +918,8 @@ img.shot#right {
 #my-message button {
   height: fit-content;
   border-radius: 20px;
+  background-color: #3A99D4;
+  border: none;
 }
 
 #my-message button:hover {
