@@ -57,7 +57,7 @@ const deleteLobboy = async (id) => {
   }
 }
 
-const addLobby = async (lobbyId, chatroomId) => {
+const addChatroom = async (lobbyId, chatroomId) => {
   try {
     const res = await fetch(`${BASE_URL}/${lobbyId}/${chatroomId}/add-chatroom`, {
       method: 'PUT',
@@ -77,5 +77,5 @@ export {
   create,
   show,
   deleteLobboy as delete,
-  addLobby,
+  addChatroom,
 }
