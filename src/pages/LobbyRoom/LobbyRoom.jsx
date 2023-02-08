@@ -4,6 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 // Components
 import Chatroom from '../../components/Chatroom/Chatroom';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
+import Message from '../../components/Message/Message';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
@@ -106,15 +107,13 @@ const LobbyRoom = ({ user }) => {
         chatroomInput={chatroomInput}
       />
       <div id="chatroom">
-        {chatroomMessages.map(message => 
+        {chatroomMessages.map(message =>
         <div key={message._id}>
-          <div>{message.content} - {message.from}
-          </div>
-          {message.sender === user.profile ? 
-          <button onClick={() => deleteMessage(message._id)}>Delete</button>
-          :
-          ""
-        }
+          <Message
+            message={message}
+            deleteMessage={deleteMessage}
+            user={user}
+          />
         </div>
         )}
         </div>
