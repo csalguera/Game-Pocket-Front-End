@@ -735,4 +735,19 @@ img.shot#right {
   /* flex-direction: row; */
 }
 
+#message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#my-message{
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  background-color: brown;
+}
+
+#other-message {
+  background-color: aquamarine;
+}
 /*! ============LOBBY ROOM============  */
