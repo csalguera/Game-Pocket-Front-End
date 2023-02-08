@@ -12,6 +12,7 @@ const LobbyRoom = ({ user }) => {
   const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
+  const [chatroomInput, setChatroomInput] = useState({name: ""})
   const [chatrooms, setChatrooms] = useState([])
 
   // fetch lobby
@@ -30,6 +31,10 @@ const LobbyRoom = ({ user }) => {
     setMessage({
       ...message,
       [e.target.name]: e.target.value,
+    })
+    setChatroomInput({
+      ...chatroomInput,
+      [e.target.name]: e.target.value
     })
   }
 
@@ -60,12 +65,13 @@ const LobbyRoom = ({ user }) => {
       const chatroomData = await chatroomService.create()
       await lobbyService.update(lobby._id, chatroomData._id)
       setChatrooms([...chatrooms, chatroomData])
+      setChatroomInput({name: ""})
     } catch (error) {
       console.log(error)
     }
   }
   
-  console.log(lobby)
+  console.log(chatroomInput)
 
   if (!lobby) return <h1>Loading</h1>
   return (
@@ -94,7 +100,7 @@ const LobbyRoom = ({ user }) => {
             type="text"
             name='name'
             onChange={handleChange}
-            value={chatroomMessages.name}
+            value={chatroomInput.name}
           />
           <button>Create</button>
         </div>
