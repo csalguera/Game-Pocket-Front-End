@@ -1,7 +1,7 @@
 const Chatroom = ({ chatroom }) => {
   return (
     <>
-      {chatroom}
+      {chatroom.name}
     </>
   )
 }
