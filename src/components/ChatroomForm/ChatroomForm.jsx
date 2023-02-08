@@ -5,7 +5,7 @@ const ChatroomForm = ({ handleCreateChatroom, handleChange, chatroomInput }) => 
       autoComplete='off'
       onSubmit={handleCreateChatroom}
       >
-        <div>
+        <div id="create-chatroom">
           <label htmlFor="name">Create a chatroom: </label>
           <input
             type="text"
