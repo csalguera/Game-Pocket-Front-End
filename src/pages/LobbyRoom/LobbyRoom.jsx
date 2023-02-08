@@ -76,51 +76,61 @@ const LobbyRoom = ({ user }) => {
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
-      <h1>{lobby.name}</h1>
-      <h2>Description: {lobby.content}</h2>
-      <h2>
-        Current Members: {
-          lobby.members?.length
-          ?
-          lobby.members.map(member => member.name)
-          :
-          0
-        }
-      </h2>
-      <h2>
-        Chatrooms: {
-          chatrooms?.length
-          ?
-          chatrooms.map(chatroom => (
-            <ul key={chatroom}>
-              <li><Chatroom chatroom={chatroom} /></li>
-            </ul>
-          ))
-          :
-          'No other chatrooms'
-        }
-      </h2>
-      <ChatroomForm
-        handleCreateChatroom={handleCreateChatroom}
-        handleChange={handleChange}
-        chatroomInput={chatroomInput}
-      />
+    <div id='lobby-room'>
+      <h1>LOBBY</h1>
+      <div id="lobby-screen">
+      <div id="lobby-head">
+        <h2>Description: {lobby.content}</h2>
+        <h2>
+          Current Members: {
+            lobby.members?.length
+            ?
+            lobby.members.map(member => member.name)
+            :
+            0
+          }
+        </h2>
+        <h2>
+          Chatrooms: {
+            chatrooms?.length
+            ?
+            chatrooms.map(chatroom => (
+              <ul key={chatroom}>
+                <li><Chatroom chatroom={chatroom} /></li>
+              </ul>
+            ))
+            :
+            'No other chatrooms'
+          }
+        </h2>
+        <ChatroomForm
+          handleCreateChatroom={handleCreateChatroom}
+          handleChange={handleChange}
+          chatroomInput={chatroomInput}
+        />
+      </div>
       <div id="chatroom">
+        <div id="message-container">
         {chatroomMessages.map(message =>
         <div key={message._id}>
           <Message
             message={message}
             deleteMessage={deleteMessage}
             user={user}
-          />
+            />
         </div>
         )}
+        </div>
+        <div id="send-container">
+        <MessageForm
+          handleSendMessage={handleSendMessage}
+          handleChange={handleChange}
+          message={message}
+          />
+          </div>
+      </div>  
       </div>
-      <MessageForm
-        handleSendMessage={handleSendMessage}
-        handleChange={handleChange}
-        message={message}
-      />
+    </div>
     </>
   )
 }
