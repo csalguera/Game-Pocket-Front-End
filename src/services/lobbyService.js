@@ -57,12 +57,13 @@ const deleteLobboy = async (id) => {
   }
 }
 
-const update = async (id) => {
+const addLobby = async (lobbyId, chatroomId) => {
   try {
-    const res = await fetch(`${BASE_URL}/${id}`, {
+    const res = await fetch(`${BASE_URL}/${lobbyId}/${chatroomId}/add-chatroom`, {
       method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
       }
     })
     return res.json()
@@ -76,5 +77,5 @@ export {
   create,
   show,
   deleteLobboy as delete,
-  update,
+  addLobby,
 }
