@@ -543,7 +543,7 @@ body {
 
 h1.space-invaders {
   font-family: 'Russo One', sans-serif;
-  font-size: 3em;
+  font-size: 5em;
   color: #C0D535;
   text-shadow: 
               0 -3px 2px #758CC6,
@@ -558,7 +558,6 @@ h1.space-invaders {
   padding: 3%;
   border-radius: 40px;
   margin-bottom: 5%;
-  /* width: 100%; */
 }
 
 .lobbyCard {
@@ -568,7 +567,6 @@ h1.space-invaders {
   justify-content: space-between;
   background-color: #3DB644;
   border-radius: 20px;
-  /* width: 70%; */
   margin: 1%;
   padding: 1%;
 }
