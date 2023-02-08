@@ -116,7 +116,7 @@ const LobbyRoom = ({ user }) => {
           />
         </div>
         )}
-        </div>
+      </div>
         <form
         autoComplete='off'
         onSubmit={handleSendMessage}
