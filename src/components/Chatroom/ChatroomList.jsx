@@ -1,4 +1,4 @@
-const Chatroom = ({ chatroom, handleJoinChatroom }) => {
+const ChatroomList = ({ chatroom, handleJoinChatroom }) => {
 
   return (
     <>
@@ -12,4 +12,4 @@ const Chatroom = ({ chatroom, handleJoinChatroom }) => {
   )
 }
 
-export default Chatroom
+export default ChatroomList

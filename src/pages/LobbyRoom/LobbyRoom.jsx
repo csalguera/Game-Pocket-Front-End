@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 // Components
-import Chatroom from '../../components/Chatroom/Chatroom';
+import Chatroom from '../../components/Chatroom/ChatroomList';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 import Message from '../../components/Message/Message';
 import MessageForm from '../../components/MessageForm/MessageForm';
@@ -74,7 +74,7 @@ const LobbyRoom = ({ user }) => {
   }
 
   const handleJoinChatroom = async () => {
-    console.log('test')
+    console.log(chatrooms)
   }
 
   if (!lobby) return <h1>Loading</h1>
