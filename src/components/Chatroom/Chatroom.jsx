@@ -1,4 +1,4 @@
-const Chatroom = ({ chatroom }) => {
+const Chatroom = ({ chatroom, chatrooms }) => {
   return (
     <>
       {chatroom.name}

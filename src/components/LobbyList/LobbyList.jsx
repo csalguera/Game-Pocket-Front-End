@@ -69,7 +69,7 @@ const LobbyList = ({ user }) => {
                 <div>
                   <h3>Name: {lobby.name}</h3>
                   <h3>Description: {lobby.content}</h3>
-                  <h3>Members: {lobby.members.length}</h3>
+                  <h3>Members: {lobby.members?.length}</h3>
                 </div>
               </Link>
                   <button onClick={() => handleDelete(lobby._id)}>DELETE</button>
