@@ -23,13 +23,6 @@ const Chatroom = ({ user }) => {
     fetchChatroom()
   }, [])
 
-  const handleJoinChatroom = async (evt) => {
-    const data = await chatroomService.update(evt._id)
-    setChatroom(data)
-    setMembers([...members, user.profile])
-    console.log(data)
-  }
-
   return (
     <>
       <h1>{chatroom.name}</h1>
@@ -38,9 +31,6 @@ const Chatroom = ({ user }) => {
           member.name
         ))}
       </h2>
-      <button onClick={() => handleJoinChatroom(chatroom)}>
-        test
-      </button>
     </>
   )
 }

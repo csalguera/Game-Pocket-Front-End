@@ -85,13 +85,6 @@ const LobbyRoom = ({ user }) => {
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
   }
 
-  // const handleJoinChatroom = async (evt) => {
-  //   const joinChatroom = await chatroomService.update(evt._id)
-  //   setMembers([...members, user.profile])
-  // }
-
-  // console.log(members)
-
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
