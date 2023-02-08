@@ -17,19 +17,30 @@ const Chatroom = ({ user }) => {
     const fetchChatroom = async () => {
       const data = await chatroomService.show(id)
       setChatroom(data)
+      setMembers(data.members)
+      console.log(data.members)
     }
     fetchChatroom()
   }, [])
 
-  console.log(chatroom)
-
   const handleJoinChatroom = async (evt) => {
-    const joinChatroom = await chatroomService.update(evt._id)
+    const data = await chatroomService.update(evt._id)
+    setChatroom(data)
     setMembers([...members, user.profile])
+    console.log(data)
   }
+
   return (
     <>
-      <h1>test</h1>
+      <h1>{chatroom.name}</h1>
+      <h2>
+        {members.map(member => (
+          member.name
+        ))}
+      </h2>
+      <button onClick={() => handleJoinChatroom(chatroom)}>
+        test
+      </button>
     </>
   )
 }
