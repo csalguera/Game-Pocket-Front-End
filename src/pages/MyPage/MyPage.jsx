@@ -79,7 +79,7 @@ const MyPage = ({ user }) => {
             {profile.friends.map(friend =>
               <li key={friend._id}>
                 <h3>{friend.name}</h3>
-                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Brock Up</button>   
+                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
               </li>
               )}
           </ul>
