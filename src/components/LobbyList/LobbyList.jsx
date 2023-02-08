@@ -18,7 +18,7 @@ const LobbyList = ({ user }) => {
       setLobbies(data)
     }
     if (user) fetchAllLobbies()
-  }, [])
+  }, [user])
 
   const updateForm = msg => {
     setFormData(msg)

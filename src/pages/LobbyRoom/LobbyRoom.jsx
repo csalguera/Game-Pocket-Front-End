@@ -61,17 +61,11 @@ const LobbyRoom = ({ user }) => {
 
   const handleCreateChatroom = async e => {
     e.preventDefault()
-    try {
-      const chatroomData = await chatroomService.create()
-      await lobbyService.addLobby(lobby._id, chatroomData._id)
-      setChatrooms([...chatrooms, chatroomData])
-      setChatroomInput({name: ""})
-    } catch (error) {
-      console.log(error)
-    }
+    const chatroomData = await chatroomService.create()
+    await lobbyService.addLobby(lobby._id, chatroomData._id)
+    setChatrooms([...chatrooms, chatroomData])
+    setChatroomInput({name: ""})
   }
-  
-  console.log(lobby)
 
   if (!lobby) return <h1>Loading</h1>
   return (
@@ -80,7 +74,7 @@ const LobbyRoom = ({ user }) => {
       <h2>Description: {lobby.content}</h2>
       <h2>
         Current Members: {
-          lobby.members.length
+          lobby.members?.length
           ?
           lobby.members.map(member => member.name)
           :
@@ -91,7 +85,11 @@ const LobbyRoom = ({ user }) => {
         Chatrooms: {
           lobby.chatrooms?.length
           ?
-          lobby.chatrooms
+          lobby.chatrooms.map(chatroom => (
+            <ul key={chatroom}>
+              <li>{chatroom}</li>
+            </ul>
+          ))
           :
           'No other chatrooms'
         }
