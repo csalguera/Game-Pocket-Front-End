@@ -19,10 +19,10 @@ const LobbyList = ({ user, socket }) => {
       setLobbies(data)
     }
     if (user) fetchAllLobbies()
-    
+    setRefresh(0)
   }, [refresh])
   
-  socket.on('refreshLobby', () => {setRefresh(refresh+1)})
+  socket.on('refreshLobby', () => {setRefresh(1)})
 
   const updateForm = msg => {
     setFormData(msg)
@@ -31,6 +31,16 @@ const LobbyList = ({ user, socket }) => {
   const handleChange = e => {
     updateForm('')
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleJoinLobby = async (memebers, lobbyId) => {
+    if(!memebers.some(memeberId => memeberId === user.profile)) 
+      try {
+        const joinLobby = await lobbyService.joinLobby(lobbyId)
+        console.log("Join a lobby")
+      } catch (err){
+        console.log(err);
+      }
   }
 
   const handleSubmit = async evt =>{
@@ -73,7 +83,7 @@ const LobbyList = ({ user, socket }) => {
         <div id="lobby-container" className="space-invaders">
           {lobbies.map((lobby, idx) => (
             <div key={lobby._id} className="lobbyCard">
-              <Link to={`/lobby/${lobby._id}`} >
+              <Link to={`/lobby/${lobby._id}`} onClick={() => handleJoinLobby(lobby.members, lobby._id)}>
                 <div>
                   <h3>Name: {lobby.name}</h3>
                   <h3>Description: {lobby.content}</h3>

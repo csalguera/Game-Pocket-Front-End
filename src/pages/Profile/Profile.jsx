@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 
-const Profile = ({ user }) => {
+const Profile = ({ user, socket }) => {
   const { id } = useParams()
   const [profile, setProfile] = useState('')
+  const [refresh, setRefresh] = useState(0)
+  
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -12,13 +14,17 @@ const Profile = ({ user }) => {
       setProfile(data)
     }
     fetchProfile()
-  }, [id])
+    setRefresh(0)
+  }, [refresh])
+
+  socket.on('friendRequest', () => setRefresh(1))
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
     try {
       const newProfile = await profileService.sendFriendRequest(profile._id)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
@@ -50,13 +56,15 @@ const Profile = ({ user }) => {
         Friends: {
           profile.friends?.length
           ?
-          'Pay $5 to see your friends.'
+          `
+          Pay $5 to see my ${profile.friends.length} friends.`
           :
           'No friends yet'
         }
       </h2>
       {
-        profile.friendRequests?.filter(requestId => requestId === user.profile).length === 0
+        !profile.friendRequests?.filter(requestId => requestId === user.profile).length &&
+        !profile.friends?.filter(requestId => requestId === user.profile).length
         ?
         <form
           autoComplete="off"
@@ -67,7 +75,11 @@ const Profile = ({ user }) => {
           </div>
         </form>
         :
+        !profile.friends?.filter(requestId => requestId === user.profile).length
+        ?
         <h2>Request Sent</h2>
+        :
+        <h2>You Are Friends</h2>
       }
     </>
   )

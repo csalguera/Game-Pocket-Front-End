@@ -11,6 +11,7 @@ import MessageForm from '../../components/MessageForm/MessageForm';
 import * as lobbyService from '../../services/lobbyService'
 import * as messageService from '../../services/messageService'
 import * as chatroomService from '../../services/chatroomService'
+import { socket } from '../../services/socket';
 
 
 const LobbyRoom = ({ user }) => {
@@ -20,6 +21,7 @@ const LobbyRoom = ({ user }) => {
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
   const [chatrooms, setChatrooms] = useState([])
+  const [refresh, setRefresh] = useState(0)
 
   // fetch lobby
   useEffect(() => {
@@ -30,8 +32,10 @@ const LobbyRoom = ({ user }) => {
       setChatrooms(data.chatrooms)
     }
     fetchLobby()
-  }, [])
+    setRefresh(0)
+  }, [refresh])
 
+  socket.on('refreshMessage', () => setRefresh(1))
   //message
   const handleChange = e => {
     setMessage({
@@ -51,6 +55,7 @@ const LobbyRoom = ({ user }) => {
       await chatroomService.addMessage(lobby.mainroom._id, messageData._id)
       setChatroomMessages([...chatroomMessages, messageData])
       setMessage({content: ""})
+      socket.emit('refreshMessage')
     } catch (err) {
       console.log(err);
     }
@@ -60,6 +65,7 @@ const LobbyRoom = ({ user }) => {
     try {
       const deletedMessage = await messageService.delete(id)
       setChatroomMessages(chatroomMessages.filter(message => message._id !== deletedMessage._id))
+      socket.emit('refreshMessage')
     } catch (error) {
       console.log(error);
     }
