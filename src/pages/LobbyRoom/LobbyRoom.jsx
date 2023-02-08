@@ -86,7 +86,7 @@ const LobbyRoom = ({ user }) => {
   return (
     <>
     <div id='lobby-room'>
-      <h1>LOBBY</h1>
+      <h1 className='space-invaders'>LOBBY</h1>
       <div id="lobby-screen">
       <div id="lobby-head">
         <h2>Description: {lobby.content}</h2>
