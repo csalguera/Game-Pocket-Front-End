@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 
-const Profile = ({ user }) => {
+const Profile = ({ user, socket }) => {
   const { id } = useParams()
   const [profile, setProfile] = useState('')
+  const [refresh, setRefresh] = useState(0)
+  
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -12,13 +14,17 @@ const Profile = ({ user }) => {
       setProfile(data)
     }
     fetchProfile()
-  }, [id])
+    setRefresh(0)
+  }, [])
+
+  socket.on('friendRequest', () => setRefresh(1))
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
     try {
       const newProfile = await profileService.sendFriendRequest(profile._id)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
