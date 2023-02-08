@@ -73,7 +73,7 @@ const LobbyRoom = ({ user }) => {
     }
   }
   
-  console.log(lobby._id)
+  console.log(chatrooms)
   // console.log(chatrooms)
 
   if (!lobby) return <h1>Loading</h1>
@@ -91,7 +91,7 @@ const LobbyRoom = ({ user }) => {
         }
       </h2>
       <h2>
-        Chatrooms: {lobby.mainroom.name}, {lobby.chatrooms?.length ? lobby.chatrooms : 'no other chatrooms'}
+        Chatrooms: {lobby.chatrooms?.length ? lobby.chatrooms : 'No other chatrooms'}
       </h2> 
       <form
       autoComplete='off'
