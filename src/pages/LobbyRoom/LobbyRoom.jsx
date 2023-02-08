@@ -78,6 +78,7 @@ const LobbyRoom = ({ user }) => {
     <>
     <div id='lobby-room'>
       <h1>LOBBY</h1>
+      <div id="lobby-screen">
       <div id="lobby-head">
         <h2>Description: {lobby.content}</h2>
         <h2>
@@ -109,20 +110,25 @@ const LobbyRoom = ({ user }) => {
         />
       </div>
       <div id="chatroom">
+        <div id="message-container">
         {chatroomMessages.map(message =>
         <div key={message._id}>
           <Message
             message={message}
             deleteMessage={deleteMessage}
             user={user}
-          />
+            />
         </div>
         )}
+        </div>
+        <div id="send-container">
         <MessageForm
           handleSendMessage={handleSendMessage}
           handleChange={handleChange}
           message={message}
-        />
+          />
+          </div>
+      </div>  
       </div>
     </div>
     </>
