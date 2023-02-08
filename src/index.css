@@ -531,4 +531,119 @@ body {
   text-decoration: none;
 }
 
+
 /*! ============FOOTER============  */
+
+
+
+/*! ============LOBBY LIST============  */
+#space-invaders{
+  background-color: #222359;
+}
+h1.space-invaders {
+  font-family: 'Russo One', sans-serif;
+  font-size: 3em;
+  color: #C0D535;
+  text-shadow: 
+              0 -3px 2px #758CC6,
+              0 -6px 2px #3A99D4;
+}
+
+#space-invaders #lobby-container {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  border-radius: 40px;
+  margin-bottom: 5%;
+}
+
+.lobbyCard {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  background-color: #3DB644;
+  border-radius: 20px;
+  width: 100%;
+  margin: 1%;
+  padding: 1%;
+}
+
+.lobbyCard:hover {
+  background-color: rgb(0, 255, 0);
+}
+
+div.lobbyCard button{
+  background-color: black;
+  color: white;
+  font-family: 'VT323', monospace;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+}
+
+div.lobbyCard button:hover {
+  background-color: red;
+}
+
+.lobbyCard div {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 40em;
+  padding: 1%;
+  border-radius: 20px;
+}
+
+.lobbyCard div * {
+  background-color: black;
+}
+
+.lobbyCard a {
+  text-decoration: none;
+  color: white;
+  font-family: 'VT323', monospace;
+}
+
+#space-invaders #lobby-container .form {
+  font-family: 'VT323', monospace;
+  background-color: black;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  border: 4px solid #3DB644;
+  border-radius: 20px;
+  color: white;
+  margin: 1%;
+  font-size: 24px;
+}
+
+#lobby-container .form button {
+  font-family: 'VT323', monospace;
+  background-color: white;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+}
+
+#lobby-container .form input {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#space-invaders #lobby-container .form button:hover {
+  background-color: #00ff0d;
+}
+
+
+/*! ============LOBBY LIST============  */

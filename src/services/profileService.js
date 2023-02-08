@@ -50,6 +50,14 @@ async function acceptFriendRequest(profileId) {
   return await res.json()
 }
 
+async function breakupFriend(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/breakup-friendship`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
 export { 
   getAllProfiles,
   addPhoto,
@@ -57,4 +65,5 @@ export {
   sendFriendRequest,
   myPage,
   acceptFriendRequest,
+  breakupFriend,
 }

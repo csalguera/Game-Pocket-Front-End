@@ -15,9 +15,18 @@ const MyPage = ({ user }) => {
     fetchProfile()
   }, [user,refreshP])
 
-  const handleAccept = async (friendId) =>{
+  const handleAccept = async (friendId) => {
     try {
       const newProfile = await profileService.acceptFriendRequest(friendId)
+      setProfile(newProfile)
+    } catch (err){
+      console.log(err);
+    }
+  }
+
+  const handleBreakUp = async (friendId) => {
+    try {
+      const newProfile = await profileService.breakupFriend(friendId)
       setProfile(newProfile)
     } catch (err){
       console.log(err);
@@ -54,7 +63,7 @@ const MyPage = ({ user }) => {
             {profile.friends.map(friend =>
               <li key={friend._id}>
                 <h3>{friend.name}</h3>
-                <button style={{backgroundColor:"red"}}>Brock Up</button>   
+                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Brock Up</button>   
               </li>
               )}
           </ul>
