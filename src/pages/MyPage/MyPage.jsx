@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
+import { socket } from "../../services/socket"
 
 const MyPage = ({ user }) => {
   const [profile, setProfile] = useState('')
+  const [refresh, setRefresh] = useState(0)
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -12,12 +14,16 @@ const MyPage = ({ user }) => {
       setProfile(data)
     }
     fetchProfile()
-  }, [user])
+    setRefresh(0)
+  }, [])
+
+  socket.on('friendRequest', () => setRefresh(1))
 
   const handleAccept = async (friendId) => {
     try {
       const newProfile = await profileService.acceptFriendRequest(friendId)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
