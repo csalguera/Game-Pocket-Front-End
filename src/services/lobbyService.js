@@ -57,9 +57,25 @@ const deleteLobboy = async (id) => {
   }
 }
 
+const addChatroom = async (lobbyId, chatroomId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${lobbyId}/${chatroomId}/add-chatroom`, {
+      method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export {
   index,
   create,
   show,
   deleteLobboy as delete,
+  addChatroom,
 }

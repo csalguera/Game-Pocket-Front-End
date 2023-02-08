@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import styles from "./NavStick.module.css"
 
 const NavStick = ({ user }) => {
   const [route, setRoute] = useState(0)
@@ -23,30 +22,33 @@ const NavStick = ({ user }) => {
     route >= routes.length - 1 ? setRoute(0) : setRoute(route + 1)
   }
 
-  if (user)
   return (
-    <div className={styles.container}>
-      <button className={styles.navstickLeft} onClick={navstickLeft}>
-        Left
-      </button>
-        <p>
-          {
-            destination === '/'
-            ?
-            'HOME'
-            :
-            destination
-            .replace('/', '')
-            .replace('-', ' ')
-            .toUpperCase()
-          }
-        </p>
-      <button className={styles.navstickRight} onClick={navstickRight}>
-        Right
-      </button>
-      <Link to={destination}>
-        <button className={styles.navButton}>
-          Navigate
+    <div className="navstick-container">
+      <div className="buttons-container">
+        <button className="navstick-left" onClick={navstickLeft}>
+          <img className="arrow-left" src="/assets/arrow.png" alt="" />
+        </button>
+          <Link className="navstick-link" to={destination}>
+          <p className="destination-name">
+            {
+              destination === '/'
+              ?
+              'HOME'
+              :
+              destination
+              .replace('/', '')
+              .replace('-', ' ')
+              .toUpperCase()
+            }
+          </p>
+          </Link>
+        <button className="navstick-right" onClick={navstickRight}>
+          <img className="arrow-right" src="/assets/arrow.png" alt="" />
+        </button>
+      </div>
+      <Link className="navstick-destinaiton" to={destination}>
+        <button className="navstick-button">
+          <p>PUSH</p>
         </button>
       </Link>
     </div>

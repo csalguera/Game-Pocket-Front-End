@@ -1,9 +1,75 @@
-import { Location, useLocation } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import * as profileService from '../../services/profileService'
 
-const Profile = () =>{
-  const location = useLocation()
+const Profile = ({ user }) => {
+  const { id } = useParams()
+  const [profile, setProfile] = useState('')
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const data = await profileService.getProfile(id)
+      setProfile(data)
+    }
+    fetchProfile()
+  }, [id])
+
+  const handleSubmit = async evt =>{
+    evt.preventDefault()
+    try {
+      const newProfile = await profileService.sendFriendRequest(profile._id)
+      setProfile(newProfile)
+    } catch (err){
+      console.log(err);
+    }
+  }
+
   return (
-    <h1>{location.state.name}</h1>
+    <>
+      <h1>{profile.name}</h1>
+      <img src={
+        profile.photo
+        ?
+        profile.photo
+        :
+        "https://i.imgur.com/izJwDia.png"
+      }
+        alt=""
+        width="150px"
+      />
+      <h2>
+        Current Records: {
+          profile.records?.length
+          ?
+          'Loading...'
+          :
+          'No records yet'
+        }
+      </h2>
+      <h2>
+        Friends: {
+          profile.friends?.length
+          ?
+          'Pay $5 to see your friends.'
+          :
+          'No friends yet'
+        }
+      </h2>
+      {
+        profile.friendRequests?.filter(requestId => requestId === user.profile).length === 0
+        ?
+        <form
+          autoComplete="off"
+          onSubmit={handleSubmit}
+        >
+          <div>
+            <button>Send Friend Request</button>
+          </div>
+        </form>
+        :
+        <h2>Request Sent</h2>
+      }
+    </>
   )
 }
 

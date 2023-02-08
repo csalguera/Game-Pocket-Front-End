@@ -28,11 +28,11 @@ import * as lobbyService from './services/lobbyService'
 // styles
 import './App.css'
 import Footer from './components/Footer/Footer'
+import MyPage from './pages/MyPage/MyPage'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [friends, setFriends] = useState([])
- 
   const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
@@ -54,8 +54,6 @@ const App = () => {
     }
     if (user) fetchAllFriends()
   }, [user])
-
-
 
   // fetch records
   useEffect(() => {
@@ -84,7 +82,7 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} socket={socket}/>} />
+        <Route path="/" element={<Landing user={user} />} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
@@ -97,7 +95,7 @@ const App = () => {
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />
@@ -105,7 +103,7 @@ const App = () => {
           path="/profiles/:id"
           element={
             <ProtectedRoute user={user}>
-              <Profile />
+              <Profile user={user} />
             </ProtectedRoute>
           }
         />
@@ -114,6 +112,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-page"
+          element={
+            <ProtectedRoute user={user}>
+              <MyPage user={user} />
             </ProtectedRoute>
           }
         />

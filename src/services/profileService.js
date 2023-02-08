@@ -20,4 +20,59 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
-export { getAllProfiles, addPhoto }
+async function getProfile(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}`, {
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+async function sendFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/send-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+async function myPage() {
+  const res = await fetch(`${BASE_URL}/myPage`, {
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+async function acceptFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/accept-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+async function breakupFriend(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/breakup-friendship`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+async function denyFriendRequest(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/deny-friend-request`, {
+    method: 'PUT',
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
+  })
+  return await res.json()
+}
+
+export { 
+  getAllProfiles,
+  addPhoto,
+  getProfile,
+  sendFriendRequest,
+  myPage,
+  acceptFriendRequest,
+  denyFriendRequest,
+  breakupFriend,
+}

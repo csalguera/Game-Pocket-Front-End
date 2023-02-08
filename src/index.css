@@ -2,6 +2,11 @@ html {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
@@ -408,3 +413,326 @@ body {
 }
 
 /*! ============DEFENDER==========  */
+
+/*! ============FOOTER============  */
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding-top: 16px;
+}
+
+.footer * {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container * {
+  margin: 8px;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5vw 1.5vh;
+}
+
+.footer-container a:hover {
+  text-decoration: underline;
+}
+
+.navstick-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  height: 50px;
+  position: sticky;
+  background-color: rgba(0, 0, 0, 0.9);
+  bottom: 0;
+  width: 100%;
+}
+
+.buttons-container {
+  display: flex;
+  width: 400px;
+}
+
+.navstick-left,
+.navstick-right {
+  width: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+.navstick-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.navstick-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.navstick-link {
+  text-decoration: none;
+}
+
+.navstick-button {
+  width: 45px;
+  height: 45px;
+  font-size: 12px;
+  font-weight: bold;
+  border: solid black 3px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+
+.navstick-button:hover {
+  filter: brightness(200%);
+}
+
+.arrow-left,
+.arrow-right {
+  width: 30px;
+}
+
+.arrow-right {
+  transform: scaleX(-1);
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  filter: invert();
+}
+
+.destination-name {
+  color: #02bbf9;
+  user-select: none;
+}
+
+.destination-name:hover {
+  color: #d18f3c;
+}
+
+.navstick-destinaiton {
+  text-decoration: none;
+}
+
+
+/*! ============FOOTER============  */
+
+
+
+/*! ============LOBBY LIST/SPACE INVADER============  */
+#space-invaders{
+  background-color: #222359;
+}
+
+h1.space-invaders {
+  font-family: 'Russo One', sans-serif;
+  font-size: 5em;
+  color: #C0D535;
+  text-shadow: 
+              0 -3px 2px #758CC6,
+              0 -6px 2px #3A99D4;
+}
+
+#space-invaders #lobby-container {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  border-radius: 40px;
+  margin-bottom: 5%;
+}
+
+.lobbyCard {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  background-color: #3DB644;
+  border-radius: 20px;
+  margin: 1%;
+  padding: 1%;
+}
+
+.lobbyCard:hover {
+  background-color: rgb(0, 255, 0);
+}
+
+div.lobbyCard button{
+  background-color: black;
+  color: white;
+  font-family: 'VT323', monospace;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+}
+
+div.lobbyCard button:hover {
+  background-color: red;
+}
+
+.lobbyCard div {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 40em;
+  padding: 1%;
+  border-radius: 20px;
+}
+
+.lobbyCard div * {
+  background-color: black;
+}
+
+.lobbyCard a {
+  text-decoration: none;
+  color: white;
+  font-family: 'VT323', monospace;
+}
+
+#space-invaders #lobby-container .form {
+  font-family: 'VT323', monospace;
+  background-color: black;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  border: 4px solid #3DB644;
+  border-radius: 20px;
+  color: white;
+  margin: 1%;
+  font-size: 24px;
+}
+
+#lobby-container .form button {
+  font-family: 'VT323', monospace;
+  background-color: white;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+}
+
+#lobby-container .form input {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#space-invaders #lobby-container .form button:hover {
+  background-color: #00ff0d;
+}
+
+#main-page {
+  display: flex;
+  width: 100%
+}
+
+#bad-guy-container img {
+  width: 100%;
+  padding: 5%;
+  max-width: 120%;
+}
+
+#good-guy{
+  width: 50%;
+  max-width: 80px;
+  /* animation: move 2s 20; */
+}
+
+/* @keyframes move{
+  0%{margin-left: -80%}
+  50%{margin-left: 80%}
+  100%{margin-left: -80%}
+} */
+
+#image-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+img.shot#left {
+  padding-left: 0;
+  width: 10%;
+  max-width: 30px;
+  margin-left: -80%;
+}
+
+img.shot#right {
+  padding-left: 0;
+  width: 10%;
+  max-width: 30px;
+  margin-left: 40%;
+}
+/*! ============LOBBY LIST/SPACE INVADER============  */
+
+/*! ============LOBBY ROOM============  */
+
+
+#lobby-room {
+  background-color: red;
+  justify-items: center;
+}
+
+#lobby-room h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#lobby-head {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 1%;
+  width: 20%;
+}
+
+#chatroom {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  margin: 1%;
+  width: 80%;
+  justify-content: space-between;
+}
+
+#lobby-screen {
+  display: flex;
+}
+
+#send-container form {
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+}
+
+/*! ============LOBBY ROOM============  */
