@@ -69,9 +69,11 @@ const LobbyRoom = ({ user }) => {
     e.preventDefault()
     const chatroomData = await chatroomService.create(chatroomInput)
     await lobbyService.addChatroom(lobby._id, chatroomData._id)
-    setChatrooms([...chatrooms, chatroomData._id]) //! remove object id once chatroom is populated 
+    setChatrooms([...chatrooms, chatroomData]) //! remove object id once chatroom is populated 
     setChatroomInput({name: ""})
   }
+
+  console.log(chatrooms)
 
   if (!lobby) return <h1>Loading</h1>
   return (
@@ -91,18 +93,21 @@ const LobbyRoom = ({ user }) => {
           }
         </h2>
         <h2>
-          Chatrooms: {
-            chatrooms?.length
-            ?
-            chatrooms.map(chatroom => (
-              <ul key={chatroom}>
-                <li><Chatroom chatroom={chatroom} /></li>
-              </ul>
-            ))
-            :
-            'No other chatrooms'
-          }
+          Chatrooms:
         </h2>
+          <h3>
+            {
+              chatrooms?.length
+              ?
+              chatrooms.map(chatroom => (
+                <ul key={chatroom._id}>
+                  <li><Chatroom chatroom={chatroom} /></li>
+                </ul>
+              ))
+              :
+              'No other chatrooms'
+            }
+          </h3>
         <ChatroomForm
           handleCreateChatroom={handleCreateChatroom}
           handleChange={handleChange}

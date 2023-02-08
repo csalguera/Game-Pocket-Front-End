@@ -1,7 +1,8 @@
 const Chatroom = ({ chatroom, chatrooms }) => {
   return (
     <>
-      {chatroom.name}
+      {chatroom.name} - Members: {chatroom.members?.length}
+      <button>Join</button>
     </>
   )
 }
