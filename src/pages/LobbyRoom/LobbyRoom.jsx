@@ -109,6 +109,7 @@ const LobbyRoom = ({ user }) => {
           <button>Create</button>
         </div>
       </form>
+      <div id="chatroom">
         {chatroomMessages.map(message => 
         <div key={message._id}>
           <div>{message.content} - {message.from}
@@ -120,6 +121,7 @@ const LobbyRoom = ({ user }) => {
         }
         </div>
         )}
+        </div>
         <form
         autoComplete='off'
         onSubmit={handleSendMessage}
