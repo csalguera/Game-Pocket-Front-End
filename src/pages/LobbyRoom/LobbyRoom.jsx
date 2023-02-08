@@ -62,7 +62,7 @@ const LobbyRoom = ({ user }) => {
     fetchChatrooms()
   }, [])
 
-  const createChatroom = async e => {
+  const handleCreateChatroom = async e => {
     e.preventDefault()
     try {
       const chatroomData = await chatroomService.create()
@@ -122,6 +122,21 @@ const LobbyRoom = ({ user }) => {
             <button>Send</button>
           </div>
         </form>
+      <form
+      autoComplete='off'
+      onSubmit={handleCreateChatroom}
+      >
+        <div>
+          <label htmlFor="name">Chatroom:</label>
+          <input
+            type="text"
+            name='name'
+            onChange={handleChange}
+            value={chatroomMessages.name}
+          />
+          <button>Create</button>
+        </div>
+      </form>
     </>
   )
 }
