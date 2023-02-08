@@ -536,7 +536,7 @@ body {
 
 
 
-/*! ============LOBBY LIST============  */
+/*! ============LOBBY LIST/SPACE INVADER============  */
 #space-invaders{
   background-color: #222359;
 }
@@ -689,4 +689,26 @@ img.shot#right {
   max-width: 30px;
   margin-left: 40%;
 }
-/*! ============LOBBY LIST============  */
+/*! ============LOBBY LIST/SPACE INVADER============  */
+
+/*! ============LOBBY ROOM============  */
+
+
+#lobby-room {
+  background-color: red;
+  justify-items: center;
+}
+
+#lobby-head {
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+#chatroom {
+  background-color: blue;
+}
+
+/*! ============LOBBY ROOM============  */
