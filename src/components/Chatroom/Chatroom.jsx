@@ -5,7 +5,9 @@ const Chatroom = ({ chatroom, handleJoinChatroom }) => {
       <h3>
         {chatroom.name} - Members: {chatroom.members?.length}
       </h3>
-      <button>Join</button>
+      <button onClick={() => handleJoinChatroom()}>
+        Join
+      </button>
     </>
   )
 }
