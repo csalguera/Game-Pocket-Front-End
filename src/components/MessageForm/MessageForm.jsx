@@ -1,4 +1,4 @@
-const MessageForm = () => {
+const MessageForm = ({ handleSendMessage, handleChange, message }) => {
   return (
     <>
     </>
