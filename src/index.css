@@ -738,19 +738,46 @@ img.shot#right {
 }
 
 #send-container form {
-  background-color: yellow;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 95%;
 
 }
 
-#send-container form input {
+#send-container form button {
   background-color: black;
   color: white;
-  height: 32px;
-  width: 40rem;
+  width: 140%;
   border: none;
+  border-radius: 10px;
+  height: 80%;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+}
+
+#send-container form button:hover{
+  background-color: #00ff0d;
+  color: red;
+}
+
+#send-container form div:nth-child(1){
+  width: 95%;
+}
+
+#send-container form div:nth-child(2){
+  width: 5%;
+}
+
+#send-container form div input {
+  font-family: 'VT323', monospace;
+  background-color: black;
+  color: white;
+  font-size: 32px;
+  height: 32px;
+  width: 100%;
+  border: none;
+  padding: 20px;
 }
 
 #send-container form input:focus-visible{
@@ -781,10 +808,6 @@ img.shot#right {
 
 #my-message button:hover {
   background-color: red;
-} 
-
-#other-message {
-  /* background-color: aquamarine; */
 }
 
 .message-content {
