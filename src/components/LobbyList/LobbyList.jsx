@@ -18,14 +18,11 @@ const LobbyList = ({ user, socket }) => {
       const data = await lobbyService.index()
       setLobbies(data)
     }
-    console.log(refresh)
-    socket.on('refresh', () => {setRefresh(refresh+1)})
     if (user) fetchAllLobbies()
-
-    return () => {
-      socket.off('refresh');
-    }
+    
   }, [refresh])
+  
+  socket.on('refreshLobby', () => {setRefresh(refresh+1)})
 
   const updateForm = msg => {
     setFormData(msg)
@@ -38,7 +35,7 @@ const LobbyList = ({ user, socket }) => {
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
-    socket.emit('refresh')
+    socket.emit('refreshLobby')
     setRefresh(refresh+1)
     try {
       const newLobby = await lobbyService.create(formData)
@@ -49,7 +46,7 @@ const LobbyList = ({ user, socket }) => {
   }
 
   const handleDelete = async (id) => {
-    socket.emit('refresh')
+    socket.emit('refreshLobby')
     setRefresh(refresh-1)
     try {
       const oldLobby = await lobbyService.delete(id)
