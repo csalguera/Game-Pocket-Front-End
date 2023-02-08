@@ -536,7 +536,7 @@ body {
 
 
 
-/*! ============LOBBY LIST============  */
+/*! ============LOBBY LIST/SPACE INVADER============  */
 #space-invaders{
   background-color: #222359;
 }
@@ -652,11 +652,13 @@ div.lobbyCard button:hover {
 
 #bad-guy-container img {
   width: 100%;
-  padding: 5%
+  padding: 5%;
+  max-width: 120%;
 }
 
 #good-guy{
   width: 50%;
+  max-width: 80px;
   /* animation: move 2s 20; */
 }
 
@@ -677,12 +679,60 @@ div.lobbyCard button:hover {
 img.shot#left {
   padding-left: 0;
   width: 10%;
+  max-width: 30px;
   margin-left: -80%;
 }
 
 img.shot#right {
   padding-left: 0;
   width: 10%;
+  max-width: 30px;
   margin-left: 40%;
 }
-/*! ============LOBBY LIST============  */
+/*! ============LOBBY LIST/SPACE INVADER============  */
+
+/*! ============LOBBY ROOM============  */
+
+
+#lobby-room {
+  background-color: red;
+  justify-items: center;
+}
+
+#lobby-room h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#lobby-head {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 1%;
+  width: 20%;
+}
+
+#chatroom {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  margin: 1%;
+  width: 80%;
+  justify-content: space-between;
+}
+
+#lobby-screen {
+  display: flex;
+}
+
+#send-container form {
+  background-color: yellow;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+}
+
+/*! ============LOBBY ROOM============  */
