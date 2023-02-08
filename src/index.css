@@ -747,7 +747,18 @@ img.shot#right {
   background-color: brown;
 }
 
+#my-message {
+  /* background-color: white; */
+  /* width: fit-content; */
+}
+
 #other-message {
   background-color: aquamarine;
+  /* width: fit-content; */
+}
+
+.message-content {
+  background-color: white;
+  width: fit-content;
 }
 /*! ============LOBBY ROOM============  */
