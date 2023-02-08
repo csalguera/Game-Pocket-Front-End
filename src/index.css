@@ -800,17 +800,20 @@ img.shot#right {
 }
 
 #message-container::-webkit-scrollbar{
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0);
 }
 
 ::-webkit-scrollbar-track {
-  background: black;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #3DB644;
   border-radius: 4px;
+  size: 20px;
 }
 
 /* Handle on hover */
