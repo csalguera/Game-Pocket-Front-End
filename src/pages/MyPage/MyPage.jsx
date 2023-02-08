@@ -33,6 +33,7 @@ const MyPage = ({ user }) => {
     try {
       const newProfile = await profileService.denyFriendRequest(friendId)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
@@ -42,6 +43,7 @@ const MyPage = ({ user }) => {
     try {
       const newProfile = await profileService.breakupFriend(friendId)
       setProfile(newProfile)
+      socket.emit('friendRequest')
     } catch (err){
       console.log(err);
     }
