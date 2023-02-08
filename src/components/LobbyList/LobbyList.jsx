@@ -3,9 +3,10 @@ import { Link } from "react-router-dom"
 
 import * as lobbyService from '../../services/lobbyService'
 
-const LobbyList = ({ user }) => {
+const LobbyList = ({ user, socket }) => {
 
   const [lobbies, setLobbies] = useState([])
+  const [refresh, setRefresh] = useState(0)
   const [formData, setFormData] = useState({
     name: '',
     content: ''
@@ -18,7 +19,10 @@ const LobbyList = ({ user }) => {
       setLobbies(data)
     }
     if (user) fetchAllLobbies()
-  }, [user])
+    
+  }, [refresh])
+  
+  socket.on('refreshLobby', () => {setRefresh(refresh+1)})
 
   const updateForm = msg => {
     setFormData(msg)
@@ -31,6 +35,8 @@ const LobbyList = ({ user }) => {
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
+    socket.emit('refreshLobby')
+    setRefresh(refresh+1)
     try {
       const newLobby = await lobbyService.create(formData)
       setLobbies([...lobbies, newLobby] )
@@ -40,6 +46,8 @@ const LobbyList = ({ user }) => {
   }
 
   const handleDelete = async (id) => {
+    socket.emit('refreshLobby')
+    setRefresh(refresh-1)
     try {
       const oldLobby = await lobbyService.delete(id)
       setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
