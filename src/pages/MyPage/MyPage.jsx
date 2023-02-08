@@ -24,6 +24,15 @@ const MyPage = ({ user }) => {
     }
   }
 
+  const handleDeny = async (friendId) => {
+    try {
+      const newProfile = await profileService.denyFriendRequest(friendId)
+      setProfile(newProfile)
+    } catch (err){
+      console.log(err);
+    }
+  }
+
   const handleBreakUp = async (friendId) => {
     try {
       const newProfile = await profileService.breakupFriend(friendId)
@@ -81,7 +90,7 @@ const MyPage = ({ user }) => {
           <li key={request._id}>
             <h3>{request.name}</h3>
             <button onClick={() => handleAccept(request._id)}>Accept</button>
-            <button style={{backgroundColor:"red"}}>Deny</button>   
+            <button style={{backgroundColor:"red"}} onClick={() => handleDeny(request._id)}>Deny</button>   
           </li>
           )}
         </ul>
