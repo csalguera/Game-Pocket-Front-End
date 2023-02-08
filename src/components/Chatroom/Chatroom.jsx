@@ -1,4 +1,5 @@
-const Chatroom = ({ chatroom, chatrooms }) => {
+const Chatroom = ({ chatroom }) => {
+
   return (
     <>
       <h3>
