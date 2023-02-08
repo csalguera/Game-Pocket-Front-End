@@ -28,6 +28,7 @@ const LobbyRoom = ({ user }) => {
       setLobby(data)
       setChatroomMessages(data.mainroom.messages)
       setChatrooms(data.chatrooms)
+      console.log(data.chatrooms)
     }
     fetchLobby()
   }, [])
@@ -101,7 +102,8 @@ const LobbyRoom = ({ user }) => {
               ?
               chatrooms.map(chatroom => (
                 <ul key={chatroom._id}>
-                  <li><Chatroom chatroom={chatroom} /></li>
+                  <li>{chatroom.name}</li>
+                  {/* <li><Chatroom chatroom={chatroom} /></li> */}
                 </ul>
               ))
               :
