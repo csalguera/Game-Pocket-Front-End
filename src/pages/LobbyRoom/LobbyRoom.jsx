@@ -118,7 +118,7 @@ const LobbyRoom = ({ user }) => {
               </ul>
             ))
             :
-            'No other chatrooms'
+            <h3>No other chatrooms</h3>
           }
         <ChatroomForm
           handleCreateChatroom={handleCreateChatroom}
