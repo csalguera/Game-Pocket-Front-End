@@ -15,11 +15,13 @@ import * as chatroomService from '../../services/chatroomService'
 
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
+  const location = useLocation()
   const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
   const [chatrooms, setChatrooms] = useState([])
+  // const [members, setMembers] = useState([])
 
   // fetch lobby
   useEffect(() => {
@@ -78,9 +80,12 @@ const LobbyRoom = ({ user }) => {
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
   }
 
-  const handleJoinChatroom = async () => {
-    console.log(chatrooms)
-  }
+  // const handleJoinChatroom = async (evt) => {
+  //   const joinChatroom = await chatroomService.update(evt._id)
+  //   setMembers([...members, user.profile])
+  // }
+
+  // console.log(members)
 
   if (!lobby) return <h1>Loading</h1>
   return (
@@ -110,7 +115,7 @@ const LobbyRoom = ({ user }) => {
                 <li>
                   <ChatroomList
                     chatroom={chatroom}
-                    handleJoinChatroom={handleJoinChatroom}
+                    // handleJoinChatroom={handleJoinChatroom}
                     handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
                   />
@@ -144,7 +149,7 @@ const LobbyRoom = ({ user }) => {
           handleChange={handleChange}
           message={message}
           />
-          </div>
+      </div>
       </div>  
       </div>
     </div>

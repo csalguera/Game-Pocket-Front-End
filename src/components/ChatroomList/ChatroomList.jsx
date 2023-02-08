@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const ChatroomList = ({ chatroom, handleJoinChatroom, handleDeleteChatroom, user }) => {
   
   return (
@@ -5,7 +7,12 @@ const ChatroomList = ({ chatroom, handleJoinChatroom, handleDeleteChatroom, user
       <h3>
         {chatroom.name} - Members: {chatroom.members?.length}
       </h3>
-      <button onClick={() => handleJoinChatroom()}>
+      <Link to={`/chatroom/${chatroom._id}`}
+        // chatroom={chatroom}
+      >
+        test
+      </Link>
+      <button onClick={() => handleJoinChatroom(chatroom)}>
         Join
       </button>
       {chatroom.owner === user.profile
