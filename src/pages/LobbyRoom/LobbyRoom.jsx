@@ -105,21 +105,6 @@ const LobbyRoom = ({ user }) => {
         handleChange={handleChange}
         chatroomInput={chatroomInput}
       />
-      <form
-      autoComplete='off'
-      onSubmit={handleCreateChatroom}
-      >
-        <div>
-          <label htmlFor="name">Create a chatroom:</label>
-          <input
-            type="text"
-            name='name'
-            onChange={handleChange}
-            value={chatroomInput.name}
-          />
-          <button>Create</button>
-        </div>
-      </form>
       <div id="chatroom">
         {chatroomMessages.map(message => 
         <div key={message._id}>
