@@ -56,13 +56,15 @@ const Profile = ({ user, socket }) => {
         Friends: {
           profile.friends?.length
           ?
-          'Pay $5 to see your friends.'
+          `
+          Pay $5 to see my ${profile.friends.length} friends.`
           :
           'No friends yet'
         }
       </h2>
       {
-        profile.friendRequests?.filter(requestId => requestId === user.profile).length === 0
+        !profile.friendRequests?.filter(requestId => requestId === user.profile).length &&
+        !profile.friends?.filter(requestId => requestId === user.profile).length
         ?
         <form
           autoComplete="off"
@@ -73,7 +75,11 @@ const Profile = ({ user, socket }) => {
           </div>
         </form>
         :
+        !profile.friends?.filter(requestId => requestId === user.profile).length
+        ?
         <h2>Request Sent</h2>
+        :
+        <h2>You Are Friends</h2>
       }
     </>
   )
