@@ -10,9 +10,8 @@ import * as chatroomService from '../../services/chatroomService'
 import * as messageService from '../../services/messageService'
 import { socket } from '../../services/socket';
 
-const Chatroom = ({ user, lobby }) => {
+const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
   const { id } = useParams()
-  const [chatroom, setChatroom] =useState([])
   const [members, setMembers] = useState([])
   const [messageForm, setMessageForm] = useState({content: ''})
   const [messages, setMessages] = useState([])
@@ -22,8 +21,8 @@ const Chatroom = ({ user, lobby }) => {
     const fetchChatroom = async () => {
       const data = await chatroomService.show(id)
       setChatroom(data)
-      setMembers(data.members)
-      setMessages(data.messages)
+      setMembers(data?.members)
+      setMessages(data?.messages)
     }
     fetchChatroom()
     setRefresh(0)
@@ -64,7 +63,7 @@ const Chatroom = ({ user, lobby }) => {
   return (
     <>
       <div id='lobby-room'>
-        <h1 className='space-invaders'>{chatroom.name}</h1>
+        <h1 className='space-invaders'>{chatroom?.name}</h1>
         <div id="lobby-screen">
           <div id="lobby-head">
             <h2>

@@ -33,8 +33,8 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     const fetchLobby = async () => {
       const data = await lobbyService.show(id)
       setLobby(data)
-      setChatroomMessages(data.mainroom.messages)
-      setChatrooms(data.chatrooms)
+      setChatroomMessages(data.mainroom?.messages)
+      setChatrooms(data?.chatrooms)
     }
     fetchLobby()
     setRefresh(0)
@@ -156,7 +156,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       </div>
       <div id="chatroom">
         <div id="message-container">
-        {chatroomMessages.map(message =>
+        {chatroomMessages?.map(message =>
         <div key={message._id}>
           <Message
             message={message}
