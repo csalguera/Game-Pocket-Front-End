@@ -60,7 +60,7 @@ const App = () => {
       const lobbyLocation = location.pathname.replace('/lobby/', '')
       if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
     }
-    leaveLobby()
+    if (lobby) leaveLobby()
   }, [location])
 
   return (
