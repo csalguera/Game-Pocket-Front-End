@@ -140,12 +140,93 @@ body {
   background-color: #5158C3;
 }
 
-#pacman.body {
-  height: 100vh;
-}
-
 #pacman.page-head{
   margin-top: 0;
+}
+
+#pacman-container{
+  height: 80%;
+  width: 80%;
+  /* border: 2px dashed white; */
+  top: 30%;
+  left: 10%;
+  position: absolute;
+}
+
+#red-ghost{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  /* background-color: red; */
+  animation-name: ghost;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+#ms-pacman {
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  /* background-color: red; */
+  animation-name: pacman;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+@keyframes pacman {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 95%;
+  }
+  50% {
+    top: 95%;
+    left: 95%;
+  }
+  75% {
+    top: 95%;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes ghost {
+  0% {
+    top: 0;
+    left: 95%;
+  }
+  25% {
+    top: 95%;
+    left: 95%;
+  }
+  50% {
+    top: 95%;
+    left: 0;
+  }
+  75% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 95%;
+  }
 }
 
 #pacman h1 {
