@@ -53,6 +53,10 @@ const Chatroom = ({ user }) => {
     socket.emit('refreshMessage')
   }
 
+  const handleLeaveChatroom = async (members, id) => {
+    if(members.some(member => member === user.profile)) 
+    await chatroomService.joinChatroom(id)
+  }
 
   return (
     <>
