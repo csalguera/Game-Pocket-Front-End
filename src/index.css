@@ -190,19 +190,19 @@ body {
   }
   25% {
     top: 0;
-    left: 95%;
+    left: 90%;
   }
   50% {
     top: 95%;
-    left: 95%;
+    left: 90%;
   }
   75% {
     top: 95%;
-    left: 0;
+    left: -5%;
   }
   100% {
     top: 0;
-    left: 0;
+    left: -5%;
   }
 }
 
