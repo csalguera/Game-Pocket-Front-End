@@ -13,7 +13,7 @@ const Signup = props => {
       <div className="page-head" id="pacman">
         <img src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" />
         <h1>Sign Up</h1>
-        <img src="https://i.imgur.com/XfSVnUx.png" alt="pacman" />
+        <img src="https://i.imgur.com/DmSS1RI.gif" alt="pacman" />
       </div>
       <main className="body" id="pacman">
         <div className="form-container">
