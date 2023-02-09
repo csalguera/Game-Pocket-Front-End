@@ -85,7 +85,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
   }
 
   const handleLeaveLobby = async (id) => {
-    await chatroomService.leaveLobby(id)
+    await lobbyService.leaveLobby(id)
   }
 
   if (!lobby) return <h1>Loading</h1>
