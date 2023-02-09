@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 // Components
@@ -17,6 +17,7 @@ import { socket } from '../../services/socket';
 
 const LobbyRoom = ({ user, lobby, setLobby }) => {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
