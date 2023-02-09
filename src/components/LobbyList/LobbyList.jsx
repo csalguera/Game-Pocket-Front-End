@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import * as lobbyService from '../../services/lobbyService'
 
 const LobbyList = ({ user, socket }) => {
-
+  const navigate = useNavigate()
   const [lobbies, setLobbies] = useState([])
   const [refresh, setRefresh] = useState(0)
   const [formData, setFormData] = useState({
