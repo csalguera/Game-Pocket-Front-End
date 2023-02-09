@@ -52,10 +52,10 @@ const MyPage = ({ user }) => {
   
   return (
     <>
-    <div className="profile-page">
-      <h1>PROFILE</h1>
+    <div className="profile-page" id="simpsons">
+      <h1>P R O F I L E</h1>
       <div id="profile-body">
-        <div id="head-container">
+        <div className="head-container" id="simpsons">
           <img src={
             profile.photo
             ?
@@ -68,15 +68,15 @@ const MyPage = ({ user }) => {
           />
             <Link to="/update-profile" id="update-profile">Update Profile</Link>
           </div>
-      <h2>
-        Friends:</h2> {
+      <h2> Friends:</h2> 
+      {
           profile.friends?.length
           ?
-          <div className="friends-container" >
+          <div className="friends-container" id="simpsons">
             {profile.friends.map(friend =>
               <div key={friend._id}>
                 <h3>{friend.name}</h3>
-                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
+                <button onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
               </div>
               )}
           </div>
@@ -89,12 +89,12 @@ const MyPage = ({ user }) => {
         {
           profile.friendRequests?.length 
           ? 
-          <div className="friend-requests">
+          <div className="friend-requests" id="simpsons">
           {profile.friendRequests.map(request =>
           <div key={request._id}>
             <h3>{request.name}</h3>
             <button onClick={() => handleAccept(request._id)}>Accept</button>
-            <button style={{backgroundColor:"red"}} onClick={() => handleDeny(request._id)}>Deny</button>   
+            <button onClick={() => handleDeny(request._id)}>Deny</button>   
           </div>
           )}
         </div>
