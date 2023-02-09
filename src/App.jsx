@@ -136,6 +136,8 @@ const App = () => {
               <Chatroom
                 user={user}
                 lobby={lobby}
+                chatroom={chatroom}
+                setChatroom={chatroom}
               />
             </ProtectedRoute>
           }
