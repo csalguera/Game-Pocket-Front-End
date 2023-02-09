@@ -49,6 +49,7 @@ const MyPage = ({ user }) => {
     }
   }
 
+  
   return (
     <>
       <img src={
@@ -61,7 +62,7 @@ const MyPage = ({ user }) => {
         alt=""
         width="150px"
       />
-      <Link to="/change-password" id="change-password">Change Password</Link>
+        <Link to="/change-password" id="change-password">Update Profile</Link>
       <h2>
         Current Records: {
           profile.records?.length

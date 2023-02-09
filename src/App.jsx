@@ -26,6 +26,7 @@ import * as lobbyService from './services/lobbyService'
 import './App.css'
 import Footer from './components/Footer/Footer'
 import MyPage from './pages/MyPage/MyPage'
+import Chatroom from './pages/Chatroom/Chatroom'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -111,6 +112,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <Leaderboard records={records} user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/chatroom/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <Chatroom user={user} />
             </ProtectedRoute>
           }
         />

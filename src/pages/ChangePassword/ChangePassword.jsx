@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ChangePasswordForm from '../../components/ChangePasswordForm/ChangePasswordForm'
-
+import SignupForm from '../../components/SignupForm/SignupForm'
 
 const ChangePassword = props => {
   const [message, setMessage] = useState([''])
@@ -20,6 +20,7 @@ const ChangePassword = props => {
         <div className='form-container'>
           <p>{message}</p>
           <ChangePasswordForm {...props} updateMessage={updateMessage} />
+          <SignupForm {...props} updateMessage={updateMessage} />
         </div>
       </main>
     </>
