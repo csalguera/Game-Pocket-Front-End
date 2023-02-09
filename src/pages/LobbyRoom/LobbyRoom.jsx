@@ -114,7 +114,6 @@ const LobbyRoom = ({ user }) => {
                 <div key={chatroom._id} id="mini-room">
                   <ChatroomList
                     chatroom={chatroom}
-                    // handleJoinChatroom={handleJoinChatroom}
                     handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
                   />
