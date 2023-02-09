@@ -86,6 +86,20 @@ const joinLobby = async (id) => {
   }
 }
 
+const leaveLobby = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/leave-lobby`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   create,
@@ -93,4 +107,5 @@ export {
   deleteLobby as delete,
   addChatroom,
   joinLobby,
+  leaveLobby,
 }

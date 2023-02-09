@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Components
 import ChatroomList from '../../components/ChatroomList/ChatroomList';
@@ -83,6 +84,10 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
   }
 
+  const handleLeaveLobby = async (id) => {
+    await lobbyService.leaveLobby(id)
+  }
+
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
@@ -95,7 +100,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           Current Members: {
             lobby.members?.length
             ?
-            lobby.members.map(member => member.name)
+            lobby.members.length
             :
             0
           }
@@ -127,6 +132,13 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           handleChange={handleChange}
           chatroomInput={chatroomInput}
         />
+        <div id="button-container">
+          <Link to='/'>
+            <button onClick={() => handleLeaveLobby(lobby._id)}>
+              Leave
+            </button>
+          </Link>
+        </div>
       </div>
       <div id="chatroom">
         <div id="message-container">
