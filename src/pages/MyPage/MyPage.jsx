@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 import { socket } from "../../services/socket"
+import { useLocation } from "react-router-dom"
 
-const MyPage = ({ user }) => {
+const MyPage = () => {
   const [profile, setProfile] = useState('')
   const [refresh, setRefresh] = useState(0)
-
+  const location = useLocation()
+  
   useEffect(() => {
     const fetchProfile = async () => {
       const data = await profileService.myPage()
@@ -15,6 +17,8 @@ const MyPage = ({ user }) => {
     fetchProfile()
     setRefresh(0)
   }, [refresh])
+  
+  console.log(location)
 
   socket.on('friendRequest', () => setRefresh(1))
 
@@ -66,39 +70,40 @@ const MyPage = ({ user }) => {
           width="150px"
           />
             <Link to="/update-profile" id="update-profile">Update Profile</Link>
-          </div>
-      <h2> Friends:</h2> 
-      {
-          profile.friends?.length
-          ?
-          <div className="friends-container" id="simpsons">
-            {profile.friends.map(friend =>
-              <div key={friend._id}>
-                <h3>{friend.name}</h3>
-                <button onClick={() => handleBreakUp(friend._id)} id="break-up">Break Up</button>   
-              </div>
-              )}
-          </div>
-          :
-          'No friends yet'
-        }
-      {/* </h2> */}
-      <h2>
-        Friend Requests:</h2> 
-        {
-          profile.friendRequests?.length 
-          ? 
-          <div className="friend-requests" id="simpsons">
-          {profile.friendRequests.map(request =>
-          <div key={request._id}>
-            <h3>{request.name}</h3>
-            <button onClick={() => handleAccept(request._id)} id="accept">Accept</button>
-            <button onClick={() => handleDeny(request._id)} id="break-up">Deny</button>   
-          </div>
-          )}
         </div>
-        : 0
-      }
+        <h2>Mood: {` ${profile.mood? profile.mood:"Poker Face"}`}</h2>
+        <h2>Friends:</h2> 
+        {
+            profile.friends?.length
+            ?
+            <div className="friends-container" id="simpsons">
+              {profile.friends.map(friend =>
+                <div key={friend._id}>
+                  <h3>{friend.name}</h3>
+                  <button onClick={() => handleBreakUp(friend._id)} id="break-up">Break Up</button>   
+                </div>
+                )}
+            </div>
+            :
+            'No friends yet'
+          }
+        {/* </h2> */}
+        <h2>
+          Friend Requests:</h2> 
+          {
+            profile.friendRequests?.length 
+            ? 
+            <div className="friend-requests" id="simpsons">
+            {profile.friendRequests.map(request =>
+            <div key={request._id}>
+              <h3>{request.name}</h3>
+              <button onClick={() => handleAccept(request._id)} id="accept">Accept</button>
+              <button onClick={() => handleDeny(request._id)} id="break-up">Deny</button>   
+            </div>
+            )}
+          </div>
+          : 0
+        }
       </div>
     </div>
     </>
