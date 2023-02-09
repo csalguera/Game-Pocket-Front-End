@@ -985,14 +985,12 @@ img.shot#right {
 #game-over h1 {
 
   font-size: 1000%;
-  /* background-color: cyan; */
   padding: 40px;
 }
 
 #options {
   display: flex;
   flex-direction: row;
-  /* background-color: blue; */
   justify-content: center;
   color: white;
   width: 100%;
@@ -1000,12 +998,16 @@ img.shot#right {
 
 #options a {
   font-size: 64px;
-  /* background-color: green; */
   color: white;
   padding: 40px;
   margin: 2%;
   text-decoration: none;
   border: 2px solid white;
+}
+
+#options a:hover {
+  background-color: white;
+  color: black;
 }
 
 /*! ============LANDING PAGE============  */
