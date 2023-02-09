@@ -123,7 +123,10 @@ const App = () => {
           path='/chatroom/:id'
           element={
             <ProtectedRoute user={user}>
-              <Chatroom user={user} />
+              <Chatroom
+                user={user}
+                lobby={lobby}
+              />
             </ProtectedRoute>
           }
         />

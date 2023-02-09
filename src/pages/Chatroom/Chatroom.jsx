@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import LobbyList from "../../components/LobbyList/LobbyList"
 
 // Components
 import Message from "../../components/Message/Message"
@@ -10,7 +11,7 @@ import * as chatroomService from '../../services/chatroomService'
 import * as messageService from '../../services/messageService'
 import { socket } from '../../services/socket';
 
-const Chatroom = ({ user }) => {
+const Chatroom = ({ user, lobby }) => {
   const { id } = useParams()
   const [chatroom, setChatroom] =useState([])
   const [members, setMembers] = useState([])
@@ -57,6 +58,8 @@ const Chatroom = ({ user }) => {
     await chatroomService.leaveChatroom(id)
     setMembers(members.filter(member => member._id !== user.profile))
   }
+
+  console.log(lobby)
 
   return (
     <>
