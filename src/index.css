@@ -257,6 +257,10 @@ body {
   background-color: #F91103;
 }
 
+#pacman .button-container > :nth-child(1):hover {
+  background-color: #00ff0d;
+}
+
 #pacman .button-container > :nth-child(1):disabled {
   padding: 3px;
   margin-right: 0.5rem;
@@ -272,6 +276,9 @@ body {
   margin-right: 0.5rem;
   border-radius: 10px;
   background-color: #FDDD10;
+}
+#pacman a button:hover {
+  background-color: red;
 }
 
 #pacman input {
