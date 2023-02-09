@@ -29,6 +29,7 @@ body {
 /*! =============NAVBAR===========  */
 
 .navbar {
+  background-color: black;
   height: 3rem;
   margin: 0;
 }
@@ -966,3 +967,45 @@ img.shot#right {
 }
 
 /*! ============LOBBY ROOM============  */
+
+/*! ============LANDING PAGE============  */
+
+#game-over{
+  font-family: 'VT323', monospace;
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-over h1 {
+
+  font-size: 1000%;
+  /* background-color: cyan; */
+  padding: 40px;
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  /* background-color: blue; */
+  justify-content: center;
+  color: white;
+  width: 100%;
+}
+
+#options a {
+  font-size: 64px;
+  /* background-color: green; */
+  color: white;
+  padding: 40px;
+  margin: 2%;
+  text-decoration: none;
+  border: 2px solid white;
+}
+
+/*! ============LANDING PAGE============  */
