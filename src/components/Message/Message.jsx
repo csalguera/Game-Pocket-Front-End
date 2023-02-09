@@ -4,7 +4,7 @@ const Message = ({ user, message, deleteMessage }) => {
       {message.sender === user.profile ? 
       <div id="my-message">
         <div className="message-content">
-          {message.content} - {message.from}
+          {message.content}
         </div>
         <button onClick={() => deleteMessage(message._id)}>X</button>
       </div>
@@ -12,7 +12,7 @@ const Message = ({ user, message, deleteMessage }) => {
       :
       <div id="other-message">
         <div className="message-content">
-        {message.content} - {message.from}
+        {message.from}: {message.content}
         </div>
       </div>
       }
