@@ -33,14 +33,9 @@ const LobbyList = ({ user, socket }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleJoinLobby = async (memebers, lobbyId) => {
-    if(!memebers.some(memeberId => memeberId === user.profile)) 
-      try {
-        const joinLobby = await lobbyService.joinLobby(lobbyId)
-        console.log("Join a lobby")
-      } catch (err){
-        console.log(err);
-      }
+  const handleJoinLobby = async (members, lobbyId) => {
+    if(!members.some(memberId => memberId === user.profile)) 
+    await lobbyService.joinLobby(lobbyId)
   }
 
   const handleSubmit = async evt =>{
