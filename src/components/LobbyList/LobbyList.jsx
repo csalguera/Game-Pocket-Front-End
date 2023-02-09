@@ -54,12 +54,8 @@ const LobbyList = ({ user, socket }) => {
   const handleDelete = async (id) => {
     socket.emit('refreshLobby')
     setRefresh(refresh-1)
-    try {
-      const oldLobby = await lobbyService.delete(id)
-      setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
-    } catch (err){
-      console.log(err);
-    }
+    const oldLobby = await lobbyService.delete(id)
+    setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
   }
 
   return (
