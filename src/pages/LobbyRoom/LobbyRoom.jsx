@@ -16,6 +16,7 @@ import { socket } from '../../services/socket';
 
 const LobbyRoom = ({ user }) => {
   const { id } = useParams()
+  const location = useLocation()
   const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
@@ -84,9 +85,6 @@ const LobbyRoom = ({ user }) => {
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
   }
 
-  const handleJoinChatroom = async () => {
-  }
-
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
@@ -116,7 +114,7 @@ const LobbyRoom = ({ user }) => {
                 <div key={chatroom._id} id="mini-room">
                   <ChatroomList
                     chatroom={chatroom}
-                    handleJoinChatroom={handleJoinChatroom}
+                    // handleJoinChatroom={handleJoinChatroom}
                     handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
                   />
@@ -151,7 +149,7 @@ const LobbyRoom = ({ user }) => {
           handleChange={handleChange}
           message={message}
           />
-          </div>
+      </div>
       </div>  
       </div>
     </div>
