@@ -135,7 +135,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           handleChange={handleChange}
           chatroomInput={chatroomInput}
         />
-        <div id="button-container">
+        <div id="leave">
           <Link to='/'>
             <button onClick={() => handleLeaveLobby(lobby._id)}>
               Leave

@@ -822,6 +822,7 @@ img.shot#right {
   color: white;
   border-radius: 20px;
   padding: 10%;
+  margin: 1%;
 }
 
 #lobby-head h2{
@@ -1063,6 +1064,10 @@ button-contaniner a {
 
 #create-chatroom button:hover {
   background-color: #00ff0d;
+}
+
+#leave button:hover{
+  background-color: red;
 }
 
 /*! ============LOBBY ROOM============  */
