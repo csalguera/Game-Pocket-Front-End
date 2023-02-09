@@ -1271,7 +1271,7 @@ h1#other-profile-name {
 
 #hero-container button{
   background-color: black;
-  border: 1px solid white;
+  border: none;
   color: white;
   margin: 6%;
   font-family: 'VT323', monospace;
@@ -1279,13 +1279,11 @@ h1#other-profile-name {
   border-radius: 20px;
 }
 
-#hero-container form:hover{
-  background-color: rgb(0, 255, 0);
-  /* border: 1px solid rgba(255, 255, 255, 0); */
-}
 
 #hero-container button:hover{
   border: 1px solid rgb(0, 255, 0);
+  background-color: #00ff0d;
+  color: black;
 }
 
 #profile-photo{
