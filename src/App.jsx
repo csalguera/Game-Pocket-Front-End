@@ -54,7 +54,7 @@ const App = () => {
     if (user) fetchAllRecords()
   }, [user])
 
-  // location change
+  // leave lobby automatically
   useEffect(() => {
     const leaveLobby = async () => {
       const lobbyLocation = location.pathname.replace('/lobby/', '')
