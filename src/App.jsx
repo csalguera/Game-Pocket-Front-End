@@ -20,6 +20,7 @@ import Leaderboard from './pages/Leaderboard/Leaderboard'
 import * as authService from './services/authService'
 import * as recordService from './services/recordService'
 import * as lobbyService from './services/lobbyService'
+import * as chatroomService from './services/chatroomService'
 
 // styles
 import './App.css'
@@ -55,16 +56,22 @@ const App = () => {
     if (user) fetchAllRecords()
   }, [user])
 
-  // leave lobby automatically
+  // leave lobby and chatroom when locaiton changes
   useEffect(() => {
+    const lobbyLocation = location.pathname.replace('/lobby/', '')
+    const chatroomLocation = location.pathname.replace('/chatroom/', '')
+
     const leaveLobby = async () => {
-      const lobbyLocation = location.pathname.replace('/lobby/', '')
       if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
     }
-    if (lobby) leaveLobby()
-  }, [location])
 
-  console.log(chatroom)
+    const leaveChatroom = async () => {
+      if (chatroom !== chatroomLocation && chatroomLocation === `/lobby/${lobby._id}`) await chatroomService.leaveChatroom(chatroom._id)
+    }
+
+    if (lobby) leaveLobby()
+    if (chatroom) leaveChatroom()
+  }, [location])
 
   return (
     <>

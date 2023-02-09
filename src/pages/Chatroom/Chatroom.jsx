@@ -22,8 +22,8 @@ const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
     const fetchChatroom = async () => {
       const data = await chatroomService.show(id)
       setChatroom(data)
-      setMembers(data.members)
-      setMessages(data.messages)
+      setMembers(data?.members)
+      setMessages(data?.messages)
     }
     fetchChatroom()
     setRefresh(0)
@@ -61,7 +61,7 @@ const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
   return (
     <>
       <div id='lobby-room'>
-        <h1 className='space-invaders'>{chatroom.name}</h1>
+        <h1 className='space-invaders'>{chatroom?.name}</h1>
         <div id="lobby-screen">
           <div id="lobby-head">
             <h2>
