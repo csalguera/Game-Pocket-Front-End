@@ -148,7 +148,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
             message={message}
             deleteMessage={deleteMessage}
             user={user}
-            />
+          />
         </div>
         )}
         </div>
@@ -157,7 +157,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           handleSendMessage={handleSendMessage}
           handleChange={handleChange}
           message={message}
-          />
+        />
       </div>
       </div>  
       </div>
