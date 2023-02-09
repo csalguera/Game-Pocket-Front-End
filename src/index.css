@@ -1300,6 +1300,8 @@ h1#other-profile-name {
 #leaderboard h1 {
   margin-top: 0;
   padding: 2%;
+  font-family: 'VT323', monospace;
+  font-size: 84px;
 }
 
 /*! ============LEEADERBOARD PAGE============  */

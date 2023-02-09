@@ -6,7 +6,7 @@ const Leaderboard = ({ records, user }) => {
     <>
     <div id="leaderboard">
       <h1>UNDER CONSTRUCTION</h1>
-      <img src="https://i.imgur.com/1VrS6Xk.gif" alt="" />
+      <img src="https://i.imgur.com/1VrS6Xk.gif" alt="Rotating arcade machine" />
     </div>
     </>
   )
