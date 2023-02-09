@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import LobbyList from "../../components/LobbyList/LobbyList"
 
 // Components
@@ -81,9 +81,11 @@ const Chatroom = ({ user, lobby }) => {
               }
             </h2>
             <div id="button-container">
-              <button onClick={() => handleLeaveChatroom(chatroom._id)}>
-                Leave
-              </button>
+              <Link to={`/lobby/${lobby._id}`}>
+                <button onClick={() => handleLeaveChatroom(chatroom._id)}>
+                  Leave
+                </button>
+              </Link>
             </div>
           </div>
           <div id="chatroom">
