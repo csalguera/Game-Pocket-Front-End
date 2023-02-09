@@ -35,6 +35,9 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     }
     fetchLobby()
     setRefresh(0)
+    return() => {
+      socket.off('refreshMessage')
+    }
   }, [refresh])
 
   socket.on('refreshMessage', () => setRefresh(1))

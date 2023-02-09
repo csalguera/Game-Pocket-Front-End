@@ -67,7 +67,6 @@ async function denyFriendRequest(profileId) {
 }
 
 async function updateProfile(formData, photo) {
-  console.log(formData)
   try {
     const res = await fetch(`${BASE_URL}`, {
       method: 'PUT',
@@ -78,7 +77,6 @@ async function updateProfile(formData, photo) {
       body: JSON.stringify(formData),
     })
     const profile = await res.json()
-    console.log(profile)
     if (photo) {
       const photoData = new FormData()
       photoData.append('photo', photo)

@@ -13,9 +13,12 @@ const NavBar = ({ user, handleLogout, socket }) => {
     }
     fetchProfile()
     setRefresh(0)
+    return() => {
+      socket.off('changeName')
+    }
   }, [refresh])
-
-  socket.on('changeName', () => { setRefresh(1)
+  
+  socket.on('changeName', () => { setRefresh(refresh+1)
                                   console.log("changedName")  })
   return (
     <nav className="navbar">

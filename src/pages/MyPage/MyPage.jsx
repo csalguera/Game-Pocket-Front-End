@@ -14,6 +14,9 @@ const MyPage = () => {
     }
     fetchProfile()
     setRefresh(0)
+    return() => {
+      socket.off('friendRequest')
+    }
   }, [refresh])
 
   socket.on('friendRequest', () => setRefresh(1))
