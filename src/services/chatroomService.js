@@ -105,6 +105,20 @@ const joinChatroom = async (id) => {
   }
 }
 
+const leaveChatroom = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/leave-chatroom`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   create,
