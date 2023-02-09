@@ -902,6 +902,10 @@ img.shot#right {
   align-items: center;
 } 
 
+#button-container button:nth-child(1){
+  width: 100%;
+}
+
 #button-container button:nth-child(1):hover{
   background-color: rgb(0, 255, 0);
 }
@@ -910,8 +914,12 @@ img.shot#right {
   background-color: red;
 }
 
-#button-container button {
+#button-container button{
   width: 50%;
+}
+
+button-contaniner a {
+  width: 40px;
 }
 
 #send-container form {
