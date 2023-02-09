@@ -58,8 +58,7 @@ const App = () => {
   useEffect(() => {
     const leaveLobby = async () => {
       const lobbyLocation = location.pathname.replace('/lobby/', '')
-      if (lobby !== lobbyLocation) await lobbyService.leaveLobby(lobby._id)
-      console.log(lobbyLocation)
+      if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
     }
     leaveLobby()
   }, [location])
