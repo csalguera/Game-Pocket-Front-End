@@ -159,11 +159,11 @@ body {
   /* border: 2px solid black; */
   border-radius: 50%;
   /* background-color: red; */
-  animation-name: slide;
+  animation-name: ghost;
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  top: 5;
+  top: 0;
   left: 0;
   position: relative;
 }
@@ -174,7 +174,7 @@ body {
   /* border: 2px solid black; */
   border-radius: 50%;
   /* background-color: red; */
-  animation-name: slide;
+  animation-name: pacman;
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -183,7 +183,7 @@ body {
   position: relative;
 }
 
-@keyframes slide {
+@keyframes pacman {
   0% {
     top: 0;
     left: 0;
@@ -203,6 +203,29 @@ body {
   100% {
     top: 0;
     left: 0;
+  }
+}
+
+@keyframes ghost {
+  0% {
+    top: 0;
+    left: 95%;
+  }
+  25% {
+    top: 95%;
+    left: 95%;
+  }
+  50% {
+    top: 95%;
+    left: 0;
+  }
+  75% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 95%;
   }
 }
 
