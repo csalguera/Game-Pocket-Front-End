@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, socket }) => {
   const [nickName, setNickName] = useState('')
+  const [refresh, setRefresh] = useState(0)
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -11,12 +12,11 @@ const NavBar = ({ user, handleLogout }) => {
       setNickName(data.name)
     }
     fetchProfile()
-  }, [])
+    setRefresh(0)
+  }, [refresh])
 
-  const handleNewName = (name) => {
-    setNickName(name)
-  }
-
+  socket.on('changeName', () => { setRefresh(1)
+                                  console.log("changedName")  })
   return (
     <nav className="navbar">
       {user ?
@@ -25,11 +25,7 @@ const NavBar = ({ user, handleLogout }) => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/profiles">Profiles</Link></li>
           <li><Link to="/leaderboard">Leaderboard</Link></li>
-          <li>
-            <Link to="/my-page"
-              // state={ }
-            >
-            My Page</Link></li>
+          <li><Link to="/my-page">My Page</Link></li>
           <li><Link to="" onClick={handleLogout}>Log Out</Link></li>
         </ul>
       :

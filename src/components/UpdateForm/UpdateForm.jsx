@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
+import { socket } from '../../services/socket'
 
 
 const UpdateForm = props => {
@@ -28,6 +29,7 @@ const UpdateForm = props => {
     try {
       await profileService.updateProfile(formData, photoData.photo)
       navigate('/my-page')
+      socket.emit('changeName')
     } catch (err) {
       props.updateMessage(err.message)
     }
