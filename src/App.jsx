@@ -57,10 +57,11 @@ const App = () => {
   // location change
   useEffect(() => {
     const leaveLobby = async () => {
-      if (lobby) await lobbyService.leaveLobby(lobby._id)
+      const lobbyLocation = location.pathname.replace('/lobby/', '')
+      if (lobby !== lobbyLocation) await lobbyService.leaveLobby(lobby._id)
+      console.log(lobbyLocation)
     }
     leaveLobby()
-    console.log(lobby)
   }, [location])
 
   return (
