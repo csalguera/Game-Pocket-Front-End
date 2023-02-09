@@ -59,6 +59,8 @@ const Chatroom = ({ user, lobby }) => {
     setMembers(members.filter(member => member._id !== user.profile))
   }
 
+  console.log(messageForm)
+
   return (
     <>
       <div id='lobby-room'>
@@ -102,7 +104,7 @@ const Chatroom = ({ user, lobby }) => {
             <MessageForm
               handleSendMessage={handleSendMessage}
               handleChange={handleChange}
-              message={messageForm.content}
+              message={messageForm}
             />
           </div>
           </div>  
