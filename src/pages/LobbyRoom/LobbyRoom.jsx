@@ -7,6 +7,7 @@ import ChatroomList from '../../components/ChatroomList/ChatroomList';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 import Message from '../../components/Message/Message';
 import MessageForm from '../../components/MessageForm/MessageForm';
+import Loading from '../Loading/Loading';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
@@ -88,7 +89,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     await lobbyService.leaveLobby(id)
   }
 
-  if (!lobby) return <h1>Loading</h1>
+  if (!lobby) return <Loading />
   return (
     <>
     <div id='lobby-room'>
