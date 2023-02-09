@@ -55,7 +55,7 @@ const Chatroom = ({ user }) => {
 
   const handleLeaveChatroom = async (members, id) => {
     if(members.some(member => member === user.profile)) 
-    await chatroomService.joinChatroom(id)
+    await chatroomService.leaveChatroom(id)
   }
 
   return (
