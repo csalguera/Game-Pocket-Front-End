@@ -66,6 +66,28 @@ async function denyFriendRequest(profileId) {
   return await res.json()
 }
 
+async function updateProfile(formData, photo) {
+  try {
+    const res = await fetch(`${BASE_URL}`, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+      body: JSON.stringify(formData),
+    })
+    const profile = await res.json()
+    console.log(profile)
+    if (photo) {
+      const photoData = new FormData()
+      photoData.append('photo', photo)
+      return await addPhoto(
+        photoData,
+        profile._id
+      )
+    }
+  } catch (err) {
+    throw err
+  }
+}
+
 export { 
   getAllProfiles,
   addPhoto,
@@ -75,4 +97,5 @@ export {
   acceptFriendRequest,
   denyFriendRequest,
   breakupFriend,
+  updateProfile,
 }

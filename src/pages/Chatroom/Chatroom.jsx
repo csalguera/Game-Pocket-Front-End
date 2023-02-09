@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import LobbyList from "../../components/LobbyList/LobbyList"
 
 // Components
 import Message from "../../components/Message/Message"
