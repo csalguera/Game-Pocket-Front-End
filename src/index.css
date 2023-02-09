@@ -29,6 +29,7 @@ body {
 /*! =============NAVBAR===========  */
 
 .navbar {
+  background-color: black;
   height: 3rem;
   margin: 0;
 }
@@ -102,8 +103,9 @@ body {
 
 .body {
   background-color: brown;
-  padding: 2%;
+  padding: 5%;
   height: 100%;
+  padding-top: 0;
 }
 
 .form-container {
@@ -140,6 +142,10 @@ body {
 
 #pacman.body {
   height: 100vh;
+}
+
+#pacman.page-head{
+  margin-top: 0;
 }
 
 #pacman h1 {
@@ -966,3 +972,46 @@ img.shot#right {
 }
 
 /*! ============LOBBY ROOM============  */
+
+/*! ============LANDING PAGE============  */
+
+#game-over{
+  font-family: 'VT323', monospace;
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-over h1 {
+  font-size: 1500%;
+  padding: 40px;
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  width: 100%;
+}
+
+#options a {
+  font-size: 64px;
+  color: white;
+  padding: 40px;
+  margin: 2%;
+  text-decoration: none;
+  border: 2px solid white;
+}
+
+#options a:hover {
+  background-color: white;
+  color: black;
+}
+
+/*! ============LANDING PAGE============  */
