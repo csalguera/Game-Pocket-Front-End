@@ -30,7 +30,7 @@ const UpdateForm = props => {
     try {
       await authService.signup(formData, photoData.photo)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/my-page')
     } catch (err) {
       props.updateMessage(err.message)
     }
