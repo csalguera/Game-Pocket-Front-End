@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import LobbyList from "../../components/LobbyList/LobbyList"
 
 // Components
 import Message from "../../components/Message/Message"
@@ -10,7 +11,7 @@ import * as chatroomService from '../../services/chatroomService'
 import * as messageService from '../../services/messageService'
 import { socket } from '../../services/socket';
 
-const Chatroom = ({ user }) => {
+const Chatroom = ({ user, lobby }) => {
   const { id } = useParams()
   const [chatroom, setChatroom] =useState([])
   const [members, setMembers] = useState([])
@@ -53,6 +54,10 @@ const Chatroom = ({ user }) => {
     socket.emit('refreshMessage')
   }
 
+  const handleLeaveChatroom = async (id) => {
+    await chatroomService.leaveChatroom(id)
+    setMembers(members.filter(member => member._id !== user.profile))
+  }
 
   return (
     <>
@@ -73,6 +78,13 @@ const Chatroom = ({ user }) => {
                 0
               }
             </h2>
+            <div id="button-container">
+              <Link to={`/lobby/${lobby._id}`}>
+                <button onClick={() => handleLeaveChatroom(chatroom._id)}>
+                  Leave
+                </button>
+              </Link>
+            </div>
           </div>
           <div id="chatroom">
             <div id="message-container">

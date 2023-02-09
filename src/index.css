@@ -74,12 +74,6 @@ body {
   }
 }
 
-@media (max-width: 680px){
-  .navbar #change-password {
-    display: none;
-  }
-}
-
 @media (max-width: 450px){
   .navbar {
     margin-bottom: 40px;

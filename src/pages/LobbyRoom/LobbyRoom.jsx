@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // Components
 import ChatroomList from '../../components/ChatroomList/ChatroomList';
@@ -14,10 +14,8 @@ import * as chatroomService from '../../services/chatroomService'
 import { socket } from '../../services/socket';
 
 
-const LobbyRoom = ({ user }) => {
+const LobbyRoom = ({ user, lobby, setLobby }) => {
   const { id } = useParams()
-  const location = useLocation()
-  const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
@@ -114,7 +112,6 @@ const LobbyRoom = ({ user }) => {
                 <div key={chatroom._id} id="mini-room">
                   <ChatroomList
                     chatroom={chatroom}
-                    // handleJoinChatroom={handleJoinChatroom}
                     handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
                   />

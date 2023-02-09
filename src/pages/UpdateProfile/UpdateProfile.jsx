@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import ChangePasswordForm from '../../components/ChangePasswordForm/ChangePasswordForm'
-import SignupForm from '../../components/SignupForm/SignupForm'
+import UpdateForm from '../../components/UpdateForm/UpdateForm'
 
-const ChangePassword = props => {
+const UpdateProfile = props => {
   const [message, setMessage] = useState([''])
 
   const updateMessage = msg => {
@@ -20,11 +20,11 @@ const ChangePassword = props => {
         <div className='form-container'>
           <p>{message}</p>
           <ChangePasswordForm {...props} updateMessage={updateMessage} />
-          <SignupForm {...props} updateMessage={updateMessage} />
+          <UpdateForm {...props} updateMessage={updateMessage} />
         </div>
       </main>
     </>
   )
 }
 
-export default ChangePassword
+export default UpdateProfile

@@ -10,7 +10,6 @@ const ChatroomList = ({ chatroom, handleDeleteChatroom, user }) => {
     await chatroomService.joinChatroom(id)
   }
 
-
   return (
     <>
       <h3>

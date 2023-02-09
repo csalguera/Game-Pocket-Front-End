@@ -6,10 +6,10 @@ const NavStick = ({ user }) => {
 
   const routes = [
     '/',
-    '/friends',
     '/profiles',
     '/leaderboard',
-    '/change-password',
+    '/my-page',
+    '/update-profile',
   ]
 
   const destination = `${routes[route]}`

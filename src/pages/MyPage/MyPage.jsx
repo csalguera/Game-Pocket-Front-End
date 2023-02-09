@@ -62,7 +62,7 @@ const MyPage = ({ user }) => {
         alt=""
         width="150px"
       />
-        <Link to="/change-password" id="change-password">Update Profile</Link>
+        <Link to="/update-profile" id="update-profile">Update Profile</Link>
       <h2>
         Current Records: {
           profile.records?.length
