@@ -53,8 +53,7 @@ const Chatroom = ({ user }) => {
     socket.emit('refreshMessage')
   }
 
-  const handleLeaveChatroom = async (members, id) => {
-    if(members.some(member => member === user.profile)) 
+  const handleLeaveChatroom = async (id) => {
     await chatroomService.leaveChatroom(id)
   }
 
@@ -78,7 +77,7 @@ const Chatroom = ({ user }) => {
               }
             </h2>
             <div id="button-container">
-              <button onClick={() => handleLeaveChatroom(members, chatroom._id)}>
+              <button onClick={() => handleLeaveChatroom(chatroom._id)}>
                 Leave
               </button>
             </div>
