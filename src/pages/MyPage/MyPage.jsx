@@ -64,6 +64,7 @@ const MyPage = ({ user }) => {
           }
           alt=""
           width="150px"
+          id="profile-photo"
           />
             <Link to="/update-profile" id="update-profile">Update Profile</Link>
           </div>
