@@ -45,7 +45,7 @@ const Profile = ({ user, socket }) => {
               }
               alt=""
               width="150px"
-              />
+              id="profile-photo"/>
             </div>
             <div id="hero-container">
           <h2>
