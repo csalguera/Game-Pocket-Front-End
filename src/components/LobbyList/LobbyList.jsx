@@ -32,7 +32,7 @@ const LobbyList = ({ user, socket }) => {
   }
 
   const handleJoinLobby = async (members, lobbyId) => {
-    if(!members.some(memberId => memberId === user.profile)) 
+    if(!members?.some(memberId => memberId === user.profile)) 
     await lobbyService.joinLobby(lobbyId)
   }
 
@@ -47,6 +47,7 @@ const LobbyList = ({ user, socket }) => {
       content: ''
     })
     navigate(`/lobby/${newLobby._id}`)
+    await lobbyService.joinLobby(newLobby._id)
   }
 
   const handleDelete = async (id) => {
