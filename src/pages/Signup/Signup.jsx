@@ -10,14 +10,15 @@ const Signup = props => {
 
   return (
     <>
-    <div id="pacman-container">
-      <img src="https://i.imgur.com/YGNuDWz.gif" alt="pacman" id="ms-pacman"/>
-    </div>
+    {/* <div id="pacman-container-container">
+    </div> */}
       <div className="page-head" id="pacman">
-        {/* <img src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" /> */}
         <h1>Sign Up</h1>
       </div>
       <main className="body" id="pacman">
+    <div id="pacman-container">
+      <img src="https://i.imgur.com/YGNuDWz.gif" alt="pacman" id="ms-pacman"/>
+    </div>
         <div className="form-container">
           <p>{message}</p>
           <SignupForm {...props} updateMessage={updateMessage} />

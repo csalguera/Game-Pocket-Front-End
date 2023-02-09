@@ -145,12 +145,11 @@ body {
 }
 
 #pacman-container{
-  height: 100%;
-  width: 100%;
-  border: 2px dashed black;
-  /* margin: 20px 20%; */
-  top: 0;
-  bottom: 0;
+  height: 80%;
+  width: 80%;
+  /* border: 2px dashed white; */
+  top: 30%;
+  left: 10%;
   position: absolute;
 }
 
