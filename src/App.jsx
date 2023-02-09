@@ -32,6 +32,7 @@ const App = () => {
   const location = useLocation()
   const [user, setUser] = useState(authService.getUser())
   const [lobby, setLobby] = useState('')
+  const [chatroom, setChatroom] = useState('')
   const [records, setRecords] = useState([])
   const navigate = useNavigate()
 
