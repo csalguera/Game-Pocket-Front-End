@@ -16,6 +16,7 @@ const Chatroom = ({ user }) => {
   const [members, setMembers] = useState([])
   const [messageForm, setMessageForm] = useState({content: ''})
   const [messages, setMessages] = useState([])
+  const [refresh, setRefresh] = useState(0)
 
   useEffect(() => {
     const fetchChatroom = async () => {
@@ -25,7 +26,10 @@ const Chatroom = ({ user }) => {
       setMessages(data.messages)
     }
     fetchChatroom()
-  }, [])
+    setRefresh(0)
+  }, [refresh])
+
+  socket.on('refreshMessage', () => setRefresh(1))
 
   const handleChange = e => {
     setMessageForm({
