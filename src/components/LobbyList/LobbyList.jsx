@@ -46,6 +46,7 @@ const LobbyList = ({ user, socket }) => {
       name: '',
       content: ''
     })
+    navigate(`/lobby/${newLobby._id}`)
   }
 
   const handleDelete = async (id) => {
@@ -70,7 +71,7 @@ const LobbyList = ({ user, socket }) => {
           <img src="https://i.imgur.com/1MHgrcd.png" alt="Spaace invader spaceship" id="good-guy"/>
         </div>
         <div id="lobby-container" className="space-invaders">
-          {lobbies.map((lobby, idx) => (
+          {lobbies.map(lobby => (
             <div key={lobby._id} className="lobbyCard">
               <Link to={`/lobby/${lobby._id}`} onClick={() => handleJoinLobby(lobby.members, lobby._id)}>
                 <div>
