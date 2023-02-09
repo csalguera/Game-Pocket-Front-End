@@ -64,6 +64,8 @@ const App = () => {
     if (lobby) leaveLobby()
   }, [location])
 
+  console.log(chatroom)
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} socket={socket}/>
@@ -137,7 +139,7 @@ const App = () => {
                 user={user}
                 lobby={lobby}
                 chatroom={chatroom}
-                setChatroom={chatroom}
+                setChatroom={setChatroom}
               />
             </ProtectedRoute>
           }
