@@ -47,8 +47,9 @@ const Profile = ({ user, socket }) => {
               width="150px"
               />
             </div>
+            <div id="hero-container">
           <h2>
-            Friends: {
+            {
             profile.friends?.length
             ?
             `
@@ -76,6 +77,7 @@ const Profile = ({ user, socket }) => {
           :
           <h2>You Are Friends</h2>
         }
+        </div>
       </div>
     </div>
   </>
