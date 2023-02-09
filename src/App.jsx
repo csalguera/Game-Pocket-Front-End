@@ -1,6 +1,6 @@
 // npm modules
 import { useEffect, useState } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import { socket } from './services/socket'
 
 // page components
@@ -8,7 +8,6 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
-import ChangePassword from './pages/UpdateProfile/UpdateProfile'
 import Profile from './pages/Profile/Profile'
 
 // components
@@ -20,7 +19,6 @@ import Leaderboard from './pages/Leaderboard/Leaderboard'
 // services
 import * as authService from './services/authService'
 import * as recordService from './services/recordService'
-import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'

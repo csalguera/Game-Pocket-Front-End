@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 import { socket } from "../../services/socket"

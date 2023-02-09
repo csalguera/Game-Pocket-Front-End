@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import * as authService from '../../services/authService'
+import * as profileService from '../../services/profileService'
 
 
 const UpdateForm = props => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    password: '',
-    passwordConf: '',
+    mood: '',
   })
   const [photoData, setPhotoData] = useState({})
 
@@ -28,18 +26,17 @@ const UpdateForm = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await authService.signup(formData, photoData.photo)
-      props.handleSignupOrLogin()
+      await profileService.updateProfile(formData, photoData.photo)
       navigate('/my-page')
     } catch (err) {
       props.updateMessage(err.message)
     }
   }
 
-  const { name, email, password, passwordConf } = formData
+  const { name, mood } = formData
 
   const isFormInvalid = () => {
-    return !(name && email && password && password === passwordConf)
+    return !(name && mood)
   }
 
   return (
@@ -60,13 +57,13 @@ const UpdateForm = props => {
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="mood">Mood</label>
         <input
           type="text"
           autoComplete="off"
-          id="email"
-          value={email}
-          name="email"
+          id="mood"
+          value={mood}
+          name="mood"
           onChange={handleChange}
         />
       </div>
