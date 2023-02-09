@@ -8,7 +8,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
-import ChangePassword from './pages/ChangePassword/ChangePassword'
+import ChangePassword from './pages/UpdateProfile/UpdateProfile'
 import Profile from './pages/Profile/Profile'
 
 // components
@@ -27,6 +27,7 @@ import './App.css'
 import Footer from './components/Footer/Footer'
 import MyPage from './pages/MyPage/MyPage'
 import Chatroom from './pages/Chatroom/Chatroom'
+import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -84,10 +85,10 @@ const App = () => {
           }
         />
         <Route
-          path="/change-password"
+          path="/update-profile"
           element={
             <ProtectedRoute user={user}>
-              <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+              <UpdateProfile handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
           }
         />

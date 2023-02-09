@@ -9,7 +9,7 @@ const NavStick = ({ user }) => {
     '/friends',
     '/profiles',
     '/leaderboard',
-    '/change-password',
+    '/update-profile',
   ]
 
   const destination = `${routes[route]}`
