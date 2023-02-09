@@ -55,6 +55,7 @@ const Chatroom = ({ user }) => {
 
   const handleLeaveChatroom = async (id) => {
     await chatroomService.leaveChatroom(id)
+    setMembers(members.filter(member => member._id !== user.profile))
   }
 
   return (
