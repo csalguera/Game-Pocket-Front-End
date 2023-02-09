@@ -11,14 +11,14 @@ import * as chatroomService from '../../services/chatroomService'
 const Chatroom = ({ user }) => {
   const { id } = useParams()
   const [chatroom, setChatroom] =useState([])
-  const [members, setMembers] = useState([])
+  // const [members, setMembers] = useState([])
 
   useEffect(() => {
     const fetchChatroom = async () => {
       const data = await chatroomService.show(id)
       setChatroom(data)
-      setMembers(data.members)
-      console.log(data.members)
+      // setMembers(data.members)
+      // console.log(data.members)
     }
     fetchChatroom()
   }, [])
@@ -27,7 +27,7 @@ const Chatroom = ({ user }) => {
     <>
       <h1>{chatroom.name}</h1>
       <h2>
-        {members.map(member => (
+        {chatroom?.members.map(member => (
           member.name
         ))}
       </h2>
