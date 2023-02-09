@@ -143,6 +143,10 @@ body {
   height: 100vh;
 }
 
+#pacman.page-head{
+  margin-top: 0;
+}
+
 #pacman h1 {
   -webkit-text-stroke: 2px #FD4293;
   color: #EADC59;
