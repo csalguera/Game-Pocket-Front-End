@@ -59,8 +59,6 @@ const Chatroom = ({ user, lobby }) => {
     setMembers(members.filter(member => member._id !== user.profile))
   }
 
-  console.log(lobby)
-
   return (
     <>
       <div id='lobby-room'>
