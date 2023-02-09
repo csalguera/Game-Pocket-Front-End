@@ -102,7 +102,7 @@ const Chatroom = ({ user, lobby }) => {
             <MessageForm
               handleSendMessage={handleSendMessage}
               handleChange={handleChange}
-              message={messageForm.content}
+              message={messageForm}
             />
           </div>
           </div>  
