@@ -30,7 +30,7 @@ import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [lobby, setLobby] = useState('')
-  const [records, setRecords] =useState([])
+  const [records, setRecords] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -51,7 +51,6 @@ const App = () => {
     }
     if (user) fetchAllRecords()
   }, [user])
-
 
   return (
     <>

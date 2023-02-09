@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 // Components
@@ -7,6 +7,7 @@ import ChatroomList from '../../components/ChatroomList/ChatroomList';
 import ChatroomForm from '../../components/ChatroomForm/ChatroomForm';
 import Message from '../../components/Message/Message';
 import MessageForm from '../../components/MessageForm/MessageForm';
+import Loading from '../Loading/Loading';
 
 // Services
 import * as lobbyService from '../../services/lobbyService'
@@ -17,6 +18,7 @@ import { socket } from '../../services/socket';
 
 const LobbyRoom = ({ user, lobby, setLobby }) => {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
@@ -73,10 +75,11 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
 
   const handleCreateChatroom = async e => {
     e.preventDefault()
-    const chatroomData = await chatroomService.create(chatroomInput)
-    await lobbyService.addChatroom(lobby._id, chatroomData._id)
-    setChatrooms([...chatrooms, chatroomData])
+    const newChatroom = await chatroomService.create(chatroomInput)
+    await lobbyService.addChatroom(lobby._id, newChatroom._id)
+    setChatrooms([...chatrooms, newChatroom])
     setChatroomInput({name: ""})
+    navigate(`/chatroom/${newChatroom._id}`)
   }
 
   const handleDeleteChatroom = async (id) => {
@@ -88,7 +91,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     await lobbyService.leaveLobby(id)
   }
 
-  if (!lobby) return <h1>Loading</h1>
+  if (!lobby) return <Loading />
   return (
     <>
     <div id='lobby-room'>

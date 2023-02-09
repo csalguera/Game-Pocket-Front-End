@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import * as lobbyService from '../../services/lobbyService'
 
 const LobbyList = ({ user, socket }) => {
-
+  const navigate = useNavigate()
   const [lobbies, setLobbies] = useState([])
   const [refresh, setRefresh] = useState(0)
   const [formData, setFormData] = useState({
     name: '',
     content: ''
-  }, [])
+  })
 
   // fetch lobbies
   useEffect(() => {
@@ -24,46 +24,37 @@ const LobbyList = ({ user, socket }) => {
   
   socket.on('refreshLobby', () => {setRefresh(1)})
 
-  const updateForm = msg => {
-    setFormData(msg)
-  }
-
   const handleChange = e => {
-    updateForm('')
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
 
-  const handleJoinLobby = async (memebers, lobbyId) => {
-    if(!memebers.some(memeberId => memeberId === user.profile)) 
-      try {
-        const joinLobby = await lobbyService.joinLobby(lobbyId)
-        console.log("Join a lobby")
-      } catch (err){
-        console.log(err);
-      }
+  const handleJoinLobby = async (members, lobbyId) => {
+    if(!members?.some(memberId => memberId === user.profile)) 
+    await lobbyService.joinLobby(lobbyId)
   }
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
     socket.emit('refreshLobby')
     setRefresh(refresh+1)
-    try {
-      const newLobby = await lobbyService.create(formData)
-      setLobbies([...lobbies, newLobby] )
-    } catch (err){
-      console.log(err);
-    }
+    const newLobby = await lobbyService.create(formData)
+    setLobbies([...lobbies, newLobby])
+    setFormData({
+      name: '',
+      content: ''
+    })
+    navigate(`/lobby/${newLobby._id}`)
+    await lobbyService.joinLobby(newLobby._id)
   }
 
   const handleDelete = async (id) => {
     socket.emit('refreshLobby')
     setRefresh(refresh-1)
-    try {
-      const oldLobby = await lobbyService.delete(id)
-      setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
-    } catch (err){
-      console.log(err);
-    }
+    const oldLobby = await lobbyService.delete(id)
+    setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
   }
 
   return (
@@ -81,7 +72,7 @@ const LobbyList = ({ user, socket }) => {
           <img src="https://i.imgur.com/1MHgrcd.png" alt="Spaace invader spaceship" id="good-guy"/>
         </div>
         <div id="lobby-container" className="space-invaders">
-          {lobbies.map((lobby, idx) => (
+          {lobbies.map(lobby => (
             <div key={lobby._id} className="lobbyCard">
               <Link to={`/lobby/${lobby._id}`} onClick={() => handleJoinLobby(lobby.members, lobby._id)}>
                 <div>

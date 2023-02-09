@@ -257,6 +257,10 @@ body {
   background-color: #F91103;
 }
 
+#pacman .button-container > :nth-child(1):hover {
+  background-color: #00ff0d;
+}
+
 #pacman .button-container > :nth-child(1):disabled {
   padding: 3px;
   margin-right: 0.5rem;
@@ -272,6 +276,9 @@ body {
   margin-right: 0.5rem;
   border-radius: 10px;
   background-color: #FDDD10;
+}
+#pacman a button:hover {
+  background-color: red;
 }
 
 #pacman input {
@@ -330,6 +337,10 @@ body {
 #simpsons {
   font-family: 'Rock Salt', cursive;
   background-color: #4CC2FF;
+}
+
+div#simpsons.page-head{
+  margin-top: 0;
 }
 
 #simpsons h1 {
@@ -1236,4 +1247,73 @@ button-contaniner a {
   border: 1px solid rgba(255, 255, 255, 0);
 }
 
+h1#other-profile-name {
+  transform: rotate(0deg);
+  font-size: 200%;
+}
+
+#hero-container {
+  margin: 2%;
+  padding: 2%;
+  background-color: #4CC2FF;
+  border-radius: 40px;
+}
+
+#hero-container > * {
+  background-color: black;
+  border-radius: 20px;
+  padding: 2%;
+}
+
+#hero-container h2{
+  padding: 6%;
+}
+
+#hero-container button{
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+  margin: 6%;
+  font-family: 'VT323', monospace;
+  font-size: large;
+  border-radius: 20px;
+}
+
+#hero-container form:hover{
+  background-color: rgb(0, 255, 0);
+  /* border: 1px solid rgba(255, 255, 255, 0); */
+}
+
+#hero-container button:hover{
+  border: 1px solid rgb(0, 255, 0);
+}
+
+#profile-photo{
+  border-radius: 800px;
+}
 /*! ============PROFILE PAGE============  */
+
+
+/*! ============LEEADERBOARD PAGE============  */
+
+#leaderboard {
+  background-color: #46CAF9;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#leaderboard h1 {
+  margin-top: 0;
+  padding: 2%;
+  font-family: 'VT323', monospace;
+  font-size: 84px;
+}
+
+#loading {
+  background-color: #222359;
+  height: 200vh;
+  width: 100vh;
+}
+/*! ============LEEADERBOARD PAGE============  */
