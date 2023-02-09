@@ -17,20 +17,21 @@ const ChatroomList = ({ chatroom, handleDeleteChatroom, user }) => {
       <h3>
         {chatroom.name} - Members: {chatroom.members?.length}
       </h3>
-      <Link to={`/chatroom/${chatroom._id}`}
-      >
-        <button onClick={handleJoinChatroom}>
-          Join
-        </button>
-      </Link>
-      {chatroom.owner === user.profile
-        ?
-        <button onClick={() => handleDeleteChatroom(chatroom._id)}>
-          Delete
-        </button>
-        :
-        ''
-      }
+      <div id="button-container">
+        <Link to={`/chatroom/${chatroom._id}`}>
+          <button onClick={handleJoinChatroom}>
+            Join
+          </button>
+        </Link>
+        {chatroom.owner === user.profile
+          ?
+          <button onClick={() => handleDeleteChatroom(chatroom._id)}>
+            Delete
+          </button>
+          :
+          ''
+        }
+      </div>
     </>
   )
 }

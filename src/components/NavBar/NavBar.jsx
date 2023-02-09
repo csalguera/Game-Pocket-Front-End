@@ -13,10 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
           <li><Link to="" onClick={handleLogout}>Log Out</Link></li>
         </ul>
       :
-        <ul>
-          <li><Link to="/login">Log In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-        </ul>
+        <div id="landing-nav"></div>
       }
     </nav>
   )

@@ -89,7 +89,7 @@ const LobbyRoom = ({ user }) => {
   return (
     <>
     <div id='lobby-room'>
-      <h1>LOBBY</h1>
+      <h1 className='space-invaders'>L O B B Y</h1>
       <div id="lobby-screen">
       <div id="lobby-head">
         <h2>Description: {lobby.content}</h2>
@@ -102,27 +102,29 @@ const LobbyRoom = ({ user }) => {
             0
           }
         </h2>
-        <h2>
-          Chatrooms:
-        </h2>
-          {
-            chatrooms?.length
-            ?
-            chatrooms.map(chatroom => (
-              <ul key={chatroom._id}>
-                <li>
+        <div id="chatrooms">
+          <h2 id="chatroom-header">
+            Chatrooms:
+          </h2>
+          <div id="chatroom-list">
+            {
+              chatrooms?.length
+              ?
+              chatrooms.map(chatroom => (
+                <div key={chatroom._id} id="mini-room">
                   <ChatroomList
                     chatroom={chatroom}
                     // handleJoinChatroom={handleJoinChatroom}
                     handleDeleteChatroom={handleDeleteChatroom}
                     user={user}
                   />
-                </li>
-              </ul>
-            ))
-            :
-            <h3>No other chatrooms</h3>
-          }
+                </div>
+              ))
+              :
+              <h3>No other chatrooms</h3>
+            }
+          </div>
+        </div>
         <ChatroomForm
           handleCreateChatroom={handleCreateChatroom}
           handleChange={handleChange}
