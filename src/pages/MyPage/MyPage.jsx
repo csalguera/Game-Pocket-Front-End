@@ -52,60 +52,56 @@ const MyPage = ({ user }) => {
   
   return (
     <>
-      <img src={
-        profile.photo
-        ?
-        profile.photo
-        :
-        "https://i.imgur.com/izJwDia.png"
-      }
-        alt=""
-        width="150px"
-      />
-        <Link to="/update-profile" id="update-profile">Update Profile</Link>
-      <h2>
-        Current Records: {
-          profile.records?.length
-          ?
-          'Loading...'
-          :
-          'No records yet'
-        }
-      </h2>
-      <h2>
-        Friends: {
+    <div className="profile-page" id="simpsons">
+      <h1>P R O F I L E</h1>
+      <div id="profile-body">
+        <div className="head-container" id="simpsons">
+          <img src={
+            profile.photo
+            ?
+            profile.photo
+            :
+            "https://i.imgur.com/izJwDia.png"
+          }
+          alt=""
+          width="150px"
+          />
+            <Link to="/update-profile" id="update-profile">Update Profile</Link>
+          </div>
+      <h2> Friends:</h2> 
+      {
           profile.friends?.length
           ?
-          <ul>
+          <div className="friends-container" id="simpsons">
             {profile.friends.map(friend =>
-              <li key={friend._id}>
+              <div key={friend._id}>
                 <h3>{friend.name}</h3>
-                <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
-              </li>
+                <button onClick={() => handleBreakUp(friend._id)} id="break-up">Break Up</button>   
+              </div>
               )}
-          </ul>
+          </div>
           :
           'No friends yet'
         }
-      </h2>
+      {/* </h2> */}
       <h2>
-        Friend Requests: 
+        Friend Requests:</h2> 
         {
-        profile.friendRequests?.length 
-        ? 
-        <ul>
+          profile.friendRequests?.length 
+          ? 
+          <div className="friend-requests" id="simpsons">
           {profile.friendRequests.map(request =>
-          <li key={request._id}>
+          <div key={request._id}>
             <h3>{request.name}</h3>
-            <button onClick={() => handleAccept(request._id)}>Accept</button>
-            <button style={{backgroundColor:"red"}} onClick={() => handleDeny(request._id)}>Deny</button>   
-          </li>
+            <button onClick={() => handleAccept(request._id)} id="accept">Accept</button>
+            <button onClick={() => handleDeny(request._id)} id="break-up">Deny</button>   
+          </div>
           )}
-        </ul>
+        </div>
         : 0
-        }
-      </h2>
-       
+      }
+      </div>
+    </div>
     </>
   )
 }
