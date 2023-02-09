@@ -30,7 +30,7 @@ import Chatroom from './pages/Chatroom/Chatroom'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  const [friends, setFriends] = useState([])
+  const [lobby, setLobby] = useState('')
   const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
@@ -103,7 +103,11 @@ const App = () => {
           path='/lobby/:id'
           element={
             <ProtectedRoute user={user}>
-              <LobbyRoom user={user} />
+              <LobbyRoom
+                user={user}
+                lobby={lobby}
+                setLobby={setLobby}
+              />
             </ProtectedRoute>
           }
         />

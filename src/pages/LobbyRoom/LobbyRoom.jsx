@@ -14,10 +14,10 @@ import * as chatroomService from '../../services/chatroomService'
 import { socket } from '../../services/socket';
 
 
-const LobbyRoom = ({ user }) => {
+const LobbyRoom = ({ user, lobby, setLobby }) => {
   const { id } = useParams()
   const location = useLocation()
-  const [lobby, setLobby] = useState('')
+  // const [lobby, setLobby] = useState('')
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
