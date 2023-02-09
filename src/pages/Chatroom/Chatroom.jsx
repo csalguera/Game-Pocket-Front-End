@@ -78,7 +78,7 @@ const Chatroom = ({ user }) => {
               }
             </h2>
             <div id="button-container">
-              <button>
+              <button onClick={() => handleLeaveChatroom(members, chatroom._id)}>
                 Leave
               </button>
             </div>
