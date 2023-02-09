@@ -67,10 +67,14 @@ async function denyFriendRequest(profileId) {
 }
 
 async function updateProfile(formData, photo) {
+  console.log(formData)
   try {
     const res = await fetch(`${BASE_URL}`, {
       method: 'PUT',
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+       },
       body: JSON.stringify(formData),
     })
     const profile = await res.json()
