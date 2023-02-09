@@ -30,7 +30,7 @@ body {
 
 .navbar {
   background-color: black;
-  height: 3rem;
+  height: 4rem;
   margin: 0;
 }
 
@@ -428,6 +428,7 @@ body {
   font-size: 32px;
   justify-content: center;
   border-top: 4px solid #F62D21;
+  margin-top: 0;
 }
 
 #defender .body {
@@ -1097,3 +1098,19 @@ button-contaniner a {
 }
 
 /*! ============LANDING PAGE============  */
+
+/*! ============PROFILE PAGE============  */
+
+.profile-page {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+}
+
+#profile-body {
+  background-color: #00ff0d;
+}
+
+/*! ============PROFILE PAGE============  */

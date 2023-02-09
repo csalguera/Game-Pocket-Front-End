@@ -52,6 +52,9 @@ const MyPage = ({ user }) => {
   
   return (
     <>
+    <div className="profile-page">
+      <div id="profile-body">
+
       <img src={
         profile.photo
         ?
@@ -59,19 +62,10 @@ const MyPage = ({ user }) => {
         :
         "https://i.imgur.com/izJwDia.png"
       }
-        alt=""
-        width="150px"
+      alt=""
+      width="150px"
       />
         <Link to="/update-profile" id="update-profile">Update Profile</Link>
-      <h2>
-        Current Records: {
-          profile.records?.length
-          ?
-          'Loading...'
-          :
-          'No records yet'
-        }
-      </h2>
       <h2>
         Friends: {
           profile.friends?.length
@@ -91,9 +85,9 @@ const MyPage = ({ user }) => {
       <h2>
         Friend Requests: 
         {
-        profile.friendRequests?.length 
-        ? 
-        <ul>
+          profile.friendRequests?.length 
+          ? 
+          <ul>
           {profile.friendRequests.map(request =>
           <li key={request._id}>
             <h3>{request.name}</h3>
@@ -103,9 +97,10 @@ const MyPage = ({ user }) => {
           )}
         </ul>
         : 0
-        }
+      }
       </h2>
-       
+      </div>
+    </div>
     </>
   )
 }
