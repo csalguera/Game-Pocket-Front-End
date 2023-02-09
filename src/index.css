@@ -1304,4 +1304,9 @@ h1#other-profile-name {
   font-size: 84px;
 }
 
+#loading {
+  background-color: #222359;
+  height: 200vh;
+  width: 100vh;
+}
 /*! ============LEEADERBOARD PAGE============  */
