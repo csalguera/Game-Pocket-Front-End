@@ -1,6 +1,6 @@
 // npm modules
 import { useEffect, useState } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { socket } from './services/socket'
 
 // page components
@@ -19,6 +19,7 @@ import Leaderboard from './pages/Leaderboard/Leaderboard'
 // services
 import * as authService from './services/authService'
 import * as recordService from './services/recordService'
+import * as lobbyService from './services/lobbyService'
 
 // styles
 import './App.css'
@@ -28,6 +29,7 @@ import Chatroom from './pages/Chatroom/Chatroom'
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 
 const App = () => {
+  const location = useLocation()
   const [user, setUser] = useState(authService.getUser())
   const [lobby, setLobby] = useState('')
   const [records, setRecords] = useState([])
@@ -51,6 +53,15 @@ const App = () => {
     }
     if (user) fetchAllRecords()
   }, [user])
+
+  // location change
+  useEffect(() => {
+    const leaveLobby = async () => {
+      const lobbyLocation = location.pathname.replace('/lobby/', '')
+      if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
+    }
+    if (lobby) leaveLobby()
+  }, [location])
 
   return (
     <>
