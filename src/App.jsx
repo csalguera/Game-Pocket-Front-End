@@ -31,7 +31,7 @@ import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
-  const [friends, setFriends] = useState([])
+  const [lobby, setLobby] = useState('')
   const [records, setRecords] =useState([])
   const navigate = useNavigate()
 
@@ -104,7 +104,11 @@ const App = () => {
           path='/lobby/:id'
           element={
             <ProtectedRoute user={user}>
-              <LobbyRoom user={user} />
+              <LobbyRoom
+                user={user}
+                lobby={lobby}
+                setLobby={setLobby}
+              />
             </ProtectedRoute>
           }
         />
@@ -120,7 +124,10 @@ const App = () => {
           path='/chatroom/:id'
           element={
             <ProtectedRoute user={user}>
-              <Chatroom user={user} />
+              <Chatroom
+                user={user}
+                lobby={lobby}
+              />
             </ProtectedRoute>
           }
         />
