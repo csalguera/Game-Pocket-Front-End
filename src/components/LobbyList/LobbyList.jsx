@@ -24,13 +24,11 @@ const LobbyList = ({ user, socket }) => {
   
   socket.on('refreshLobby', () => {setRefresh(1)})
 
-  // const updateForm = msg => {
-  //   setFormData(msg)
-  // }
-
   const handleChange = e => {
-    // updateForm('')
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
   }
 
   const handleJoinLobby = async (members, lobbyId) => {
@@ -44,6 +42,10 @@ const LobbyList = ({ user, socket }) => {
     setRefresh(refresh+1)
     const newLobby = await lobbyService.create(formData)
     setLobbies([...lobbies, newLobby])
+    setFormData({
+      name: '',
+      content: ''
+    })
   }
 
   const handleDelete = async (id) => {
