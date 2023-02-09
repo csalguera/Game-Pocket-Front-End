@@ -78,6 +78,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     await lobbyService.addChatroom(lobby._id, newChatroom._id)
     setChatrooms([...chatrooms, newChatroom])
     setChatroomInput({name: ""})
+    navigate(`/chatroom/${newChatroom._id}`)
   }
 
   const handleDeleteChatroom = async (id) => {
