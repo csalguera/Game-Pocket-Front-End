@@ -844,7 +844,10 @@ img.shot#right {
 }
 
 #lobby-head #mini-room {
-  /* background-color: blue; */
+  border: 1px solid #00ff0d;
+  margin: 5%;
+  border-radius: 20px;
+  padding: 5%;
 }
 
 #chatroom {
