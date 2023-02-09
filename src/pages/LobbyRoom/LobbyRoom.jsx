@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Components
 import ChatroomList from '../../components/ChatroomList/ChatroomList';
@@ -95,7 +96,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           Current Members: {
             lobby.members?.length
             ?
-            lobby.members.map(member => member.name)
+            lobby.members.length
             :
             0
           }
@@ -127,6 +128,13 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           handleChange={handleChange}
           chatroomInput={chatroomInput}
         />
+        <div id="button-container">
+          <Link to='/'>
+            <button>
+              Leave
+            </button>
+          </Link>
+        </div>
       </div>
       <div id="chatroom">
         <div id="message-container">
