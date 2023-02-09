@@ -76,7 +76,7 @@ const MyPage = ({ user }) => {
             {profile.friends.map(friend =>
               <div key={friend._id}>
                 <h3>{friend.name}</h3>
-                <button onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
+                <button onClick={() => handleBreakUp(friend._id)} id="break-up">Break Up</button>   
               </div>
               )}
           </div>
@@ -93,8 +93,8 @@ const MyPage = ({ user }) => {
           {profile.friendRequests.map(request =>
           <div key={request._id}>
             <h3>{request.name}</h3>
-            <button onClick={() => handleAccept(request._id)}>Accept</button>
-            <button onClick={() => handleDeny(request._id)}>Deny</button>   
+            <button onClick={() => handleAccept(request._id)} id="accept">Accept</button>
+            <button onClick={() => handleDeny(request._id)} id="break-up">Deny</button>   
           </div>
           )}
         </div>
