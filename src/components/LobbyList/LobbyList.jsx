@@ -24,12 +24,12 @@ const LobbyList = ({ user, socket }) => {
   
   socket.on('refreshLobby', () => {setRefresh(1)})
 
-  const updateForm = msg => {
-    setFormData(msg)
-  }
+  // const updateForm = msg => {
+  //   setFormData(msg)
+  // }
 
   const handleChange = e => {
-    updateForm('')
+    // updateForm('')
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
