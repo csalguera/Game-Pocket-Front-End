@@ -53,41 +53,43 @@ const MyPage = ({ user }) => {
   return (
     <>
     <div className="profile-page">
+      <h1>PROFILE</h1>
       <div id="profile-body">
-
-      <img src={
-        profile.photo
-        ?
-        profile.photo
-        :
-        "https://i.imgur.com/izJwDia.png"
-      }
-      alt=""
-      width="150px"
-      />
-        <Link to="/update-profile" id="update-profile">Update Profile</Link>
+        <div id="head-container">
+          <img src={
+            profile.photo
+            ?
+            profile.photo
+            :
+            "https://i.imgur.com/izJwDia.png"
+          }
+          alt=""
+          width="150px"
+          />
+            <Link to="/update-profile" id="update-profile">Update Profile</Link>
+          </div>
       <h2>
-        Friends: {
+        Friends:</h2> {
           profile.friends?.length
           ?
-          <ul>
+          <div className="friends-container" >
             {profile.friends.map(friend =>
               <li key={friend._id}>
                 <h3>{friend.name}</h3>
                 <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
               </li>
               )}
-          </ul>
+          </div>
           :
           'No friends yet'
         }
-      </h2>
+      {/* </h2> */}
       <h2>
-        Friend Requests: 
+        Friend Requests:</h2> 
         {
           profile.friendRequests?.length 
           ? 
-          <ul>
+          <div className="friend-requests">
           {profile.friendRequests.map(request =>
           <li key={request._id}>
             <h3>{request.name}</h3>
@@ -95,10 +97,9 @@ const MyPage = ({ user }) => {
             <button style={{backgroundColor:"red"}} onClick={() => handleDeny(request._id)}>Deny</button>   
           </li>
           )}
-        </ul>
+        </div>
         : 0
       }
-      </h2>
       </div>
     </div>
     </>
