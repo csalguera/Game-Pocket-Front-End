@@ -1,5 +1,6 @@
-## Game-Pocket
-![The Lobby Page.](https://i.imgur.com/QgAmQoY.png)
+## Game-Pocket ![Mrs. Pacman](https://i.imgur.com/YGNuDWz.gif)
+![The Lobby Page.](https://i.imgur.com/QgAmQoY.png) 
+
 
   Tired of having to go to 40 different apps to play a game? Well look no further, Game-Pocket is here to save the day! With Game-Pocket you can hop in a lobby with friends or strangers to play some games or just chat!
 
