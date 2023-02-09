@@ -127,4 +127,5 @@ export {
   deleteChatroom as delete,
   show,
   joinChatroom,
+  leaveChatroom,
 }
