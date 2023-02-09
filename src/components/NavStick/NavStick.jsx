@@ -6,9 +6,9 @@ const NavStick = ({ user }) => {
 
   const routes = [
     '/',
-    '/friends',
     '/profiles',
     '/leaderboard',
+    '/my-page',
     '/change-password',
   ]
 
