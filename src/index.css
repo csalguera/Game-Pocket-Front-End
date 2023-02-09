@@ -153,6 +153,21 @@ body {
   position: absolute;
 }
 
+#red-ghost{
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  /* background-color: red; */
+  animation-name: slide;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 5;
+  left: 0;
+  position: relative;
+}
+
 #ms-pacman {
   height: 100px;
   width: 100px;

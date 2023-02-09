@@ -17,6 +17,7 @@ const Signup = props => {
       </div>
       <main className="body" id="pacman">
     <div id="pacman-container">
+      <img src="https://i.imgur.com/oArznbz.gif" alt="red-ghost" id="red-ghost"/>
       <img src="https://i.imgur.com/YGNuDWz.gif" alt="pacman" id="ms-pacman"/>
     </div>
         <div className="form-container">
