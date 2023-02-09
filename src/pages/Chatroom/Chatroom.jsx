@@ -73,6 +73,11 @@ const Chatroom = ({ user }) => {
                 0
               }
             </h2>
+            <div id="button-container">
+              <button>
+                Leave
+              </button>
+            </div>
           </div>
           <div id="chatroom">
             <div id="message-container">
