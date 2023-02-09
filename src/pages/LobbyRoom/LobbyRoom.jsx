@@ -116,7 +116,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
             ?
             lobby.members.length
             :
-            0
+            'Loading...'
           }
         </h2>
         <div id="chatrooms">
