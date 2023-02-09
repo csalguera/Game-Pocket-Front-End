@@ -10,7 +10,7 @@ const LobbyList = ({ user, socket }) => {
   const [formData, setFormData] = useState({
     name: '',
     content: ''
-  }, [])
+  })
 
   // fetch lobbies
   useEffect(() => {
