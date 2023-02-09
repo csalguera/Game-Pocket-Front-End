@@ -84,6 +84,10 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
   }
 
+  const handleLeaveLobby = async (id) => {
+    await chatroomService.leaveLobby(id)
+  }
+
   if (!lobby) return <h1>Loading</h1>
   return (
     <>
