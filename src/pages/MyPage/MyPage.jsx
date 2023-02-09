@@ -74,10 +74,10 @@ const MyPage = ({ user }) => {
           ?
           <div className="friends-container" >
             {profile.friends.map(friend =>
-              <li key={friend._id}>
+              <div key={friend._id}>
                 <h3>{friend.name}</h3>
                 <button style={{backgroundColor:"red"}} onClick={() => handleBreakUp(friend._id)} >Break Up</button>   
-              </li>
+              </div>
               )}
           </div>
           :
@@ -91,11 +91,11 @@ const MyPage = ({ user }) => {
           ? 
           <div className="friend-requests">
           {profile.friendRequests.map(request =>
-          <li key={request._id}>
+          <div key={request._id}>
             <h3>{request.name}</h3>
             <button onClick={() => handleAccept(request._id)}>Accept</button>
             <button style={{backgroundColor:"red"}} onClick={() => handleDeny(request._id)}>Deny</button>   
-          </li>
+          </div>
           )}
         </div>
         : 0
