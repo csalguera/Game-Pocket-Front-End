@@ -23,7 +23,7 @@ const ChangePasswordForm = props => {
     try {
       await authService.changePassword(formData)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/my-page')
     } catch (err) {
       props.updateMessage(err.message)
     }
@@ -84,7 +84,7 @@ const ChangePasswordForm = props => {
         <button disabled={isFormInvalid()}>
           Change Password
         </button>
-        <Link to="/">
+        <Link to="/my-page">
           <button >Cancel</button>
         </Link>
       </div>

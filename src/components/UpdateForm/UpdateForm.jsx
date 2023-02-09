@@ -30,7 +30,7 @@ const UpdateForm = props => {
     try {
       await authService.signup(formData, photoData.photo)
       props.handleSignupOrLogin()
-      navigate('/')
+      navigate('/my-page')
     } catch (err) {
       props.updateMessage(err.message)
     }
@@ -70,30 +70,6 @@ const UpdateForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="newpassword"
-          value={password}
-          name="password"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="confirm">
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="confirm"
-          value={passwordConf}
-          name="passwordConf"
-          onChange={handleChange}
-        />
-      </div>
       <div id='photo'>
         <label htmlFor="photo-upload">
           Upload Photo
@@ -107,9 +83,9 @@ const UpdateForm = props => {
       </div>
       <div className='button-container'>
         <button disabled={isFormInvalid()}>
-          Sign Up
+          Update
         </button>
-        <Link to="/">
+        <Link to="/my-page">
           <button>Cancel</button>
         </Link>
       </div>
