@@ -6,7 +6,6 @@ import * as chatroomService from '../../services/chatroomService'
 const ChatroomList = ({ chatroom, handleDeleteChatroom, user }) => {
 
   const handleJoinChatroom = async (members, id) => {
-    console.log(members)
     if(!members.some(member => member === user.profile)) 
     await chatroomService.joinChatroom(id)
   }
@@ -19,7 +18,7 @@ const ChatroomList = ({ chatroom, handleDeleteChatroom, user }) => {
       </h3>
       <div id="button-container">
         <Link to={`/chatroom/${chatroom._id}`}>
-          <button onClick={handleJoinChatroom}>
+          <button onClick={() => handleJoinChatroom(chatroom.members, chatroom._id)}>
             Join
           </button>
         </Link>
