@@ -74,9 +74,9 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
 
   const handleCreateChatroom = async e => {
     e.preventDefault()
-    const chatroomData = await chatroomService.create(chatroomInput)
-    await lobbyService.addChatroom(lobby._id, chatroomData._id)
-    setChatrooms([...chatrooms, chatroomData])
+    const newChatroom = await chatroomService.create(chatroomInput)
+    await lobbyService.addChatroom(lobby._id, newChatroom._id)
+    setChatrooms([...chatrooms, newChatroom])
     setChatroomInput({name: ""})
   }
 
