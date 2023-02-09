@@ -47,12 +47,8 @@ const LobbyList = ({ user, socket }) => {
     evt.preventDefault()
     socket.emit('refreshLobby')
     setRefresh(refresh+1)
-    try {
-      const newLobby = await lobbyService.create(formData)
-      setLobbies([...lobbies, newLobby] )
-    } catch (err){
-      console.log(err);
-    }
+    const newLobby = await lobbyService.create(formData)
+    setLobbies([...lobbies, newLobby])
   }
 
   const handleDelete = async (id) => {
