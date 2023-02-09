@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 
 // Components
 import ChatroomList from '../../components/ChatroomList/ChatroomList';
@@ -25,6 +26,8 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
   const [chatrooms, setChatrooms] = useState([])
   const [refresh, setRefresh] = useState(0)
 
+  const messagesEndRef = useRef(null)
+
   // fetch lobby
   useEffect(() => {
     const fetchLobby = async () => {
@@ -36,6 +39,11 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     fetchLobby()
     setRefresh(0)
   }, [refresh])
+
+  //SCROLLBAR 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView()
+  }, [chatroomMessages])
 
   socket.on('refreshMessage', () => setRefresh(1))
   //message
@@ -154,6 +162,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           />
         </div>
         )}
+        <div ref={messagesEndRef}></div>
         </div>
         <div id="send-container">
         <MessageForm
