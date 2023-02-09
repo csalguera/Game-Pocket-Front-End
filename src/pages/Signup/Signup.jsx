@@ -10,10 +10,12 @@ const Signup = props => {
 
   return (
     <>
+    <div id="pacman-container">
+      <img src="https://i.imgur.com/YGNuDWz.gif" alt="pacman" id="ms-pacman"/>
+    </div>
       <div className="page-head" id="pacman">
-        <img src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" />
+        {/* <img src="https://i.imgur.com/POd6u7R.png" alt="pacman-ghost" /> */}
         <h1>Sign Up</h1>
-        <img src="https://i.imgur.com/DmSS1RI.gif" alt="pacman" />
       </div>
       <main className="body" id="pacman">
         <div className="form-container">

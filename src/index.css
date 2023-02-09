@@ -140,12 +140,56 @@ body {
   background-color: #5158C3;
 }
 
-#pacman.body {
-  height: 100vh;
-}
-
 #pacman.page-head{
   margin-top: 0;
+}
+
+#pacman-container{
+  height: 100%;
+  width: 100%;
+  border: 2px dashed black;
+  /* margin: 20px 20%; */
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+#ms-pacman {
+  height: 100px;
+  width: 100px;
+  /* border: 2px solid black; */
+  border-radius: 50%;
+  /* background-color: red; */
+  animation-name: slide;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+@keyframes slide {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 95%;
+  }
+  50% {
+    top: 95%;
+    left: 95%;
+  }
+  75% {
+    top: 95%;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
 }
 
 #pacman h1 {
