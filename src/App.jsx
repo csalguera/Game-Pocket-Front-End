@@ -152,7 +152,7 @@ const App = () => {
           }
         />
       </Routes>
-      <Footer user={user} />
+      <Footer user={user} handleLogout={handleLogout} />
     </>
   )
 }
