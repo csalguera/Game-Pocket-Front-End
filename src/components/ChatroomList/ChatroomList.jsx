@@ -5,7 +5,7 @@ import * as chatroomService from '../../services/chatroomService'
 const ChatroomList = ({ chatroom, handleDeleteChatroom, user }) => {
 
   const handleJoinChatroom = async (members, id) => {
-    if(!members.some(member => member === user.profile)) 
+    if(!members?.some(member => member === user.profile))
     await chatroomService.joinChatroom(id)
   }
 
