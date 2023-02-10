@@ -4,11 +4,11 @@ import * as profileService from '../../services/profileService'
 import { socket } from '../../services/socket'
 
 
-const UpdateForm = props => {
+const UpdateForm = (props) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    name: '',
-    mood: '',
+    name: props.profile.profile.name,
+    mood: props.profile.profile.mood,
   })
   const [photoData, setPhotoData] = useState({})
 
@@ -35,11 +35,7 @@ const UpdateForm = props => {
     }
   }
 
-  const { name, mood } = formData
-
-  const isFormInvalid = () => {
-    return !(name && mood)
-  }
+  console.log(props)
 
   return (
     <form
@@ -53,9 +49,9 @@ const UpdateForm = props => {
           type="text"
           autoComplete="off"
           id="name"
-          value={name}
           name="name"
           onChange={handleChange}
+          placeholder={props.profile.profile.name}
         />
       </div>
       <div>
@@ -64,9 +60,9 @@ const UpdateForm = props => {
           type="text"
           autoComplete="off"
           id="mood"
-          value={mood}
           name="mood"
           onChange={handleChange}
+          placeholder={props.profile.profile.mood}
         />
       </div>
       <div id='photo'>
@@ -78,10 +74,11 @@ const UpdateForm = props => {
           id="photo-upload"
           name="photo"
           onChange={handleChangePhoto}
+          style={{display: 'none'}}
         />
       </div>
       <div className='button-container'>
-        <button disabled={isFormInvalid()}>
+        <button >
           Update
         </button>
         <Link to="/my-page">

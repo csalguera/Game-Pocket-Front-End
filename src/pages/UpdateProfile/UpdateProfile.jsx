@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import ChangePasswordForm from '../../components/ChangePasswordForm/ChangePasswordForm'
 import UpdateForm from '../../components/UpdateForm/UpdateForm'
+import { useLocation } from 'react-router-dom'
 
 const UpdateProfile = props => {
+  const location = useLocation()
+
   const [message, setMessage] = useState([''])
 
   const updateMessage = msg => {
@@ -20,7 +23,7 @@ const UpdateProfile = props => {
         <div className='form-container'>
           <p>{message}</p>
           <ChangePasswordForm {...props} updateMessage={updateMessage} />
-          <UpdateForm {...props} updateMessage={updateMessage} />
+          <UpdateForm {...props} updateMessage={updateMessage} profile={location.state} />
         </div>
       </main>
     </>

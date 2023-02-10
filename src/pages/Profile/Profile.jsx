@@ -38,37 +38,45 @@ const Profile = ({ user, socket }) => {
     <div className="profile-page" id="simpsons">
       <h1 id="other-profile-name">{profile.name}</h1>
         <div id="profile-body">
-          <div className="head-container" id="simpsons">
-            <img src={
-            profile.photo
-            ?
-            profile.photo
-            :
-            "https://i.imgur.com/izJwDia.png"
-            }
-            alt=""
-            width="150px"
-            id="profile-photo"/>
-          </div>
-          <div id="hero-container">
-            <h2>
-              {
-              profile.friends?.length
+            <div className="head-container" id="simpsons">
+              <img src={
+              profile.photo
               ?
-              `
-              Pay $5 to see my ${profile.friends.length} friends.`
+              profile.photo
               :
-              'No friends yet'
+              "https://i.imgur.com/izJwDia.png"
               }
-            </h2>
-            {
-            !profile.friendRequests?.filter(requestId => requestId === user.profile).length &&
-            !profile.friends?.filter(requestId => requestId === user.profile).length
-            ?
-            <form
-            autoComplete="off"
-            onSubmit={handleSubmit}
-            >
+              alt=""
+              width="150px"
+              id="profile-photo"/>
+            </div>
+              <h1>
+                {
+                  profile.mood?
+                  `"${profile.mood}"`
+                  :
+                  `"..."`
+                }
+              </h1>
+            <div id="hero-container">
+              <h2>
+                {
+                profile.friends?.length
+                ?
+                `
+                Pay $5 to see my ${profile.friends.length} friends.`
+                :
+                'No friends yet'
+                }
+              </h2>
+              {
+              !profile.friendRequests?.filter(requestId => requestId === user.profile).length &&
+              !profile.friends?.filter(requestId => requestId === user.profile).length
+              ?
+              <form
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              >
             <div>
               <button>Send Friend Request</button>
             </div>

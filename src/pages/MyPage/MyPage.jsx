@@ -54,6 +54,26 @@ const MyPage = () => {
   
   return (
     <>
+    <div className="profile-page" id="simpsons">
+      <h1>P R O F I L E</h1>
+      <div id="profile-body">
+        <div className="head-container" id="simpsons">
+          <img src={
+            profile.photo
+            ?
+            profile.photo
+            :
+            "https://i.imgur.com/izJwDia.png"
+          }
+          alt=""
+          width="150px"
+          id="profile-photo"
+          />
+            <Link to="/update-profile" state={{profile}} id="update-profile">Update Profile</Link>
+        </div>
+        <h2>Mood: {` ${profile.mood? profile.mood:"Poker Face"}`}</h2>
+        <h2>Friends:</h2> 
+        {
       <div className="profile-page" id="simpsons">
         <h1>P R O F I L E</h1>
         <div id="profile-body">
