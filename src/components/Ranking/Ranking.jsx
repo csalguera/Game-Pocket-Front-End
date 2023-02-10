@@ -49,7 +49,7 @@ const Ranking = ({ records, user }) => {
         </div>
       ))}
     </>
-  );
+  )
 }
 
 export default Ranking;
