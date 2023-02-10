@@ -8,7 +8,7 @@ const index = async () => {
     const res = await fetch(`${BASE_URL}`, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -26,7 +26,7 @@ const create = async (lobbyData) => {
       },
       body: JSON.stringify(lobbyData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -37,7 +37,7 @@ const show = async (id) => {
     const res = await fetch(`${BASE_URL}/${id}`, {
       headers: {'Authorization': `Bearer ${tokenService.getToken()}`},
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -51,7 +51,7 @@ const deleteLobby = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -66,7 +66,7 @@ const addChatroom = async (lobbyId, chatroomId) => {
           'Content-Type': 'application/json'
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -80,7 +80,7 @@ const joinLobby = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -94,7 +94,7 @@ const leaveLobby = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }

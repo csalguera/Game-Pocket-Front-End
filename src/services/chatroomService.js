@@ -10,7 +10,7 @@ const index = async () => {
         'Content-Type': 'application/json'
       },
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -26,13 +26,12 @@ const create = async (chatroomData) => {
       },
       body: JSON.stringify(chatroomData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
 }
 
-// !MIGHT USE LATER
 const update = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
@@ -43,7 +42,7 @@ const update = async (id) => {
       },
       body: JSON.stringify()
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -58,7 +57,7 @@ const addMessage = async (chatroomId, messageId) => {
         'Content-Type': 'application/json'
       },
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -72,7 +71,7 @@ const deleteChatroom = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`,
       },
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -85,7 +84,7 @@ const show = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`,
       },
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -99,7 +98,7 @@ const joinChatroom = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -113,7 +112,7 @@ const leaveChatroom = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }

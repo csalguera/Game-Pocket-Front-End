@@ -12,7 +12,7 @@ const create = async (messageData) => {
       },
       body: JSON.stringify(messageData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
@@ -26,7 +26,7 @@ const deleteMessage = async (id) => {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error);
   }
