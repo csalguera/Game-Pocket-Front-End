@@ -103,7 +103,6 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
 
   const handleLeaveLobby = async (id) => {
     await lobbyService.leaveLobby(id)
-    socket.emit('refreshMessage')
     socket.emit('refreshLobby')
   }
 
