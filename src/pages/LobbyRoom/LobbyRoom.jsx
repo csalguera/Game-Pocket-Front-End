@@ -92,15 +92,19 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     setChatrooms([...chatrooms, newChatroom])
     setChatroomInput({name: ""})
     navigate(`/chatroom/${newChatroom._id}`)
+    socket.emit('refreshMessage')
   }
 
   const handleDeleteChatroom = async (id) => {
     const deletedChatroom = await chatroomService.delete(id)
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
+    socket.emit('refreshMessage')
   }
 
   const handleLeaveLobby = async (id) => {
     await lobbyService.leaveLobby(id)
+    socket.emit('refreshMessage')
+    socket.emit('refreshLobby')
   }
 
   if (!lobby) return <Loading />

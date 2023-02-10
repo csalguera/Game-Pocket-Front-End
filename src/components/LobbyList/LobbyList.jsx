@@ -36,6 +36,7 @@ const LobbyList = ({ user, socket }) => {
   const handleJoinLobby = async (members, lobbyId) => {
     if(!members?.some(memberId => memberId === user.profile)) 
     await lobbyService.joinLobby(lobbyId)
+    socket.emit('refreshLobby')
   }
 
   const handleSubmit = async evt =>{
@@ -54,7 +55,6 @@ const LobbyList = ({ user, socket }) => {
 
   const handleDelete = async (id) => {
     socket.emit('refreshLobby')
-    setRefresh(refresh-1)
     const oldLobby = await lobbyService.delete(id)
     setLobbies(lobbies.filter(lobby => lobby._id !== oldLobby._id))
   }
