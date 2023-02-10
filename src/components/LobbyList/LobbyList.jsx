@@ -84,7 +84,14 @@ const LobbyList = ({ user, socket }) => {
                   <h3>Members: {lobby.members?.length}</h3>
                 </div>
               </Link>
-                  <button onClick={() => handleDelete(lobby._id)}>DELETE</button>
+              {lobby.owner === user.profile
+                ?
+                <button onClick={() => handleDelete(lobby._id)}>DELETE</button>
+                :
+                <button style={{visibility: 'hidden'}}>
+                  DELETE
+                </button>
+              }
             </div>
           ))}
           <form

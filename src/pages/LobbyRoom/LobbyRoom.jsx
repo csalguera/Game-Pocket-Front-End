@@ -102,6 +102,8 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     await lobbyService.leaveLobby(id)
   }
 
+  console.log(lobby)
+
   if (!lobby) return <Loading />
   return (
     <>
