@@ -7,7 +7,7 @@ const Signup = props => {
   const updateMessage = msg => {
     setMessage(msg)
   }
-
+  
   return (
     <>
       <div className="page-head" id="pacman">
