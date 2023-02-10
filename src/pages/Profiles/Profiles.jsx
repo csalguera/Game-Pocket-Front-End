@@ -25,8 +25,8 @@ const Profiles = ({ user }) => {
             <div className='player-list'>
               {profiles.filter(profile => profile._id !== user.profile).map(profile =>
                 <Link to={`/profiles/${profile._id}`} key={profile._id} className='player'>{profile.name}</Link>
-                )}
-            </div>
+              )}
+          </div>
           :
           <p>No profiles yet</p>
         }

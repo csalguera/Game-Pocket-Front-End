@@ -54,26 +54,26 @@ const MyPage = () => {
   
   return (
     <>
-    <div className="profile-page" id="simpsons">
-      <h1>P R O F I L E</h1>
-      <div id="profile-body">
-        <div className="head-container" id="simpsons">
-          <img src={
-            profile.photo
-            ?
-            profile.photo
-            :
-            "https://i.imgur.com/izJwDia.png"
-          }
-          alt=""
-          width="150px"
-          id="profile-photo"
-          />
-            <Link to="/update-profile" id="update-profile">Update Profile</Link>
-        </div>
-        <h2>Mood: {` ${profile.mood? profile.mood:"Poker Face"}`}</h2>
-        <h2>Friends:</h2> 
-        {
+      <div className="profile-page" id="simpsons">
+        <h1>P R O F I L E</h1>
+        <div id="profile-body">
+          <div className="head-container" id="simpsons">
+            <img src={
+              profile.photo
+              ?
+              profile.photo
+              :
+              "https://i.imgur.com/izJwDia.png"
+            }
+            alt=""
+            width="150px"
+            id="profile-photo"
+            />
+              <Link to="/update-profile" id="update-profile">Update Profile</Link>
+          </div>
+          <h2>Mood: {` ${profile.mood? profile.mood:"Poker Face"}`}</h2>
+          <h2>Friends:</h2> 
+          {
             profile.friends?.length
             ?
             <div className="friends-container" id="simpsons">
@@ -82,30 +82,28 @@ const MyPage = () => {
                   <h3>{friend.name}</h3>
                   <button onClick={() => handleBreakUp(friend._id)} id="break-up">Break Up</button>   
                 </div>
-                )}
+              )}
             </div>
             :
             'No friends yet'
           }
-        {/* </h2> */}
-        <h2>
-          Friend Requests:</h2> 
+          <h2>Friend Requests:</h2> 
           {
             profile.friendRequests?.length 
             ? 
             <div className="friend-requests" id="simpsons">
             {profile.friendRequests.map(request =>
-            <div key={request._id}>
-              <h3>{request.name}</h3>
-              <button onClick={() => handleAccept(request._id)} id="accept">Accept</button>
-              <button onClick={() => handleDeny(request._id)} id="break-up">Deny</button>   
-            </div>
+              <div key={request._id}>
+                <h3>{request.name}</h3>
+                <button onClick={() => handleAccept(request._id)} id="accept">Accept</button>
+                <button onClick={() => handleDeny(request._id)} id="break-up">Deny</button>   
+              </div>
             )}
           </div>
           : 0
-        }
+          }
+        </div>
       </div>
-    </div>
     </>
   )
 }
