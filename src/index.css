@@ -138,20 +138,48 @@ body {
   margin-top: 0;
 }
 
-#pacman-container{
-  height: 80%;
-  width: 80%;
+#pacman.page-head > * {
+  width: 100%;
+  object-fit: contain;
+}
+
+div#login.pacman-container {
+  /* margin-top: -15%; */
+  height: 65%;
+  width: 70%;
   top: 30%;
   left: 10%;
   position: absolute;
   z-index: 0;
 }
 
+div#signup.pacman-container {
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  z-index: 0;
+}
+
+
 #red-ghost{
   height: 100px;
   width: 100px;
   border-radius: 50%;
   animation-name: ghost;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: 0;
+}
+
+#blue-ghost{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  animation-name: blue-ghost;
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -178,27 +206,50 @@ body {
 @keyframes pacman {
   0% {
     top: 0;
-    left: 0;
+    left: -12%;
   }
   25% {
     top: 0;
-    left: 90%;
+    left: 85%;
   }
   50% {
     top: 95%;
-    left: 90%;
+    left: 85%;
   }
   75% {
     top: 95%;
-    left: -5%;
+    left: -12%;
   }
   100% {
     top: 0;
-    left: -5%;
+    left: -12%;
   }
 }
 
 @keyframes ghost {
+  0% {
+    top: 0;
+    left: 95%;
+  }
+  25% {
+    top: 95%;
+    left: 95%;
+  }
+  50% {
+    top: 95%;
+    left: 0;
+  }
+  75% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 95%;
+  }
+}
+
+@keyframes blue-ghost {
   0% {
     top: 0;
     left: 95%;
@@ -282,7 +333,7 @@ body {
 }
 
 #pacman input {
-  font-family: 'Bungee', cursive;
+  /* font-family: 'Bungee', cursive;git */
   background-color: white;
   color: black;
   border-radius: 4px;
@@ -290,8 +341,13 @@ body {
 }
 
 #pacman div#photo {
+  text-align: center;
   display: flex;
   width: 60%;
+}
+
+#pacman div#photo:hover{
+  color: rgb(0, 255, 0);
 }
 
 #pacman div#photo input {
@@ -465,15 +521,22 @@ div#simpsons.page-head{
   grid-template-rows: 5;
   grid-column-end: 5;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
+  justify-items: start;
+  align-items: start;
   background-color: black;
   border-radius: 40px;
   color: white;
   font-size: 64px;
-  height: 60vmax;
+  height: 100%;
   border: 12px solid #F62D21;
+  overflow-y: scroll;
+  padding: 2%;
 }
+
+.player-list::-webkit-scrollbar{
+  background-color: rgba(255, 0, 0, 0);
+}
+
 
 @media (max-width: 450px){
   #defender h1 {
@@ -650,17 +713,19 @@ h1.space-invaders {
   padding: 3%;
   border-radius: 40px;
   margin-bottom: 5%;
+  width: 70%;
 }
 
 .lobbyCard {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: auto auto;
+  /* grid-template-columns: auto auto; */
   justify-content: space-between;
   background-color: #3DB644;
   border-radius: 20px;
   margin: 1%;
   padding: 1%;
+  width: 100%;
 }
 
 .lobbyCard:hover {
@@ -684,10 +749,12 @@ div.lobbyCard button:hover {
 
 .lobbyCard div {
   background-color: black;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 40em;
-  padding: 1%;
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2%;
   border-radius: 20px;
 }
 
@@ -699,6 +766,7 @@ div.lobbyCard button:hover {
   text-decoration: none;
   color: white;
   font-family: 'VT323', monospace;
+  width: 100%;
 }
 
 #space-invaders #lobby-container .form {
@@ -921,7 +989,7 @@ img.shot#right {
 }
 
 #button-container button{
-  width: 50%;
+  width: 80%;
 }
 
 button-contaniner a {
@@ -1074,7 +1142,7 @@ button-contaniner a {
   color: white;
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1314,4 +1382,5 @@ h1#other-profile-name {
   height: 200vh;
   width: 100vh;
 }
+
 /*! ============LEEADERBOARD PAGE============  */

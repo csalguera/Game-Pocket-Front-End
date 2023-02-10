@@ -80,14 +80,14 @@ const Profile = ({ user, socket }) => {
             <div>
               <button>Send Friend Request</button>
             </div>
-          </form>
-          :
-          !profile.friends?.filter(requestId => requestId === user.profile).length
-          ?
-          <h2>Request Sent</h2>
-          :
-          <h2>You Are Friends</h2>
-        }
+            </form>
+              :
+              !profile.friends?.filter(requestId => requestId === user.profile).length
+              ?
+              <h2>Request Sent</h2>
+              :
+              <h2>You Are Friends</h2>
+            }
         </div>
       </div>
     </div>
