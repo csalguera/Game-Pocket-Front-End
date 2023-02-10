@@ -85,7 +85,7 @@ const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
                   </ul>
                   ))
                 :
-                'Loading...'
+                0
               }
             </h2>
             <div id="button-container">

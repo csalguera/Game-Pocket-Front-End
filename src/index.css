@@ -822,7 +822,6 @@ img.shot#right {
   color: white;
   border-radius: 20px;
   padding: 10%;
-  margin: 1%;
 }
 
 #lobby-head h2{
@@ -844,10 +843,7 @@ img.shot#right {
 }
 
 #lobby-head #mini-room {
-  border: 1px solid #00ff0d;
-  margin: 5%;
-  border-radius: 20px;
-  padding: 5%;
+  /* background-color: blue; */
 }
 
 #chatroom {
@@ -1067,10 +1063,6 @@ button-contaniner a {
 
 #create-chatroom button:hover {
   background-color: #00ff0d;
-}
-
-#leave button:hover{
-  background-color: red;
 }
 
 /*! ============LOBBY ROOM============  */
@@ -1323,49 +1315,3 @@ h1#other-profile-name {
   width: 100vh;
 }
 /*! ============LEEADERBOARD PAGE============  */
-
-/*! ================DROPDOWN=================  */
-.dropbtn {
-  background-color: #00786d;
-  color: white; 
-  padding: 9px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  background-color: green;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: green;
-  min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a{
-  color: #233E2A;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #009b8e;}
-
-/*! ================DROPDOWN=================  */

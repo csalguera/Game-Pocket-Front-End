@@ -18,8 +18,7 @@ const NavBar = ({ user, handleLogout, socket }) => {
     }
   }, [refresh])
   
-  socket.on('changeName', () => { setRefresh(refresh+1)
-                                  console.log("changedName")  })
+  socket.on('changeName', () => { setRefresh(refresh+1) })
   return (
     <nav className="navbar">
       {user ?
