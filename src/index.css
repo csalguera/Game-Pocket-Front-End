@@ -328,7 +328,7 @@ div#signup.pacman-container {
 }
 
 #pacman input {
-  font-family: 'Bungee', cursive;
+  /* font-family: 'Bungee', cursive;git */
   background-color: white;
   color: black;
   border-radius: 4px;
