@@ -78,11 +78,11 @@ const UpdateForm = (props) => {
         />
       </div>
       <div className='button-container'>
-        <button >
+        <button id="update">
           Update
         </button>
         <Link to="/my-page">
-          <button>Cancel</button>
+          <button id="cancel">Cancel</button>
         </Link>
       </div>
     </form>
