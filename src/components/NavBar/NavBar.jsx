@@ -8,7 +8,7 @@ const NavBar = ({ user, handleLogout, socket }) => {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const data = await profileService.getProfile(user.profile)
+      const data = await profileService.getProfile(user?.profile)
       setNickName(data.name)
     }
     fetchProfile()

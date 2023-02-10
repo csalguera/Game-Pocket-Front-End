@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 
 // Components
 import ChatroomList from '../../components/ChatroomList/ChatroomList';
@@ -25,13 +26,15 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
   const [chatrooms, setChatrooms] = useState([])
   const [refresh, setRefresh] = useState(0)
 
+  const messagesEndRef = useRef(null)
+
   // fetch lobby
   useEffect(() => {
     const fetchLobby = async () => {
       const data = await lobbyService.show(id)
       setLobby(data)
-      setChatroomMessages(data.mainroom.messages)
-      setChatrooms(data.chatrooms)
+      setChatroomMessages(data.mainroom?.messages)
+      setChatrooms(data?.chatrooms)
     }
     fetchLobby()
     setRefresh(0)
@@ -39,6 +42,11 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       socket.off('refreshMessage')
     }
   }, [refresh])
+
+  //SCROLLBAR 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView()
+  }, [chatroomMessages])
 
   socket.on('refreshMessage', () => setRefresh(1))
   //message
@@ -138,7 +146,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           handleChange={handleChange}
           chatroomInput={chatroomInput}
         />
-        <div id="button-container">
+        <div id="leave">
           <Link to='/'>
             <button onClick={() => handleLeaveLobby(lobby._id)}>
               Leave
@@ -148,7 +156,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       </div>
       <div id="chatroom">
         <div id="message-container">
-        {chatroomMessages.map(message =>
+        {chatroomMessages?.map(message =>
         <div key={message._id}>
           <Message
             message={message}
@@ -157,6 +165,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           />
         </div>
         )}
+        <div ref={messagesEndRef}></div>
         </div>
         <div id="send-container">
         <MessageForm

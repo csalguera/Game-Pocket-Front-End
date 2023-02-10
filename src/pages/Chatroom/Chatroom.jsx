@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
+import { useRef } from 'react';
+
 
 // Components
 import Message from "../../components/Message/Message"
@@ -10,20 +12,21 @@ import * as chatroomService from '../../services/chatroomService'
 import * as messageService from '../../services/messageService'
 import { socket } from '../../services/socket';
 
-const Chatroom = ({ user, lobby }) => {
+const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
   const { id } = useParams()
-  const [chatroom, setChatroom] =useState([])
   const [members, setMembers] = useState([])
   const [messageForm, setMessageForm] = useState({content: ''})
   const [messages, setMessages] = useState([])
   const [refresh, setRefresh] = useState(0)
 
+  const messagesEndRef = useRef(null)
+
   useEffect(() => {
     const fetchChatroom = async () => {
       const data = await chatroomService.show(id)
       setChatroom(data)
-      setMembers(data.members)
-      setMessages(data.messages)
+      setMembers(data?.members)
+      setMessages(data?.messages)
     }
     fetchChatroom()
     setRefresh(0)
@@ -31,6 +34,11 @@ const Chatroom = ({ user, lobby }) => {
       socket.off('refreshMessage')
     }
   }, [refresh])
+
+    //SCROLLBAR 
+    useEffect(() => {
+      messagesEndRef.current?.scrollIntoView()
+    }, [messages])
 
   socket.on('refreshMessage', () => setRefresh(1))
 
@@ -64,7 +72,7 @@ const Chatroom = ({ user, lobby }) => {
   return (
     <>
       <div id='lobby-room'>
-        <h1 className='space-invaders'>{chatroom.name}</h1>
+        <h1 className='space-invaders'>{chatroom?.name}</h1>
         <div id="lobby-screen">
           <div id="lobby-head">
             <h2>
@@ -99,6 +107,7 @@ const Chatroom = ({ user, lobby }) => {
                   />
               </div>
             )}
+              <div ref={messagesEndRef}></div>
           </div>
           <div id="send-container">
             <MessageForm
