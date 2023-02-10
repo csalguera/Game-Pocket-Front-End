@@ -40,3 +40,7 @@
 
 ## [Planning materials](https://trello.com/b/URkUaoiq/sinkingship)
 ## [Back-end repo](https://github.com/WarmSkin/Game-Pocket-Back-End)
+
+## Attributions
+
+- View the attributions [here](https://github.com/csalguera/Game-Pocket-Front-End/blob/main/attributions.md)
