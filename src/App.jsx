@@ -128,8 +128,8 @@ const App = () => {
                 user={user}
                 lobby={lobby}
                 setLobby={setLobby}
-                lobbyMembers={lobbyMembers}
-                setLobbyMembers={setLobbyMembers}
+                members={lobbyMembers}
+                setMembers={setLobbyMembers}
               />
             </ProtectedRoute>
           }
@@ -151,8 +151,8 @@ const App = () => {
                 lobby={lobby}
                 chatroom={chatroom}
                 setChatroom={setChatroom}
-                chatroomMembers={chatroomMembers}
-                setChatroomMembers={setChatroomMembers}
+                members={chatroomMembers}
+                setMembers={setChatroomMembers}
               />
             </ProtectedRoute>
           }

@@ -12,9 +12,9 @@ import * as chatroomService from '../../services/chatroomService'
 import * as messageService from '../../services/messageService'
 import { socket } from '../../services/socket';
 
-const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
+const Chatroom = ({ user, lobby, chatroom, setChatroom, members, setMembers }) => {
   const { id } = useParams()
-  const [members, setMembers] = useState([])
+  // const [members, setMembers] = useState([])
   const [messageForm, setMessageForm] = useState({content: ''})
   const [messages, setMessages] = useState([])
   const [refresh, setRefresh] = useState(0)

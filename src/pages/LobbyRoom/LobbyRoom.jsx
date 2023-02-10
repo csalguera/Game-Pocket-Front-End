@@ -17,10 +17,10 @@ import * as chatroomService from '../../services/chatroomService'
 import { socket } from '../../services/socket';
 
 
-const LobbyRoom = ({ user, lobby, setLobby }) => {
+const LobbyRoom = ({ user, lobby, setLobby, members, setMembers }) => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [members, setMembers] =useState([])
+  // const [members, setMembers] =useState([])
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
@@ -36,7 +36,9 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       setLobby(data)
       setChatroomMessages(data.mainroom?.messages)
       setChatrooms(data?.chatrooms)
+      // setMembers(data?.members)
       setMembers(data?.members)
+
     }
     fetchLobby()
     return() => {
