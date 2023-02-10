@@ -65,15 +65,15 @@ const LobbyList = ({ user, socket }) => {
       <h1 className="space-invaders">L O B B I E S</h1>
       <div id="main-page">
         <div id="image-container">
-        <div id="bad-guy-container">
-          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
-          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
-          <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+          <div id="bad-guy-container">
+            <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+            <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+            <img src="https://i.imgur.com/Btgwjda.png" alt="Spaace invader bad guy" />
+            </div>
+            <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="left"/>
+            <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="right"/>
+            <img src="https://i.imgur.com/1MHgrcd.png" alt="Spaace invader spaceship" id="good-guy"/>
           </div>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="left"/>
-          <img src="https://i.imgur.com/9EfKBqu.png" alt="Space invader shot" className="shot" id="right"/>
-          <img src="https://i.imgur.com/1MHgrcd.png" alt="Spaace invader spaceship" id="good-guy"/>
-        </div>
         <div id="lobby-container" className="space-invaders">
           {lobbies.map(lobby => (
             <div key={lobby._id} className="lobbyCard">

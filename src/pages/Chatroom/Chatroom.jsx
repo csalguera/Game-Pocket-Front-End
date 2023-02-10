@@ -98,24 +98,24 @@ const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
           </div>
           <div id="chatroom">
             <div id="message-container">
-            {messages?.map(message =>
-              <div key={message._id}>
-                <Message
-                  message={message}
-                  deleteMessage={deleteMessage}
-                  user={user}
-                  />
-              </div>
-            )}
+              {messages?.map(message =>
+                <div key={message._id}>
+                  <Message
+                    message={message}
+                    deleteMessage={deleteMessage}
+                    user={user}
+                    />
+                </div>
+              )}
               <div ref={messagesEndRef}></div>
-          </div>
-          <div id="send-container">
-            <MessageForm
-              handleSendMessage={handleSendMessage}
-              handleChange={handleChange}
-              message={messageForm}
-            />
-          </div>
+            </div>
+            <div id="send-container">
+              <MessageForm
+                handleSendMessage={handleSendMessage}
+                handleChange={handleChange}
+                message={messageForm}
+              />
+            </div>
           </div>  
         </div>
       </div>

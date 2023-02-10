@@ -106,7 +106,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
 
   if (!lobby) return <Loading />
   return (
-    <>
+  <>
     <div id='lobby-room'>
       <h1 className='space-invaders'>L O B B Y</h1>
       <div id="lobby-screen">
@@ -122,9 +122,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
           }
         </h2>
         <div id="chatrooms">
-          <h2 id="chatroom-header">
-            Chatrooms:
-          </h2>
+          <h2 id="chatroom-header">Chatrooms:</h2>
           <div id="chatroom-list">
             {
               chatrooms?.length
@@ -158,29 +156,29 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       </div>
       <div id="chatroom">
         <div id="message-container">
-        {chatroomMessages?.map(message =>
-        <div key={message._id}>
-          <Message
-            message={message}
-            deleteMessage={deleteMessage}
-            user={user}
-          />
-        </div>
-        )}
-        <div ref={messagesEndRef}></div>
-        </div>
-        <div id="send-container">
-        <MessageForm
-          handleSendMessage={handleSendMessage}
-          handleChange={handleChange}
-          message={message}
-        />
-      </div>
-      </div>  
+          {chatroomMessages?.map(message =>
+            <div key={message._id}>
+              <Message
+                message={message}
+                deleteMessage={deleteMessage}
+                user={user}
+              />
+            </div>
+          )}
+          <div ref={messagesEndRef}></div>
+          </div>
+          <div id="send-container">
+            <MessageForm
+              handleSendMessage={handleSendMessage}
+              handleChange={handleChange}
+              message={message}
+            />
+          </div>
+        </div>  
       </div>
     </div>
-    </>
-  )
+  </>
+)
 }
 
 export default LobbyRoom
