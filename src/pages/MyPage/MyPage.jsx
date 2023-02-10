@@ -69,7 +69,7 @@ const MyPage = () => {
           width="150px"
           id="profile-photo"
           />
-            <Link to="/update-profile" id="update-profile">Update Profile</Link>
+            <Link to="/update-profile" state={{profile}} id="update-profile">Update Profile</Link>
         </div>
         <h2>Mood: {` ${profile.mood? profile.mood:"Poker Face"}`}</h2>
         <h2>Friends:</h2> 
