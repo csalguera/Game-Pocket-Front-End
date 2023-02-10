@@ -201,7 +201,7 @@ div#signup.pacman-container {
 @keyframes pacman {
   0% {
     top: 0;
-    left: -15%;
+    left: -12%;
   }
   25% {
     top: 0;
@@ -213,11 +213,11 @@ div#signup.pacman-container {
   }
   75% {
     top: 95%;
-    left: -15%;
+    left: -12%;
   }
   100% {
     top: 0;
-    left: -15%;
+    left: -12%;
   }
 }
 
