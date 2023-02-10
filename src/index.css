@@ -336,8 +336,13 @@ div#signup.pacman-container {
 }
 
 #pacman div#photo {
+  text-align: center;
   display: flex;
   width: 60%;
+}
+
+#pacman div#photo:hover{
+  color: rgb(0, 255, 0);
 }
 
 #pacman div#photo input {
@@ -511,15 +516,21 @@ div#simpsons.page-head{
   grid-template-rows: 5;
   grid-column-end: 5;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
+  justify-items: start;
+  align-items: start;
   background-color: black;
   border-radius: 40px;
   color: white;
   font-size: 64px;
   height: 60vmax;
   border: 12px solid #F62D21;
+  overflow-y: scroll;
 }
+
+.player-list::-webkit-scrollbar{
+  background-color: rgba(255, 0, 0, 0);
+}
+
 
 @media (max-width: 450px){
   #defender h1 {
