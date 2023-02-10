@@ -50,25 +50,33 @@ const Profile = ({ user, socket }) => {
               width="150px"
               id="profile-photo"/>
             </div>
+              <h1>
+                {
+                  profile.mood?
+                  `"${profile.mood}"`
+                  :
+                  `"..."`
+                }
+              </h1>
             <div id="hero-container">
-          <h2>
-            {
-            profile.friends?.length
-            ?
-            `
-            Pay $5 to see my ${profile.friends.length} friends.`
-            :
-            'No friends yet'
-            }
-          </h2>
-          {
-          !profile.friendRequests?.filter(requestId => requestId === user.profile).length &&
-          !profile.friends?.filter(requestId => requestId === user.profile).length
-          ?
-          <form
-          autoComplete="off"
-          onSubmit={handleSubmit}
-          >
+              <h2>
+                {
+                profile.friends?.length
+                ?
+                `
+                Pay $5 to see my ${profile.friends.length} friends.`
+                :
+                'No friends yet'
+                }
+              </h2>
+              {
+              !profile.friendRequests?.filter(requestId => requestId === user.profile).length &&
+              !profile.friends?.filter(requestId => requestId === user.profile).length
+              ?
+              <form
+              autoComplete="off"
+              onSubmit={handleSubmit}
+              >
             <div>
               <button>Send Friend Request</button>
             </div>
