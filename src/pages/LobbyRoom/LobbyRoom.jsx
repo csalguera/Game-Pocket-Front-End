@@ -20,6 +20,7 @@ import { socket } from '../../services/socket';
 const LobbyRoom = ({ user, lobby, setLobby }) => {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [members, setMembers] =useState([])
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
@@ -35,6 +36,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       setLobby(data)
       setChatroomMessages(data.mainroom?.messages)
       setChatrooms(data?.chatrooms)
+      setMembers(data?.members)
     }
     fetchLobby()
     setRefresh(0)
@@ -107,16 +109,16 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
   <>
     <div id='lobby-room'>
       <h1 className='space-invaders'>L O B B Y</h1>
-        <div id="lobby-screen">
-          <div id="lobby-head">
-            <h2>Description: {lobby.content}</h2>
-        <h2>Current Members: 
-          {
-            lobby.members?.length
+      <div id="lobby-screen">
+      <div id="lobby-head">
+        <h2>Description: {lobby.content}</h2>
+        <h2>
+          Current Members: {
+            members?.length
             ?
-            lobby.members.length
+            members.length
             :
-            0
+            'Loading...'
           }
         </h2>
         <div id="chatrooms">

@@ -5,13 +5,13 @@ import * as profileService from '../../services/profileService'
 const NavBar = ({ user, handleLogout, socket }) => {
   const [nickName, setNickName] = useState('')
   const [refresh, setRefresh] = useState(0)
-
+  
   useEffect(() => {
     const fetchProfile = async () => {
       const data = await profileService.getProfile(user?.profile)
       setNickName(data.name)
     }
-    fetchProfile()
+    if(user) fetchProfile()
     setRefresh(0)
     return() => {
       socket.off('changeName')
