@@ -877,7 +877,7 @@ img.shot#right {
   align-items: center;
   justify-content: space-around;
   padding: 1%;
-  margin: 1%;
+  margin: 2%;
   width: 20%;
   height: 900px;
 }
@@ -890,6 +890,7 @@ img.shot#right {
   color: white;
   border-radius: 20px;
   padding: 10%;
+  margin: 2%;
 }
 
 #lobby-head h2{
