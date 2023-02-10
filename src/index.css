@@ -1128,7 +1128,7 @@ button-contaniner a {
   color: white;
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1368,4 +1368,5 @@ h1#other-profile-name {
   height: 200vh;
   width: 100vh;
 }
+
 /*! ============LEEADERBOARD PAGE============  */
