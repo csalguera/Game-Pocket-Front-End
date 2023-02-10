@@ -138,6 +138,11 @@ body {
   margin-top: 0;
 }
 
+#pacman.page-head > * {
+  width: 100%;
+  object-fit: contain;
+}
+
 div#login.pacman-container {
   /* margin-top: -15%; */
   height: 65%;
