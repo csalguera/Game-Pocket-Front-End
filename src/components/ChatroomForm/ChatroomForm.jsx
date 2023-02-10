@@ -12,6 +12,7 @@ const ChatroomForm = ({ handleCreateChatroom, handleChange, chatroomInput }) => 
             name='name'
             onChange={handleChange}
             value={chatroomInput.name}
+            required
           />
           <button>Create</button>
         </div>
