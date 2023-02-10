@@ -12,7 +12,6 @@ const NavBar = ({ user, handleLogout, socket }) => {
       setNickName(data.name)
     }
     if(user) fetchProfile()
-    setRefresh(refresh-1)
     return() => {
       socket.off('changeName')
     }

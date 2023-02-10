@@ -14,7 +14,6 @@ const Profile = ({ user, socket }) => {
       setProfile(data)
     }
     fetchProfile()
-    setRefresh(refresh-1)
     return() => {
       socket.off('friendRequest')
     }

@@ -19,7 +19,6 @@ const LobbyList = ({ user, socket }) => {
       setLobbies(data)
     }
     if (user) fetchAllLobbies()
-    setRefresh(refresh-1)
     return() => {
       socket.off('refreshLobby')
     }
