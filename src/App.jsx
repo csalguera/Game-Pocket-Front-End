@@ -56,22 +56,22 @@ const App = () => {
     if (user) fetchAllRecords()
   }, [user])
 
-  // leave lobby and chatroom when locaiton changes
-  useEffect(() => {
-    const lobbyLocation = location.pathname.replace('/lobby/', '')
-    const chatroomLocation = location.pathname.replace('/chatroom/', '')
+  //! ICEBOX: leave lobby and chatroom when locaiton changes
+  // useEffect(() => {
+  //   const lobbyLocation = location.pathname.replace('/lobby/', '')
+  //   const chatroomLocation = location.pathname.replace('/chatroom/', '')
 
-    const leaveLobby = async () => {
-      if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
-    }
+  //   const leaveLobby = async () => {
+  //     if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
+  //   }
 
-    const leaveChatroom = async () => {
-      if (chatroom !== chatroomLocation && chatroomLocation === `/lobby/${lobby._id}`) await chatroomService.leaveChatroom(chatroom._id)
-    }
+  //   const leaveChatroom = async () => {
+  //     if (chatroom !== chatroomLocation && chatroomLocation === `/lobby/${lobby._id}`) await chatroomService.leaveChatroom(chatroom._id)
+  //   }
 
-    if (lobby) leaveLobby()
-    if (chatroom) leaveChatroom()
-  }, [location])
+  //   if (lobby) leaveLobby()
+  //   if (chatroom) leaveChatroom()
+  // }, [location])
 
   return (
     <>
