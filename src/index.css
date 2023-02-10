@@ -696,17 +696,19 @@ h1.space-invaders {
   padding: 3%;
   border-radius: 40px;
   margin-bottom: 5%;
+  width: 70%;
 }
 
 .lobbyCard {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: auto auto;
+  /* grid-template-columns: auto auto; */
   justify-content: space-between;
   background-color: #3DB644;
   border-radius: 20px;
   margin: 1%;
   padding: 1%;
+  width: 100%;
 }
 
 .lobbyCard:hover {
@@ -730,10 +732,12 @@ div.lobbyCard button:hover {
 
 .lobbyCard div {
   background-color: black;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 40em;
-  padding: 1%;
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2%;
   border-radius: 20px;
 }
 
@@ -745,6 +749,7 @@ div.lobbyCard button:hover {
   text-decoration: none;
   color: white;
   font-family: 'VT323', monospace;
+  width: 100%;
 }
 
 #space-invaders #lobby-container .form {
