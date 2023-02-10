@@ -34,6 +34,8 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [lobby, setLobby] = useState('')
   const [chatroom, setChatroom] = useState('')
+  const [lobbyMembers, setLobbyMembers] = useState('')
+  const [chatroomMembers, setChatroomMembers] = useState('')
   const [records, setRecords] = useState([])
   const navigate = useNavigate()
 
@@ -56,22 +58,22 @@ const App = () => {
     if (user) fetchAllRecords()
   }, [user])
 
-  //! ICEBOX: leave lobby and chatroom when locaiton changes
-  // useEffect(() => {
-  //   const lobbyLocation = location.pathname.replace('/lobby/', '')
-  //   const chatroomLocation = location.pathname.replace('/chatroom/', '')
+  // ICEBOX: leave lobby and chatroom when locaiton changes
+  useEffect(() => {
+    const lobbyLocation = location.pathname.replace('/lobby/', '')
+    const chatroomLocation = location.pathname.replace('/chatroom/', '')
 
-  //   const leaveLobby = async () => {
-  //     if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
-  //   }
+    const leaveLobby = async () => {
+      if (lobby !== lobbyLocation && lobbyLocation === '/') await lobbyService.leaveLobby(lobby._id)
+    }
 
-  //   const leaveChatroom = async () => {
-  //     if (chatroom !== chatroomLocation && chatroomLocation === `/lobby/${lobby._id}`) await chatroomService.leaveChatroom(chatroom._id)
-  //   }
+    const leaveChatroom = async () => {
+      if (chatroom !== chatroomLocation && chatroomLocation === `/lobby/${lobby._id}`) await chatroomService.leaveChatroom(chatroom._id)
+    }
 
-  //   if (lobby) leaveLobby()
-  //   if (chatroom) leaveChatroom()
-  // }, [location])
+    if (lobby) leaveLobby()
+    if (chatroom) leaveChatroom()
+  }, [location])
 
   return (
     <>
@@ -126,6 +128,8 @@ const App = () => {
                 user={user}
                 lobby={lobby}
                 setLobby={setLobby}
+                lobbyMembers={lobbyMembers}
+                setLobbyMembers={setLobbyMembers}
               />
             </ProtectedRoute>
           }
@@ -147,6 +151,8 @@ const App = () => {
                 lobby={lobby}
                 chatroom={chatroom}
                 setChatroom={setChatroom}
+                chatroomMembers={chatroomMembers}
+                setChatroomMembers={setChatroomMembers}
               />
             </ProtectedRoute>
           }
