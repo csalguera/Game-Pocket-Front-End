@@ -20,6 +20,7 @@ import { socket } from '../../services/socket';
 const LobbyRoom = ({ user, lobby, setLobby }) => {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [members, setMembers] =useState([])
   const [message, setMessage] = useState({content: ""})
   const [chatroomMessages, setChatroomMessages] = useState([])
   const [chatroomInput, setChatroomInput] = useState({name: ""})
@@ -35,6 +36,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       setLobby(data)
       setChatroomMessages(data.mainroom?.messages)
       setChatrooms(data?.chatrooms)
+      setMembers(data?.members)
     }
     fetchLobby()
     setRefresh(0)
@@ -102,8 +104,6 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     await lobbyService.leaveLobby(id)
   }
 
-  console.log(lobby)
-
   if (!lobby) return <Loading />
   return (
     <>
@@ -114,9 +114,9 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
         <h2>Description: {lobby.content}</h2>
         <h2>
           Current Members: {
-            lobby.members?.length
+            members?.length
             ?
-            lobby.members.length
+            members.length
             :
             'Loading...'
           }
