@@ -39,7 +39,6 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       setMembers(data?.members)
     }
     fetchLobby()
-    setRefresh(0)
     return() => {
       socket.off('refreshMessage')
     }
@@ -50,7 +49,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     messagesEndRef.current?.scrollIntoView()
   }, [chatroomMessages])
 
-  socket.on('refreshMessage', () => setRefresh(1))
+  socket.on('refreshMessage', () => setRefresh(refresh+1))
   //message
   const handleChange = e => {
     setMessage({
@@ -93,15 +92,18 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     setChatrooms([...chatrooms, newChatroom])
     setChatroomInput({name: ""})
     navigate(`/chatroom/${newChatroom._id}`)
+    socket.emit('refreshMessage')
   }
 
   const handleDeleteChatroom = async (id) => {
     const deletedChatroom = await chatroomService.delete(id)
     setChatrooms(chatrooms.filter(chatroom => chatroom._id !== deletedChatroom._id))
+    socket.emit('refreshMessage')
   }
 
   const handleLeaveLobby = async (id) => {
     await lobbyService.leaveLobby(id)
+    socket.emit('refreshLobby')
   }
 
   if (!lobby) return <Loading />

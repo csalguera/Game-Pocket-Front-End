@@ -29,7 +29,6 @@ const Chatroom = ({ user, lobby, chatroom, setChatroom }) => {
       setMessages(data?.messages)
     }
     fetchChatroom()
-    setRefresh(0)
     return() => {
       socket.off('refreshMessage')
     }

@@ -14,13 +14,12 @@ const Profile = ({ user, socket }) => {
       setProfile(data)
     }
     fetchProfile()
-    setRefresh(0)
     return() => {
       socket.off('friendRequest')
     }
   }, [refresh])
 
-  socket.on('friendRequest', () => setRefresh(1))
+  socket.on('friendRequest', () => setRefresh(refresh+1))
 
   const handleSubmit = async evt =>{
     evt.preventDefault()
