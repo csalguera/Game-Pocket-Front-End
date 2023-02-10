@@ -103,6 +103,7 @@ const SignupForm = props => {
           id="photo-upload"
           name="photo"
           onChange={handleChangePhoto}
+          style={{display: 'none'}}
         />
       </div>
       <div className='button-container'>

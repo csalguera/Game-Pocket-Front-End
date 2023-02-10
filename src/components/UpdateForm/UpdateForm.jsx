@@ -35,8 +35,6 @@ const UpdateForm = (props) => {
     }
   }
 
-  const { name, mood } = formData
-
   console.log(props)
 
   return (
@@ -76,6 +74,7 @@ const UpdateForm = (props) => {
           id="photo-upload"
           name="photo"
           onChange={handleChangePhoto}
+          style={{display: 'none'}}
         />
       </div>
       <div className='button-container'>
