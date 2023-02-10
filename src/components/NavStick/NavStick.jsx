@@ -9,6 +9,7 @@ const NavStick = ({ user, handleLogout }) => {
     '/profiles',
     '/leaderboard',
     '/my-page',
+    ''
   ]
 
   const destination = `${routes[route]}`
@@ -33,6 +34,12 @@ const NavStick = ({ user, handleLogout }) => {
               destination === '/'
               ?
               'HOME'
+              :
+              destination === ''
+              ?
+              <p onClick={() => handleLogout()}>
+                LOG OUT
+              </p>
               :
               destination
               .replace('/', '')
