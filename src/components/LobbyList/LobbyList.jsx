@@ -19,13 +19,13 @@ const LobbyList = ({ user, socket }) => {
       setLobbies(data)
     }
     if (user) fetchAllLobbies()
-    setRefresh(0)
+    setRefresh(refresh-1)
     return() => {
       socket.off('refreshLobby')
     }
   }, [refresh])
   
-  socket.on('refreshLobby', () => {setRefresh(1)})
+  socket.on('refreshLobby', () => {setRefresh(refresh+1)})
 
   const handleChange = e => {
     setFormData({

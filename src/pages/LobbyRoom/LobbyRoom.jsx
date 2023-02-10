@@ -39,7 +39,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
       setMembers(data?.members)
     }
     fetchLobby()
-    setRefresh(0)
+    setRefresh(refresh-1)
     return() => {
       socket.off('refreshMessage')
     }
@@ -50,7 +50,7 @@ const LobbyRoom = ({ user, lobby, setLobby }) => {
     messagesEndRef.current?.scrollIntoView()
   }, [chatroomMessages])
 
-  socket.on('refreshMessage', () => setRefresh(1))
+  socket.on('refreshMessage', () => setRefresh(refresh+1))
   //message
   const handleChange = e => {
     setMessage({
