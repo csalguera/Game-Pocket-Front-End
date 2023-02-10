@@ -527,9 +527,10 @@ div#simpsons.page-head{
   border-radius: 40px;
   color: white;
   font-size: 64px;
-  height: 60vmax;
+  height: 100%;
   border: 12px solid #F62D21;
   overflow-y: scroll;
+  padding: 2%;
 }
 
 .player-list::-webkit-scrollbar{
