@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
-const NavStick = ({ user }) => {
+const NavStick = ({ user, handleLogout }) => {
   const [route, setRoute] = useState(0)
 
   const routes = [
