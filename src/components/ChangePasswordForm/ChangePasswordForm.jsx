@@ -85,7 +85,7 @@ const ChangePasswordForm = props => {
           Change Password
         </button>
         <Link to="/my-page">
-          <button >Cancel</button>
+          <button id="cancel">Cancel</button>
         </Link>
       </div>
     </form>
